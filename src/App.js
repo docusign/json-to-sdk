@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import NavbarSection from './components/NavbarSection';
+import BodySection from './components/BodySection';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+    <>
+        <NavbarSection />
+        <Container fluid>
+            <Row>
+                <BodySection />
+            </Row>
+        </Container>
+    </>
+);
 
 export default App;
