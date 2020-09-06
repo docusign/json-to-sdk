@@ -1,11 +1,10 @@
-# DocuSign API Request Builder example. Generated: {{generated}}
+# DocuSign example. Generated: {{generated}}
 # DocuSign Ⓒ {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
 # @see <a href="https://developers.docusign.com">DocuSign Developer Center</a>
 import docusign_esign as docusign
 import base64
 from os import path
-# Note: the accessToken is for testing and is temporary. It is only good for 8 hours from the time you 
-#       authenticated with API Request Builder. In production, use an OAuth flow to obtain access tokens.
+# Use an OAuth flow to obtain anaccess token.
 ACCESS_TOKEN = "{{access_token}}"
 ACCOUNT_ID="{{account_id}}"
 DS_BASE_URI="https://demo.docusign.net"

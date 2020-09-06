@@ -1,5 +1,5 @@
 /**
- * DocuSign Builder example. Generated: {{generated}}
+ * DocuSign example. Generated: {{generated}}
  * DocuSign Ⓒ {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
  * @see <a href="https://developers.docusign.com">DocuSign Developer Center</a>
  */
@@ -17,8 +17,7 @@ import java.util.List;
 
 public class Example {
     /**
-     *  Note: the accessToken is for testing and is temporary. It is only good for 8 hours from the time you 
-     *  authenticated with API Request Builder. In production, use an OAuth flow to obtain access tokens.
+     *  Use an OAuth flow to obtain an access token.
      */
     private static String accessToken = "{{access_token}}";
     private static String accountId = "{{account_id}}";

@@ -1,10 +1,9 @@
-<?php # DocuSign Builder example. Generated: {{generated}}
+<?php # DocuSign example. Generated: {{generated}}
       # DocuSign Ⓒ {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
       # @see <a href="https://developers.docusign.com">DocuSign Developer Center</a>
 require_once ('vendor/autoload.php');
 require_once ('vendor/docusign/esign-client/autoload.php');
-# Note: the access_token is for testing and is temporary. It is only good for 8 hours from the time you 
-#       authenticated with API Request Builder. 
+# Use an OAuth flow to obtain an access token 
 const base_uri = 'https://demo.docusign.net/';
 const access_token = '{{access_token}}';
 const account_id = '{{account_id}}';

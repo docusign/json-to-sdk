@@ -1,4 +1,4 @@
-// DocuSign Builder example. Generated: {{generated}}
+// DocuSign example. Generated: {{generated}}
 // DocuSign Ⓒ {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
 // @see <a href="https://developers.docusign.com">DocuSign Developer Center</a>
 
@@ -13,8 +13,7 @@ namespace CSharp_example
 {
 	class Program
 	{
-        // Note: the accessToken is for testing and is temporary. It is only good for 8 hours from the time you 
-        //       authenticated with API Request Builder. In production, use an OAuth flow to obtain access tokens.
+        // Use an OAuth flow to obtain an access tokens
 		private const string accessToken = "{{access_token}}";
 		private const string accountId = "{{account_id}}";
 		private const string basePath = "https://demo.docusign.net/restapi";
