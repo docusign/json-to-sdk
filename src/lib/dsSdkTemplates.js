@@ -710,7 +710,7 @@ ${lineIndent}{\n`
                             if (v.varName) {v.varName = this.transformVar(transformRule, v.varName)}
                         }
                         const attrName = this.transformAttrName(transformRule, v.attr);
-                        const val = v.value ? `"${v.value.replace (/"/g, '""')}"` : null; // Double the quotes for strings
+                        const val = (v.value && v.type === 'string')  ? `"${v.value.replace (/"/g, '""')}"` : null; // Double the quotes for strings
                         return `${lineIndent}${indent}${attrName} = ${v.scalar ? (v.type === 'string' ? val : v.value) : v.varName}${i === a.length - 1 ? '' : ', '} ${v.comment ? ('// ' + v.comment):''}\n`
                     }
                   ).join('')
@@ -808,7 +808,7 @@ ${lineIndent}{\n`
                             if (v.varName) {v.varName = this.transformVar(transformRule, v.varName)}
                         }
                         const attrName = this.transformAttrName(transformRule, v.attr);
-                        const val = v.value ? `"${v.value.replace (/"/g, '""')}"` : null; // Double the quotes for strings
+                        const val = (v.value && v.type === 'string') ? `"${v.value.replace (/"/g, '""')}"` : null; // Double the quotes for strings
                         return `${lineIndent}${vName}.set${attrName}(${v.scalar ? (v.type === 'string' ? val : v.value) : v.varName});  ${v.comment ? ('// ' + v.comment):''}\n`
                     }
                   ).join('')

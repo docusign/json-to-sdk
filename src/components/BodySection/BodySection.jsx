@@ -212,21 +212,15 @@ class BodySection extends React.Component {
     }
 
     jsonParseError(errMsg) {
-        const re1 = /Unexpected string in JSON at position (\d+)/
-            , re2 = /Unexpected token (.+) in JSON at position (\d+)/
+        const re1 = /in JSON at position (\d+)/
             , results1 = re1.exec(errMsg)
-            , results2 = re2.exec(errMsg)
             , out = `Problem! ${errMsg}\n\n`
             , errBuffer = 5;
         let errStringPos = null
           , errStart = null
           , errEnd = null
           ;
-        if (results1) {
-            errStringPos = parseInt(results1[1]);
-        } else if (results2) {
-            errStringPos = parseInt(results2[2]);
-        }
+        if (results1) {errStringPos = parseInt(results1[1])} 
         if (errStringPos !== null) {
             const len = this.state.json.length;
             errStart = (errStringPos - errBuffer) > 0 ? (errStringPos - errBuffer) : 0;
