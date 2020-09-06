@@ -1,68 +1,155 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JSON to SDK tool
+The JSON to SDK tool converts JSON input for the 
+DocuSign eSignature REST 
+[Envelopes:create](https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/Envelopes/create/)
+API method to SDK 
+code examples for
 
-## Available Scripts
+* C#
+* PHP
+* Java
+* Node.JS
+* Python
+* Ruby
+* Visual Basic (The example calls the API directly since there is no VB SDK.)
 
-In the project directory, you can run:
+## Usage
+1. Open the tool's URL.
+1. Copy/paste the source JSON to the input textarea on the left side of the app.
+1. The SDK code example will immediately be shown on the right side.
+1. Use the output drop-down menu to change the output language.
 
-### `npm start`
+## Input formats
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The input JSON must represent a JSON object and must start with an opening brace, `{`.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### The JSON object can be just the request object:
 
-### `npm test`
+````
+{
+    "emailSubject": "Please sign the attached document",
+    "status": "sent",
+    "documents": [
+        {
+            "filename": "anchorfields.pdf",
+            "name": "Example document",
+            "fileExtension": "pdf",
+            "documentId": "1"
+        }
+    ],
+    ...
+}
+````
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Or the object can include an `envelopeDefinition` attribute
+````
+{
+  "envelopeDefinition": {
+    "emailSubject": "Please sign the attached document",
+    "status": "sent",
+    "documents": [
+      {
+        "filename": "anchorfields.pdf",
+        "name": "Example document",
+        "fileExtension": "pdf",
+        "documentId": "1"
+      }
+    ],
+...
+}
+````
 
-### `npm run build`
+If the second format is used, an optional `createRecipientViewReq`
+attribute can be included at the first level:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+````
+  "createRecipientViewReq": {
+    "returnUrl": "https://docusign.com",
+    "authenticationMethod": "none",
+    "clientUserId": "1000",
+    "email": "signer_email@example.com",
+    "userName": "Signer's name"
+  }
+````
+If the `createRecipientViewReq` attribute is included, the app 
+will include an 
+[EnvelopeViews:createRecipient](https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/EnvelopeViews/createRecipient/)
+call in the code.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Attribute names
+Object and array attribute names must exactly match an `attribute` attribute in the 
+`json-to-sdk/src/lib/children.json` file.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Except for `filename`, any scalar attribute name can be used and will be included in the request.
 
-### `npm run eject`
+## `filename` attribute
+If you include a `filename` attribute, then its value will
+be interpreted as a filename whose contents should be included
+as the object's `documentBase64` attribute.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For example:
+````
+"documents": [
+  {
+    "filename": "anchorfields.pdf",
+    "name": "Example document",
+    "fileExtension": "pdf",
+    "documentId": "1"
+  }
+],
+````
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Will be converted, for C#, to:
+````
+Document document1 = new Document
+{
+	DocumentId = "1",  
+	FileExtension = "pdf",  
+	DocumentBase64 = ReadContent("anchorfields.pdf"),
+	Name = "Example document" 
+};
+List<Document> documents1 = new List<Document> {document1};
+````
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The `ReadContent` method is included in the code example.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Output
+To run an output example, first use the `Download Framework`
+button to download a zip file that includes the "framework" 
+for the specific language.
 
-## Learn More
+Use the language's library utility to install the 
+DocuSign SDK and any other needed libraries.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Next, download the example code by using the `Download Code`
+button or use copy/paste from the output textarea. 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You will overwrite the contents of the main file in the
+framework. For example, for C#, you'll overwrite the 
+`CSharp_example/CSharp_example/Program.cs` file.
 
-### Code Splitting
+## Authentication
+Each call to the eSignature REST API requires an access token.
+You can obtain an access token for development testing
+from the access token generator.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+For production, you must use one of the supported
+[OAuth flows](https://developers.docusign.com/docs/platform/auth/choose/).
 
-### Analyzing the Bundle Size
+## Fluent input
+The tool includes support for a *Fluent* API interface
+to the Envelopes:create method. Fluent input is a 
+proof of concept investigation.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Issues, pull requests
+Please file issues using the `issues` page of the application's
+github repository. Please do **not** use the issues 
+page to ask general API questions.
 
-### Making a Progressive Web App
+For general API questions, use 
+[StackOverflow](https://stackoverflow.com) with tag
+`docusignapi`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+**Pull Requests** are welcome if the update uses the
+MIT license.
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

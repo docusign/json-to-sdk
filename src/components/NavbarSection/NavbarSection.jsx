@@ -8,7 +8,7 @@ function NavbarSection(props) {
     <Navbar bg="dark" variant="dark" expand="lg">
         <Navbar.Brand href="">DocuSign JSON to SDK tool</Navbar.Brand>
         <Nav className="ml-5">
-            <Nav.Link href="https://github.com/docusign/docusign-php-client/blob/master/README.md" 
+            <Nav.Link href="https://github.com/docusign/json-to-sdk/blob/master/README.md" 
                 target="_blank">Documentation</Nav.Link>
         </Nav>
 
