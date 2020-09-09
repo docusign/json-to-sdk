@@ -27,7 +27,7 @@ const langNode = 'NodeJS'
     , langRuby = 'Ruby'
     , langJson = 'JSON'
     , langVB = 'VB'
-    , inputTextAreaY = 159; // y start of the input textarea
+    , inputTextAreaY = 172; // y start of the input textarea
     ;
 
 class BodySection extends React.Component {
@@ -80,10 +80,16 @@ class BodySection extends React.Component {
                         <Form.Check name="radio1" inline label="JSON" type='radio' onChange={evt => this.inputJson(evt)} checked={this.state.inputType==='json'} />
                         <Form.Check name="radio1" inline label="Fluent" type='radio' onChange={evt => this.inputFluent(evt)} checked={this.state.inputType==='fluent'} />
                     </div>
+                    <div>
+                        Note: Only the <a href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create"
+                            target="_blank">Envelopes:create</a> and <a 
+                            href="https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/EnvelopeViews/createRecipient/" 
+                            target="_blank">EnvelopeViews:createRecipient</a> API calls are supported.
+                    </div>
                     <Form.Group>
                         <Form.Control as="textarea" onChange={evt => this.inputChange(evt)}
                         style={{ height: `${this.state.windowHeight - inputTextAreaY}px`,
-                                 fontFamily: "Consolas, monaco, monospace", marginTop: "38px"}}
+                                 fontFamily: "Consolas, monaco, monospace", marginTop: "10px"}}
                         value={this.state.inputType==='json'?this.state.json:this.state.fluent} />
                     </Form.Group>
                 </Form>
@@ -111,7 +117,7 @@ class BodySection extends React.Component {
                         /**  <pre style={{whiteSpace: "pre-wrap"}}>{this.state.output}</pre> */
                         <Form.Control as="textarea" readOnly
                         style={{ height: `${this.state.windowHeight - inputTextAreaY}px`, 
-                                 fontFamily: "Consolas, monaco, monospace", marginTop: "2em"}}
+                                 fontFamily: "Consolas, monaco, monospace", marginTop: "44px"}}
                         value={this.state.output} />
                     }
                     {this.state.errStringPos === null ?
