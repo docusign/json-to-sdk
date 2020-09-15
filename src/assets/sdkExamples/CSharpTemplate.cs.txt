@@ -26,7 +26,7 @@ namespace CSharp_example
 
             ApiClient apiClient = new ApiClient(basePath);
             apiClient.Configuration.AddDefaultHeader("Authorization", "Bearer " + accessToken);
-            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient);
             try
             {
                 EnvelopeSummary results = envelopesApi.CreateEnvelope(accountId, envelopeDefinition);
@@ -54,7 +54,7 @@ namespace CSharp_example
             }
             ApiClient apiClient = new ApiClient(basePath);
             apiClient.Configuration.AddDefaultHeader("Authorization", "Bearer " + accessToken);
-            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient.Configuration);
+            EnvelopesApi envelopesApi = new EnvelopesApi(apiClient);
             try
             {
                 ViewUrl results = envelopesApi.CreateRecipientView(accountId, envelopeId, recipientViewRequest);

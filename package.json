@@ -28,7 +28,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "processSwagger": "node batch/processSwagger.js"
+    "processSwagger": "node batch/processSwagger.js",
+    "prestart": "./create_example_zips.sh",
+    "prebuild": "./create_example_zips.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
