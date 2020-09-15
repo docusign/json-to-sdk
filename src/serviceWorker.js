@@ -1,3 +1,4 @@
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 // This optional code is used to register a service worker.
 // register() is not called by default.
 

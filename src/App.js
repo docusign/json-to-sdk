@@ -1,3 +1,4 @@
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 import React from 'react';
 
 import Row from 'react-bootstrap/Row';

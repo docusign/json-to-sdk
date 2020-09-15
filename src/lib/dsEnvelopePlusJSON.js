@@ -1,3 +1,4 @@
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 /**
  * dsEnvelopePlusJSON adds a fluent interface to the DocuSign API
  * It creates a JSON output 

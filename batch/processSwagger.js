@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 
 /**
  * @file processSwagger.js is the root file for processing the Swagger file.

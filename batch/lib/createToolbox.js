@@ -1,3 +1,4 @@
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 /**
  * @file index.js is the root file.
  * @author DocuSign

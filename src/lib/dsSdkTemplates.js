@@ -1,3 +1,4 @@
+// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 /**
  * dsSdkTemplates are used to convert JSON constructs into 
  * code for different DocuSign SDKs.

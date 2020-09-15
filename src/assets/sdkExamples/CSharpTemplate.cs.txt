@@ -1,6 +1,6 @@
 // DocuSign example. Generated: {{generated}}
-// DocuSign Ⓒ {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
-// @see <a href="https://developers.docusign.com">DocuSign Developer Center</a>
+// DocuSign (c) {{generated_year}}. MIT License -- https://opensource.org/licenses/MIT
+// @see https://developers.docusign.com -- DocuSign Developer Center
 
 using System.Collections.Generic;
 using System.IO;
