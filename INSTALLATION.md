@@ -12,8 +12,8 @@
    [eSign-OpenAPI-Specification](https://github.com/docusign/eSign-OpenAPI-Specification) repo to the file 
 
    **json-to-sdk/batch/esignature.rest.swagger-v2.1.json**
-1. npm run-script processSwagger
-1. Then run the app via npm start to test.
+1. `npm run-script processSwagger`
+1. Run the app via npm start to test.
 
 ## Colophon
 

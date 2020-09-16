@@ -144,9 +144,9 @@ proof of concept investigation.
 ## Issues, pull requests
 Please file issues using the `issues` page of the application's
 github repository. Please do **not** use the issues 
-page to ask general API questions.
+page to ask general eSignature API questions.
 
-For general API questions, use 
+For general eSignature API questions, use 
 [StackOverflow](https://stackoverflow.com) with tag
 `docusignapi`
 
