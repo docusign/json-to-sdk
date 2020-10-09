@@ -4,12 +4,9 @@ Steps
 1. Install this Python framework directory. (Done!)
 2. From within the directory:
 3. pipenv install
-4. Send an envelope via the API Request Builder. This will cause you 
-   to login to the tool, and will set the access_token and account_id 
-   in the example.
-5. Download the example from the API Request Builder. 
+1. Download the example from the JSON to SDK tool. 
    *Overwrite* the main.py file in this directory.
-6. pipenv run python3 main.py
+1. pipenv run python3 main.py
 
 Notes
 1. Both a Pipfile and requirements.txt files are provided.
