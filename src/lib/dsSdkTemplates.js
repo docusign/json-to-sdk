@@ -636,8 +636,8 @@ class DsSdkTemplates {
          * handle the false case too.
          * @param {*} recipientViewRequest 
          */ 
-        const indent = "\t";
-        const lineIndent = "\t\t\t";
+        const indent = "    ";
+        const lineIndent = "            ";
         const setRecipientViewRequest = recipientViewRequest => {
             const out1 =
                 `${lineIndent}bool doRecipientView = ${recipientViewRequest ? "true" : "false"};\n`;

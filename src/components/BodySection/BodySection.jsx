@@ -83,9 +83,9 @@ class BodySection extends React.Component {
                     </div>
                     <div>
                         Note: Only the <a href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create"
-                            target="_blank">Envelopes:create</a> and <a 
+                            target="_blank" rel="noopener noreferrer">Envelopes:create</a> and <a 
                             href="https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/EnvelopeViews/createRecipient/" 
-                            target="_blank">EnvelopeViews:createRecipient</a> API calls are supported.
+                            target="_blank" rel="noopener noreferrer">EnvelopeViews:createRecipient</a> API calls are supported.
                     </div>
                     <Form.Group>
                         <Form.Control as="textarea" onChange={evt => this.inputChange(evt)}
