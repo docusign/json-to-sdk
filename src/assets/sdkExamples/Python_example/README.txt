@@ -4,9 +4,9 @@ Steps
 1. Install this Python framework directory. (Done!)
 2. From within the directory:
 3. pipenv install
-1. Download the example from the JSON to SDK tool. 
+4. Download the example from the JSON to SDK tool. 
    *Overwrite* the main.py file in this directory.
-1. pipenv run python3 main.py
+5. pipenv run python3 main.py
 
 Notes
 1. Both a Pipfile and requirements.txt files are provided.
