@@ -8,12 +8,12 @@ import com.docusign.esign.api.EnvelopesApi;
 import com.docusign.esign.client.ApiClient;
 import com.docusign.esign.client.ApiException;
 import com.docusign.esign.model.*;
-import com.sun.jersey.core.util.Base64;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Base64;
 
 public class Example {
     /**
@@ -67,7 +67,7 @@ public class Example {
             buffer.write(data, 0, nRead);
         }
         buffer.flush();
-        return new String(Base64.encode(buffer.toByteArray()));
+        return new String(Base64.getEncoder().encodeToString(buffer.toByteArray()));
     }
  
     /**

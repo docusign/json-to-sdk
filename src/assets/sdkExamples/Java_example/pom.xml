@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.docusign</groupId>
             <artifactId>docusign-esign-java</artifactId>
-            <version>3.5.0</version>
+            <version>3.9.0</version>
         </dependency>
     </dependencies>
 
