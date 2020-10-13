@@ -193,7 +193,14 @@ class BodySection extends React.Component {
                 this.setState({output: JSON.stringify(json, null, 4), errMsg: null, errStringPos: null});
             } else {
                 const jsonToSdk = new JsonToSdk(this.appObject, this.sdkLanguage());
-                sdk = jsonToSdk.convert(json);
+                try {sdk = jsonToSdk.convert(json)}
+                catch {
+                    errMsg = `The input is valid JSON, but it is not valid as a request for the API.
+                    Check that attributes are correctly set as arrays, objects, arrays of objects, etc.
+                    You may want to stepwise test different parts of the JSON to see where the problem is.`;
+                    this.setState({errMsg: errMsg, errStringPos: null});
+                    return;    
+                }
                 this.setState({output: sdk, errMsg: null, errStringPos: null});
             }
         } else {
