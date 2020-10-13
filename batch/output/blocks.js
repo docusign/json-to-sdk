@@ -1,4 +1,3 @@
-// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 export function addBlocks(BlocklyObj) {
     const Blockly = BlocklyObj;
     
@@ -245,25 +244,6 @@ Blockly.Blocks['addressInformation__stateOrProvince'] = {
     });
   }
 };
-Blockly.Blocks['addressInformation__zipPlus4'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "zip plus4: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "zipPlus4",
-          "text": ""
-        }
-      ],
-      "colour": 6,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "addressInformationAttribute",
-      "nextStatement":     "addressInformationAttribute",    
-    });
-  }
-};
 
 // addressInformationInput
 Blockly.Blocks['addressInformationInput'] = {
@@ -423,45 +403,6 @@ Blockly.Blocks['agent__addAccessCodeToEmail'] = {
       ],
       "colour": 12,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "agentAttribute",
-      "nextStatement":     "agentAttribute",    
-    });
-  }
-};
-Blockly.Blocks['agent__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 12,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "agentAttribute",
       "nextStatement":     "agentAttribute",    
@@ -2230,7 +2171,7 @@ Blockly.Blocks['approve__anchorUnits'] = {
         }
       ],
       "colour": 15,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "approveAttribute",
       "nextStatement":     "approveAttribute",    
@@ -2288,7 +2229,7 @@ Blockly.Blocks['approve__anchorXOffset'] = {
         }
       ],
       "colour": 15,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "approveAttribute",
       "nextStatement":     "approveAttribute",    
@@ -2346,7 +2287,7 @@ Blockly.Blocks['approve__anchorYOffset'] = {
         }
       ],
       "colour": 15,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "approveAttribute",
       "nextStatement":     "approveAttribute",    
@@ -4073,7 +4014,7 @@ Blockly.Blocks['approve__xPosition'] = {
         }
       ],
       "colour": 15,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "approveAttribute",
       "nextStatement":     "approveAttribute",    
@@ -4131,7 +4072,7 @@ Blockly.Blocks['approve__yPosition'] = {
         }
       ],
       "colour": 15,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "approveAttribute",
       "nextStatement":     "approveAttribute",    
@@ -4494,45 +4435,6 @@ Blockly.Blocks['carbonCopy__addAccessCodeToEmail'] = {
       ],
       "colour": 24,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "carbonCopyAttribute",
-      "nextStatement":     "carbonCopyAttribute",    
-    });
-  }
-};
-Blockly.Blocks['carbonCopy__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 24,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "carbonCopyAttribute",
       "nextStatement":     "carbonCopyAttribute",    
@@ -5992,45 +5894,6 @@ Blockly.Blocks['certifiedDelivery__addAccessCodeToEmail'] = {
       ],
       "colour": 27,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "certifiedDeliveryAttribute",
-      "nextStatement":     "certifiedDeliveryAttribute",    
-    });
-  }
-};
-Blockly.Blocks['certifiedDelivery__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 27,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "certifiedDeliveryAttribute",
       "nextStatement":     "certifiedDeliveryAttribute",    
@@ -7837,7 +7700,7 @@ Blockly.Blocks['checkbox__anchorUnits'] = {
         }
       ],
       "colour": 30,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "checkboxAttribute",
       "nextStatement":     "checkboxAttribute",    
@@ -7895,7 +7758,7 @@ Blockly.Blocks['checkbox__anchorXOffset'] = {
         }
       ],
       "colour": 30,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "checkboxAttribute",
       "nextStatement":     "checkboxAttribute",    
@@ -7953,7 +7816,7 @@ Blockly.Blocks['checkbox__anchorYOffset'] = {
         }
       ],
       "colour": 30,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "checkboxAttribute",
       "nextStatement":     "checkboxAttribute",    
@@ -9970,7 +9833,7 @@ Blockly.Blocks['checkbox__xPosition'] = {
         }
       ],
       "colour": 30,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-7, -6)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "checkboxAttribute",
       "nextStatement":     "checkboxAttribute",    
@@ -10028,7 +9891,7 @@ Blockly.Blocks['checkbox__yPosition'] = {
         }
       ],
       "colour": 30,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-7, -6)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "checkboxAttribute",
       "nextStatement":     "checkboxAttribute",    
@@ -10993,7 +10856,7 @@ Blockly.Blocks['commentThread__anchorUnits'] = {
         }
       ],
       "colour": 36,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "commentThreadAttribute",
       "nextStatement":     "commentThreadAttribute",    
@@ -11051,7 +10914,7 @@ Blockly.Blocks['commentThread__anchorXOffset'] = {
         }
       ],
       "colour": 36,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "commentThreadAttribute",
       "nextStatement":     "commentThreadAttribute",    
@@ -11109,7 +10972,7 @@ Blockly.Blocks['commentThread__anchorYOffset'] = {
         }
       ],
       "colour": 36,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "commentThreadAttribute",
       "nextStatement":     "commentThreadAttribute",    
@@ -12855,7 +12718,7 @@ Blockly.Blocks['commentThread__yPosition'] = {
         }
       ],
       "colour": 36,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "commentThreadAttribute",
       "nextStatement":     "commentThreadAttribute",    
@@ -13344,7 +13207,7 @@ Blockly.Blocks['company__anchorUnits'] = {
         }
       ],
       "colour": 39,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "companyAttribute",
       "nextStatement":     "companyAttribute",    
@@ -13402,7 +13265,7 @@ Blockly.Blocks['company__anchorXOffset'] = {
         }
       ],
       "colour": 39,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "companyAttribute",
       "nextStatement":     "companyAttribute",    
@@ -13460,7 +13323,7 @@ Blockly.Blocks['company__anchorYOffset'] = {
         }
       ],
       "colour": 39,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "companyAttribute",
       "nextStatement":     "companyAttribute",    
@@ -15593,7 +15456,7 @@ Blockly.Blocks['company__xPosition'] = {
         }
       ],
       "colour": 39,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "companyAttribute",
       "nextStatement":     "companyAttribute",    
@@ -15651,7 +15514,7 @@ Blockly.Blocks['company__yPosition'] = {
         }
       ],
       "colour": 39,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "companyAttribute",
       "nextStatement":     "companyAttribute",    
@@ -16389,7 +16252,7 @@ Blockly.Blocks['date__anchorUnits'] = {
         }
       ],
       "colour": 48,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "dateAttribute",
       "nextStatement":     "dateAttribute",    
@@ -16447,7 +16310,7 @@ Blockly.Blocks['date__anchorXOffset'] = {
         }
       ],
       "colour": 48,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "dateAttribute",
       "nextStatement":     "dateAttribute",    
@@ -16505,7 +16368,7 @@ Blockly.Blocks['date__anchorYOffset'] = {
         }
       ],
       "colour": 48,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "dateAttribute",
       "nextStatement":     "dateAttribute",    
@@ -18986,7 +18849,7 @@ Blockly.Blocks['date__xPosition'] = {
         }
       ],
       "colour": 48,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "dateAttribute",
       "nextStatement":     "dateAttribute",    
@@ -19044,7 +18907,7 @@ Blockly.Blocks['date__yPosition'] = {
         }
       ],
       "colour": 48,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "dateAttribute",
       "nextStatement":     "dateAttribute",    
@@ -19533,7 +19396,7 @@ Blockly.Blocks['dateSigned__anchorUnits'] = {
         }
       ],
       "colour": 51,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "dateSignedAttribute",
       "nextStatement":     "dateSignedAttribute",    
@@ -19591,7 +19454,7 @@ Blockly.Blocks['dateSigned__anchorXOffset'] = {
         }
       ],
       "colour": 51,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "dateSignedAttribute",
       "nextStatement":     "dateSignedAttribute",    
@@ -19649,7 +19512,7 @@ Blockly.Blocks['dateSigned__anchorYOffset'] = {
         }
       ],
       "colour": 51,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "dateSignedAttribute",
       "nextStatement":     "dateSignedAttribute",    
@@ -21434,7 +21297,7 @@ Blockly.Blocks['dateSigned__xPosition'] = {
         }
       ],
       "colour": 51,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "dateSignedAttribute",
       "nextStatement":     "dateSignedAttribute",    
@@ -21492,7 +21355,7 @@ Blockly.Blocks['dateSigned__yPosition'] = {
         }
       ],
       "colour": 51,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "dateSignedAttribute",
       "nextStatement":     "dateSignedAttribute",    
@@ -22082,7 +21945,7 @@ Blockly.Blocks['decline__anchorUnits'] = {
         }
       ],
       "colour": 57,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "declineAttribute",
       "nextStatement":     "declineAttribute",    
@@ -22140,7 +22003,7 @@ Blockly.Blocks['decline__anchorXOffset'] = {
         }
       ],
       "colour": 57,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "declineAttribute",
       "nextStatement":     "declineAttribute",    
@@ -22198,7 +22061,7 @@ Blockly.Blocks['decline__anchorYOffset'] = {
         }
       ],
       "colour": 57,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "declineAttribute",
       "nextStatement":     "declineAttribute",    
@@ -23983,7 +23846,7 @@ Blockly.Blocks['decline__xPosition'] = {
         }
       ],
       "colour": 57,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "declineAttribute",
       "nextStatement":     "declineAttribute",    
@@ -24041,7 +23904,7 @@ Blockly.Blocks['decline__yPosition'] = {
         }
       ],
       "colour": 57,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "declineAttribute",
       "nextStatement":     "declineAttribute",    
@@ -24351,6 +24214,44 @@ Blockly.Blocks['document__includeInDownload'] = {
     });
   }
 };
+Blockly.Blocks['document__isDynamicXfa'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "is dynamic xfa: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "isDynamicXfa",
+          "text": ""
+        }
+      ],
+      "colour": 63,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "documentAttribute",
+      "nextStatement":     "documentAttribute",    
+    });
+  }
+};
+Blockly.Blocks['document__isStaticXfa'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "is static xfa: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "isStaticXfa",
+          "text": ""
+        }
+      ],
+      "colour": 63,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "documentAttribute",
+      "nextStatement":     "documentAttribute",    
+    });
+  }
+};
 Blockly.Blocks['document__name'] = {
   init: function() {
     this.jsonInit({
@@ -24383,6 +24284,25 @@ Blockly.Blocks['document__order'] = {
       ],
       "colour": 63,
       "tooltip": "(Optional) The order in which to sort the results.\n\nValid values are: \n\n\n* `asc`: Ascending order.\n* `desc`: Descending order. ",
+      "helpUrl": "",
+      "previousStatement": "documentAttribute",
+      "nextStatement":     "documentAttribute",    
+    });
+  }
+};
+Blockly.Blocks['document__pageCount'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "page count: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pageCount",
+          "text": ""
+        }
+      ],
+      "colour": 63,
+      "tooltip": "An integer value specifying the number of document pages in the template. ",
       "helpUrl": "",
       "previousStatement": "documentAttribute",
       "nextStatement":     "documentAttribute",    
@@ -24427,6 +24347,25 @@ Blockly.Blocks['document__password'] = {
     });
   }
 };
+Blockly.Blocks['document__pdfFieldsData'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "pdf fields data: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pdfFieldsData",
+          "text": ""
+        }
+      ],
+      "colour": 63,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "documentAttribute",
+      "nextStatement":     "documentAttribute",    
+    });
+  }
+};
 Blockly.Blocks['document__pdfFormFieldOption'] = {
   init: function() {
     this.jsonInit({
@@ -24435,6 +24374,25 @@ Blockly.Blocks['document__pdfFormFieldOption'] = {
         {
           "type": "field_input",
           "name": "pdfFormFieldOption",
+          "text": ""
+        }
+      ],
+      "colour": 63,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "documentAttribute",
+      "nextStatement":     "documentAttribute",    
+    });
+  }
+};
+Blockly.Blocks['document__pdfWidgetsBase64'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "pdf widgets base64: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pdfWidgetsBase64",
           "text": ""
         }
       ],
@@ -25318,7 +25276,7 @@ Blockly.Blocks['documentHtmlDisplaySettings__preLabel'] = {
         }
       ],
       "colour": 75,
-      "tooltip": "Enables you to add descriptive text that appears before a collapsed section or continue button.",
+      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "documentHtmlDisplaySettingsAttribute",
       "nextStatement":     "documentHtmlDisplaySettingsAttribute",    
@@ -25926,7 +25884,7 @@ Blockly.Blocks['draw__anchorUnits'] = {
         }
       ],
       "colour": 81,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "drawAttribute",
       "nextStatement":     "drawAttribute",    
@@ -25984,7 +25942,7 @@ Blockly.Blocks['draw__anchorXOffset'] = {
         }
       ],
       "colour": 81,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "drawAttribute",
       "nextStatement":     "drawAttribute",    
@@ -26042,7 +26000,7 @@ Blockly.Blocks['draw__anchorYOffset'] = {
         }
       ],
       "colour": 81,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "drawAttribute",
       "nextStatement":     "drawAttribute",    
@@ -27595,7 +27553,7 @@ Blockly.Blocks['draw__yPosition'] = {
         }
       ],
       "colour": 81,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "drawAttribute",
       "nextStatement":     "drawAttribute",    
@@ -27737,45 +27695,6 @@ Blockly.Blocks['editor__addAccessCodeToEmail'] = {
       ],
       "colour": 84,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "editorAttribute",
-      "nextStatement":     "editorAttribute",    
-    });
-  }
-};
-Blockly.Blocks['editor__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 84,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "editorAttribute",
       "nextStatement":     "editorAttribute",    
@@ -29499,7 +29418,7 @@ Blockly.Blocks['email__anchorUnits'] = {
         }
       ],
       "colour": 87,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "emailAttribute",
       "nextStatement":     "emailAttribute",    
@@ -29557,7 +29476,7 @@ Blockly.Blocks['email__anchorXOffset'] = {
         }
       ],
       "colour": 87,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "emailAttribute",
       "nextStatement":     "emailAttribute",    
@@ -29615,7 +29534,7 @@ Blockly.Blocks['email__anchorYOffset'] = {
         }
       ],
       "colour": 87,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "emailAttribute",
       "nextStatement":     "emailAttribute",    
@@ -32096,7 +32015,7 @@ Blockly.Blocks['email__xPosition'] = {
         }
       ],
       "colour": 87,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "emailAttribute",
       "nextStatement":     "emailAttribute",    
@@ -32154,7 +32073,7 @@ Blockly.Blocks['email__yPosition'] = {
         }
       ],
       "colour": 87,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "emailAttribute",
       "nextStatement":     "emailAttribute",    
@@ -32643,7 +32562,7 @@ Blockly.Blocks['emailAddress__anchorUnits'] = {
         }
       ],
       "colour": 90,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "emailAddressAttribute",
       "nextStatement":     "emailAddressAttribute",    
@@ -32701,7 +32620,7 @@ Blockly.Blocks['emailAddress__anchorXOffset'] = {
         }
       ],
       "colour": 90,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "emailAddressAttribute",
       "nextStatement":     "emailAddressAttribute",    
@@ -32759,7 +32678,7 @@ Blockly.Blocks['emailAddress__anchorYOffset'] = {
         }
       ],
       "colour": 90,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "emailAddressAttribute",
       "nextStatement":     "emailAddressAttribute",    
@@ -34544,7 +34463,7 @@ Blockly.Blocks['emailAddress__xPosition'] = {
         }
       ],
       "colour": 90,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "emailAddressAttribute",
       "nextStatement":     "emailAddressAttribute",    
@@ -34602,7 +34521,7 @@ Blockly.Blocks['emailAddress__yPosition'] = {
         }
       ],
       "colour": 90,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "emailAddressAttribute",
       "nextStatement":     "emailAddressAttribute",    
@@ -35280,7 +35199,7 @@ Blockly.Blocks['envelope__envelopeId'] = {
         }
       ],
       "colour": 96,
-      "tooltip": "The envelope's GUID. \n\nExample: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`\n",
+      "tooltip": "The envelope's GUID. \n\nExample: `93be49ab-afa0-4adf-933c-f752070d71ec`",
       "helpUrl": "",
       "previousStatement": "envelopeAttribute",
       "nextStatement":     "envelopeAttribute",    
@@ -35812,7 +35731,7 @@ Blockly.Blocks['envelope__status'] = {
         }
       ],
       "colour": 96,
-      "tooltip": "Indicates the envelope status. Valid values are:\n\n* `completed`: The recipients have finished working with the envelope: the documents are signed and all required tabs are filled in.\n* `created`: The envelope is created as a draft. It can be modified and sent later.\n* `declined`: The envelope has been declined by the recipients.\n* `delivered`: The envelope has been delivered to the recipients.\n* `sent`: The envelope will be sent to the recipients after the envelope is created.\n* `signed`: The envelope has been signed by the recipients.\n* `voided`: The envelope is no longer valid and recipients cannot access or sign the envelope.\n",
+      "tooltip": "The status of the item.",
       "helpUrl": "",
       "previousStatement": "envelopeAttribute",
       "nextStatement":     "envelopeAttribute",    
@@ -36536,7 +36455,7 @@ Blockly.Blocks['envelopeDefinition__envelopeId'] = {
         }
       ],
       "colour": 0,
-      "tooltip": "The envelope's GUID. \n\nExample: `93be49ab-xxxx-xxxx-xxxx-f752070d71ec`\n",
+      "tooltip": "The envelope's GUID. \n\nExample: `93be49ab-afa0-4adf-933c-f752070d71ec`",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
       "nextStatement":     "createEnvelopeAttribute",    
@@ -37087,7 +37006,7 @@ Blockly.Blocks['envelopeDefinition__status'] = {
         }
       ],
       "colour": 0,
-      "tooltip": "Indicates the envelope status. Valid values when creating an envelope are: \n\n* `created`: The envelope is created as a draft. It can be modified and sent later.\n* `sent`: The envelope will be sent to the recipients after the envelope is created.\n\nYou can query these additional statuses once the recipients have interacted with the envelope.\n\n* `completed`: The recipients have finished working with the envelope: the documents are signed and all required tabs are filled in.\n* `declined`: The envelope has been declined by the recipients.\n* `delivered`: The envelope has been delivered to the recipients.\n* `signed`: The envelope has been signed by the recipients.\n* `voided`: The envelope is no longer valid and recipients cannot access or sign the envelope.\n",
+      "tooltip": "Indicates the envelope status. Valid values are:\n\n* `sent`: The envelope has been sent to the recipients. \n* `created`: The envelope is saved as a draft and can be modified and sent later.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
       "nextStatement":     "createEnvelopeAttribute",    
@@ -38302,7 +38221,7 @@ Blockly.Blocks['envelopeId__anchorUnits'] = {
         }
       ],
       "colour": 105,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "envelopeIdAttribute",
       "nextStatement":     "envelopeIdAttribute",    
@@ -38360,7 +38279,7 @@ Blockly.Blocks['envelopeId__anchorXOffset'] = {
         }
       ],
       "colour": 105,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "envelopeIdAttribute",
       "nextStatement":     "envelopeIdAttribute",    
@@ -38418,7 +38337,7 @@ Blockly.Blocks['envelopeId__anchorYOffset'] = {
         }
       ],
       "colour": 105,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "envelopeIdAttribute",
       "nextStatement":     "envelopeIdAttribute",    
@@ -40203,7 +40122,7 @@ Blockly.Blocks['envelopeId__yPosition'] = {
         }
       ],
       "colour": 105,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "envelopeIdAttribute",
       "nextStatement":     "envelopeIdAttribute",    
@@ -41709,7 +41628,7 @@ Blockly.Blocks['firstName__anchorUnits'] = {
         }
       ],
       "colour": 132,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "firstNameAttribute",
       "nextStatement":     "firstNameAttribute",    
@@ -41767,7 +41686,7 @@ Blockly.Blocks['firstName__anchorXOffset'] = {
         }
       ],
       "colour": 132,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "firstNameAttribute",
       "nextStatement":     "firstNameAttribute",    
@@ -41825,7 +41744,7 @@ Blockly.Blocks['firstName__anchorYOffset'] = {
         }
       ],
       "colour": 132,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "firstNameAttribute",
       "nextStatement":     "firstNameAttribute",    
@@ -43610,7 +43529,7 @@ Blockly.Blocks['firstName__xPosition'] = {
         }
       ],
       "colour": 132,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "firstNameAttribute",
       "nextStatement":     "firstNameAttribute",    
@@ -43668,7 +43587,7 @@ Blockly.Blocks['firstName__yPosition'] = {
         }
       ],
       "colour": 132,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "firstNameAttribute",
       "nextStatement":     "firstNameAttribute",    
@@ -44758,7 +44677,7 @@ Blockly.Blocks['formulaTab__anchorUnits'] = {
         }
       ],
       "colour": 141,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "formulaTabAttribute",
       "nextStatement":     "formulaTabAttribute",    
@@ -44816,7 +44735,7 @@ Blockly.Blocks['formulaTab__anchorXOffset'] = {
         }
       ],
       "colour": 141,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "formulaTabAttribute",
       "nextStatement":     "formulaTabAttribute",    
@@ -44874,7 +44793,7 @@ Blockly.Blocks['formulaTab__anchorYOffset'] = {
         }
       ],
       "colour": 141,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "formulaTabAttribute",
       "nextStatement":     "formulaTabAttribute",    
@@ -47587,7 +47506,7 @@ Blockly.Blocks['formulaTab__xPosition'] = {
         }
       ],
       "colour": 141,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+35, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "formulaTabAttribute",
       "nextStatement":     "formulaTabAttribute",    
@@ -47645,7 +47564,7 @@ Blockly.Blocks['formulaTab__yPosition'] = {
         }
       ],
       "colour": 141,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+35, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "formulaTabAttribute",
       "nextStatement":     "formulaTabAttribute",    
@@ -48134,7 +48053,7 @@ Blockly.Blocks['fullName__anchorUnits'] = {
         }
       ],
       "colour": 144,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "fullNameAttribute",
       "nextStatement":     "fullNameAttribute",    
@@ -48192,7 +48111,7 @@ Blockly.Blocks['fullName__anchorXOffset'] = {
         }
       ],
       "colour": 144,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "fullNameAttribute",
       "nextStatement":     "fullNameAttribute",    
@@ -48250,7 +48169,7 @@ Blockly.Blocks['fullName__anchorYOffset'] = {
         }
       ],
       "colour": 144,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "fullNameAttribute",
       "nextStatement":     "fullNameAttribute",    
@@ -50035,7 +49954,7 @@ Blockly.Blocks['fullName__xPosition'] = {
         }
       ],
       "colour": 144,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "fullNameAttribute",
       "nextStatement":     "fullNameAttribute",    
@@ -50093,7 +50012,7 @@ Blockly.Blocks['fullName__yPosition'] = {
         }
       ],
       "colour": 144,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "fullNameAttribute",
       "nextStatement":     "fullNameAttribute",    
@@ -52527,7 +52446,7 @@ Blockly.Blocks['initialHere__anchorUnits'] = {
         }
       ],
       "colour": 153,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "initialHereAttribute",
       "nextStatement":     "initialHereAttribute",    
@@ -52585,7 +52504,7 @@ Blockly.Blocks['initialHere__anchorXOffset'] = {
         }
       ],
       "colour": 153,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "initialHereAttribute",
       "nextStatement":     "initialHereAttribute",    
@@ -52643,7 +52562,7 @@ Blockly.Blocks['initialHere__anchorYOffset'] = {
         }
       ],
       "colour": 153,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "initialHereAttribute",
       "nextStatement":     "initialHereAttribute",    
@@ -54138,7 +54057,7 @@ Blockly.Blocks['initialHere__xPosition'] = {
         }
       ],
       "colour": 153,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+2, -7)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "initialHereAttribute",
       "nextStatement":     "initialHereAttribute",    
@@ -54196,7 +54115,7 @@ Blockly.Blocks['initialHere__yPosition'] = {
         }
       ],
       "colour": 153,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+2, -7)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "initialHereAttribute",
       "nextStatement":     "initialHereAttribute",    
@@ -54382,45 +54301,6 @@ Blockly.Blocks['intermediary__addAccessCodeToEmail'] = {
       ],
       "colour": 159,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "intermediaryAttribute",
-      "nextStatement":     "intermediaryAttribute",    
-    });
-  }
-};
-Blockly.Blocks['intermediary__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 159,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "intermediaryAttribute",
       "nextStatement":     "intermediaryAttribute",    
@@ -56189,7 +56069,7 @@ Blockly.Blocks['lastName__anchorUnits'] = {
         }
       ],
       "colour": 162,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "lastNameAttribute",
       "nextStatement":     "lastNameAttribute",    
@@ -56247,7 +56127,7 @@ Blockly.Blocks['lastName__anchorXOffset'] = {
         }
       ],
       "colour": 162,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "lastNameAttribute",
       "nextStatement":     "lastNameAttribute",    
@@ -56305,7 +56185,7 @@ Blockly.Blocks['lastName__anchorYOffset'] = {
         }
       ],
       "colour": 162,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "lastNameAttribute",
       "nextStatement":     "lastNameAttribute",    
@@ -58090,7 +57970,7 @@ Blockly.Blocks['lastName__xPosition'] = {
         }
       ],
       "colour": 162,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "lastNameAttribute",
       "nextStatement":     "lastNameAttribute",    
@@ -58148,7 +58028,7 @@ Blockly.Blocks['lastName__yPosition'] = {
         }
       ],
       "colour": 162,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "lastNameAttribute",
       "nextStatement":     "lastNameAttribute",    
@@ -58637,7 +58517,7 @@ Blockly.Blocks['list__anchorUnits'] = {
         }
       ],
       "colour": 165,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "listAttribute",
       "nextStatement":     "listAttribute",    
@@ -58695,7 +58575,7 @@ Blockly.Blocks['list__anchorXOffset'] = {
         }
       ],
       "colour": 165,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "listAttribute",
       "nextStatement":     "listAttribute",    
@@ -58753,7 +58633,7 @@ Blockly.Blocks['list__anchorYOffset'] = {
         }
       ],
       "colour": 165,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "listAttribute",
       "nextStatement":     "listAttribute",    
@@ -60886,7 +60766,7 @@ Blockly.Blocks['list__xPosition'] = {
         }
       ],
       "colour": 165,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "listAttribute",
       "nextStatement":     "listAttribute",    
@@ -60944,7 +60824,7 @@ Blockly.Blocks['list__yPosition'] = {
         }
       ],
       "colour": 165,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "listAttribute",
       "nextStatement":     "listAttribute",    
@@ -61739,7 +61619,7 @@ Blockly.Blocks['matchBox__yPosition'] = {
         }
       ],
       "colour": 177,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "matchBoxAttribute",
       "nextStatement":     "matchBoxAttribute",    
@@ -62707,7 +62587,7 @@ Blockly.Blocks['notarize__anchorUnits'] = {
         }
       ],
       "colour": 189,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "notarizeAttribute",
       "nextStatement":     "notarizeAttribute",    
@@ -62765,7 +62645,7 @@ Blockly.Blocks['notarize__anchorXOffset'] = {
         }
       ],
       "colour": 189,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "notarizeAttribute",
       "nextStatement":     "notarizeAttribute",    
@@ -62823,7 +62703,7 @@ Blockly.Blocks['notarize__anchorYOffset'] = {
         }
       ],
       "colour": 189,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "notarizeAttribute",
       "nextStatement":     "notarizeAttribute",    
@@ -64202,7 +64082,7 @@ Blockly.Blocks['notarize__xPosition'] = {
         }
       ],
       "colour": 189,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "notarizeAttribute",
       "nextStatement":     "notarizeAttribute",    
@@ -64260,7 +64140,7 @@ Blockly.Blocks['notarize__yPosition'] = {
         }
       ],
       "colour": 189,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "notarizeAttribute",
       "nextStatement":     "notarizeAttribute",    
@@ -65970,7 +65850,7 @@ Blockly.Blocks['note__anchorUnits'] = {
         }
       ],
       "colour": 195,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "noteAttribute",
       "nextStatement":     "noteAttribute",    
@@ -66028,7 +65908,7 @@ Blockly.Blocks['note__anchorXOffset'] = {
         }
       ],
       "colour": 195,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "noteAttribute",
       "nextStatement":     "noteAttribute",    
@@ -66086,7 +65966,7 @@ Blockly.Blocks['note__anchorYOffset'] = {
         }
       ],
       "colour": 195,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "noteAttribute",
       "nextStatement":     "noteAttribute",    
@@ -67929,7 +67809,7 @@ Blockly.Blocks['note__xPosition'] = {
         }
       ],
       "colour": 195,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "noteAttribute",
       "nextStatement":     "noteAttribute",    
@@ -67987,7 +67867,7 @@ Blockly.Blocks['note__yPosition'] = {
         }
       ],
       "colour": 195,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "noteAttribute",
       "nextStatement":     "noteAttribute",    
@@ -68520,7 +68400,7 @@ Blockly.Blocks['number__anchorUnits'] = {
         }
       ],
       "colour": 201,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "numberAttribute",
       "nextStatement":     "numberAttribute",    
@@ -68578,7 +68458,7 @@ Blockly.Blocks['number__anchorXOffset'] = {
         }
       ],
       "colour": 201,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "numberAttribute",
       "nextStatement":     "numberAttribute",    
@@ -68636,7 +68516,7 @@ Blockly.Blocks['number__anchorYOffset'] = {
         }
       ],
       "colour": 201,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "numberAttribute",
       "nextStatement":     "numberAttribute",    
@@ -71233,7 +71113,7 @@ Blockly.Blocks['number__xPosition'] = {
         }
       ],
       "colour": 201,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "numberAttribute",
       "nextStatement":     "numberAttribute",    
@@ -71291,7 +71171,7 @@ Blockly.Blocks['number__yPosition'] = {
         }
       ],
       "colour": 201,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "numberAttribute",
       "nextStatement":     "numberAttribute",    
@@ -71338,6 +71218,145 @@ Blockly.Blocks['number__yPositionMetadata'] = {
   }
 };
 
+// ocrRequest
+Blockly.Blocks['ocrRequest'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "ocr request %1 %2",
+      "args0": [
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_statement",
+          "name": "attributes",
+          "check": "ocrRequestAttribute"
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "createEnvelopeAttribute",
+      "nextStatement": "createEnvelopeAttribute",
+    });
+  }
+};
+// document__ocrRequest Attributes
+Blockly.Blocks['ocrRequest__ocrLanguage'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "ocr language: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "ocrLanguage",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+Blockly.Blocks['ocrRequest__pageSelection'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "page selection: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pageSelection",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+Blockly.Blocks['ocrRequest__setPageOrientation'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "set page orientation: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "setPageOrientation",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+Blockly.Blocks['ocrRequest__showFrames'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "show frames: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "showFrames",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+Blockly.Blocks['ocrRequest__showText'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "show text: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "showText",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+Blockly.Blocks['ocrRequest__skipPagesHavingExistingExtractableText'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "skip pages having existing extractable text: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "skipPagesHavingExistingExtractableText",
+          "text": ""
+        }
+      ],
+      "colour": 204,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "ocrRequestAttribute",
+      "nextStatement":     "ocrRequestAttribute",    
+    });
+  }
+};
+
 // page
 Blockly.Blocks['page'] = {
   init: function() {
@@ -71353,7 +71372,7 @@ Blockly.Blocks['page'] = {
           "check": "pageAttribute"
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "Description of a page of a document.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -71373,7 +71392,7 @@ Blockly.Blocks['page__dpi'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The number of dots per inch used for the page image.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71392,7 +71411,7 @@ Blockly.Blocks['page__height'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The height of the page in pixels.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71411,7 +71430,7 @@ Blockly.Blocks['page__imageBytes'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The number of image bytes.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71430,7 +71449,7 @@ Blockly.Blocks['page__mimeType'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The MIME type.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71449,7 +71468,7 @@ Blockly.Blocks['page__pageId'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The id of the page.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71468,7 +71487,7 @@ Blockly.Blocks['page__sequence'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The sequence of the page in the document, or page number.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
@@ -71487,11 +71506,74 @@ Blockly.Blocks['page__width'] = {
           "text": ""
         }
       ],
-      "colour": 204,
+      "colour": 207,
       "tooltip": "The width of the page in pixels.",
       "helpUrl": "",
       "previousStatement": "pageAttribute",
       "nextStatement":     "pageAttribute",    
+    });
+  }
+};
+
+// pageSize
+Blockly.Blocks['pageSize'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "page size %1 %2",
+      "args0": [
+        {
+          "type": "input_dummy"
+        },
+        {
+          "type": "input_statement",
+          "name": "attributes",
+          "check": "pageSizeAttribute"
+        }
+      ],
+      "colour": 210,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "createEnvelopeAttribute",
+      "nextStatement": "createEnvelopeAttribute",
+    });
+  }
+};
+// document__pageSize Attributes
+Blockly.Blocks['pageSize__pageHeight'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "page height: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pageHeight",
+          "text": ""
+        }
+      ],
+      "colour": 210,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "pageSizeAttribute",
+      "nextStatement":     "pageSizeAttribute",    
+    });
+  }
+};
+Blockly.Blocks['pageSize__pageWidth'] = {
+  init: function() {
+    this.jsonInit({
+      "message0": "page width: %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "pageWidth",
+          "text": ""
+        }
+      ],
+      "colour": 210,
+      "tooltip": "",
+      "helpUrl": "",
+      "previousStatement": "pageSizeAttribute",
+      "nextStatement":     "pageSizeAttribute",    
     });
   }
 };
@@ -71511,7 +71593,7 @@ Blockly.Blocks['pathExtendedElement'] = {
           "check": "pathExtendedElementAttribute"
         }
       ],
-      "colour": 207,
+      "colour": 213,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -71531,7 +71613,7 @@ Blockly.Blocks['pathExtendedElement__name'] = {
           "text": ""
         }
       ],
-      "colour": 207,
+      "colour": 213,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "pathExtendedElementAttribute",
@@ -71550,7 +71632,7 @@ Blockly.Blocks['pathExtendedElement__type'] = {
           "text": ""
         }
       ],
-      "colour": 207,
+      "colour": 213,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "pathExtendedElementAttribute",
@@ -71569,7 +71651,7 @@ Blockly.Blocks['pathExtendedElement__typeName'] = {
           "text": ""
         }
       ],
-      "colour": 207,
+      "colour": 213,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "pathExtendedElementAttribute",
@@ -71593,7 +71675,7 @@ Blockly.Blocks['paymentDetails'] = {
           "check": "paymentDetailsAttribute"
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "When a formula tab\nhas a `paymentDetails` property,\nthe formula tab\nis a payment item.\nSee [Requesting Payments Along with Signatures][paymentguide]\nin the DocuSign Support Center\nto learn more about payments.\n\n[paymentguide]:     https://support.docusign.com/en/guides/requesting-payments-along-with-signatures\n",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -71617,7 +71699,7 @@ Blockly.Blocks['paymentDetails__allowedPaymentMethods'] = {
           "check": "paymentDetails_allowedPaymentMethodsAttribute"
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "An array of accepted payment methods:\n\n* `CreditCard`\n* `ApplePay`\n* `AndroidPay`\n* `BankAccount`\n\nFor example, if you only accept credit cards and ACH transfers, you would set this property to:\n\n`'[\"BankAccount\", \"CreditCard\"]'`\n\nDo not specify `BankAccount` (ACH) if you are also using in-person signing.\n",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71637,7 +71719,7 @@ Blockly.Blocks['paymentDetails_allowedPaymentMethods__allowedPaymentMethod'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "paymentDetails_allowedPaymentMethodsAttribute",
@@ -71658,7 +71740,7 @@ Blockly.Blocks['paymentDetails__chargeId'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "The GUID set by the payment gateway (such as Stripe) that identifies a transaction. The `chargeId` is created when authorizing a payment and must be referenced when completing a payment.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71677,7 +71759,7 @@ Blockly.Blocks['paymentDetails__currencyCode'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "Specifies the three-letter\n[ISO 4217][ISO4217] currency code for the payment.\n\nSupported currencies are:\n\n* AUD: Australian dollar\n* CAD: Canadian dollar\n* EUR: Euro\n* GBP: Great Britain pound\n* USD: United States dollar\n\nSpecifying any other ISO 4217 code for payments is an error.\n\n[ISO4217]:          https://en.wikipedia.org/wiki/ISO_4217\n",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71716,7 +71798,7 @@ Blockly.Blocks['paymentDetails__currencyCodeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "Metadata that indicates whether the `currencyCode` property is editable.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71735,7 +71817,7 @@ Blockly.Blocks['paymentDetails__customMetadata'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "This is a sender-defined field that passes any extra metadata about the payment that will show up in the Authorize.net transaction under **Description** in the merchant gateway portal. The custom metadata will be recorded in downloaded Authorize.net reports. \n\nThe following example shows what the **Description** field of the transaction will look like: \n\n`<envelopeID>, <customMetadata>`",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71754,7 +71836,7 @@ Blockly.Blocks['paymentDetails__customMetadataRequired'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "A sender-defined field that specifies whether custom metadata is required for the transaction. When set to **true**, custom metadata is required. This property only applies if you are using an Authorize.net payment gateway account.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71773,7 +71855,7 @@ Blockly.Blocks['paymentDetails__customerId'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "The customer ID.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71792,7 +71874,7 @@ Blockly.Blocks['paymentDetails__gatewayAccountId'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "A GUID that identifies the payment gateway\nconnected to the sender's DocuSign account.\n\nThere is no public API\nfor connecting payment gateway accounts\nYou must connect and manage payment gateway accounts\nthrough the DocuSign Admin console\nand through your chosen payment gateway.\n\nYou can get the gateway account ID\nin the Payments section\nof the DocuSign Admin console.\n\n\n[paymentgateways]:  https://support.docusign.com/en/guides/managing-payment-gateways\n",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71831,7 +71913,7 @@ Blockly.Blocks['paymentDetails__gatewayAccountIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "Metadata that indicates whether the `gatewayAccountId` property is editable.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71850,7 +71932,7 @@ Blockly.Blocks['paymentDetails__gatewayDisplayName'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "Display name of the gateway connected to sender's Docusign account.\n\nPossible values are: Stripe, Braintree, Authorize.Net.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71869,7 +71951,7 @@ Blockly.Blocks['paymentDetails__gatewayName'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "Name of the gateway connected to sender's DocuSign account.\n\nPossible values are:\n\n* `Stripe`\n* `Braintree`\n* `AuthorizeDotNet`",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71888,7 +71970,7 @@ Blockly.Blocks['paymentDetails__paymentOption'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "This property specifies how the signer's collected payment details will be used.\n\nPossible values:\n\n- `authorize`: The payment details will be used to collect payment. This is the default value.\n- `save`: The signer's payment method (credit card or bank account) will be saved to the sender's payment gateway.\n- `save_and_authorize`: The signer's payment method (credit card or bank account) will be saved to the sender's payment gateway and will also be used to collect payment.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71907,7 +71989,7 @@ Blockly.Blocks['paymentDetails__paymentSourceId'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "The payment source ID.",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71926,7 +72008,7 @@ Blockly.Blocks['paymentDetails__status'] = {
           "text": ""
         }
       ],
-      "colour": 210,
+      "colour": 216,
       "tooltip": "This read-only property describes the status of a payment.\n\n* `new`<br>\n  This is a new payment request.\n  The envelope has been created,\n  but no payment authorizations have been made.\n\n* `auth_complete`<br>\n  A recipient has entered their credit card information,\n  but the envelope has not been completed.\n  The card has not been charged.\n\n* `payment_complete`<br>\n  The recipient's card has been charged.\n\n* `payment_capture_failed`<br>\n  Final charge failed.\n  This can happen when too much time\n  passes between authorizing the payment\n  and completing the document.\n\n* `future_payment_saved` <br>\nThe recipient's payment method has been saved to the sender's payment gateway.\n",
       "helpUrl": "",
       "previousStatement": "paymentDetailsAttribute",
@@ -71950,7 +72032,7 @@ Blockly.Blocks['paymentLineItem'] = {
           "check": "paymentLineItemAttribute"
         }
       ],
-      "colour": 213,
+      "colour": 219,
       "tooltip": "A line item describes details\nabout an individual line item\nin a payment request.\n\n",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -71970,7 +72052,7 @@ Blockly.Blocks['paymentLineItem__amountReference'] = {
           "text": ""
         }
       ],
-      "colour": 213,
+      "colour": 219,
       "tooltip": "This is a the `tabLabel`\nthat specifies the amount paid\nfor the line items.\n\n",
       "helpUrl": "",
       "previousStatement": "paymentLineItemAttribute",
@@ -71989,7 +72071,7 @@ Blockly.Blocks['paymentLineItem__description'] = {
           "text": ""
         }
       ],
-      "colour": 213,
+      "colour": 219,
       "tooltip": "A sender-defined description of the line item.\n",
       "helpUrl": "",
       "previousStatement": "paymentLineItemAttribute",
@@ -72008,7 +72090,7 @@ Blockly.Blocks['paymentLineItem__itemCode'] = {
           "text": ""
         }
       ],
-      "colour": 213,
+      "colour": 219,
       "tooltip": "This is the sender-defined\nSKU, inventory number, or other item code\nfor the line item.\n",
       "helpUrl": "",
       "previousStatement": "paymentLineItemAttribute",
@@ -72027,7 +72109,7 @@ Blockly.Blocks['paymentLineItem__name'] = {
           "text": ""
         }
       ],
-      "colour": 213,
+      "colour": 219,
       "tooltip": "This is a sender-defined\nproduct name, service name,\nor other designation for the line item.\n",
       "helpUrl": "",
       "previousStatement": "paymentLineItemAttribute",
@@ -72051,7 +72133,7 @@ Blockly.Blocks['polyLine'] = {
           "check": "polyLineAttribute"
         }
       ],
-      "colour": 216,
+      "colour": 222,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -72071,7 +72153,7 @@ Blockly.Blocks['polyLine__x1'] = {
           "text": ""
         }
       ],
-      "colour": 216,
+      "colour": 222,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineAttribute",
@@ -72090,7 +72172,7 @@ Blockly.Blocks['polyLine__x2'] = {
           "text": ""
         }
       ],
-      "colour": 216,
+      "colour": 222,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineAttribute",
@@ -72109,7 +72191,7 @@ Blockly.Blocks['polyLine__y1'] = {
           "text": ""
         }
       ],
-      "colour": 216,
+      "colour": 222,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineAttribute",
@@ -72128,7 +72210,7 @@ Blockly.Blocks['polyLine__y2'] = {
           "text": ""
         }
       ],
-      "colour": 216,
+      "colour": 222,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineAttribute",
@@ -72152,7 +72234,7 @@ Blockly.Blocks['polyLineOverlay'] = {
           "check": "polyLineOverlayAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "This tab enables users to strike through the text of a document. The tab is implemented as a line represented as a pair of x and y coordinates.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -72172,7 +72254,7 @@ Blockly.Blocks['polyLineOverlay__anchorAllowWhiteSpaceInCharacters'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72211,7 +72293,7 @@ Blockly.Blocks['polyLineOverlay__anchorAllowWhiteSpaceInCharactersMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72230,7 +72312,7 @@ Blockly.Blocks['polyLineOverlay__anchorCaseSensitive'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "This property controls how [anchor tabs][AnchorTabs] are placed. When **true**, the text string in a document must match the case of the `anchorString` property for an anchor tab to be created. The default value is **false**.\n\nFor example, when set to **true**, if the anchor string is `DocuSign`, then `DocuSign` will match but `Docusign`, `docusign`, `DoCuSiGn`, etc. will not match. When set to **false**, `DocuSign`, `Docusign`, `docusign`, `DoCuSiGn`, etc. will all match.\n\nThis functionality uses the following rules:\n\n- Unless punctuation is specified in the `anchorString`, this functionality ignores punctuation and the following characters:\n\n  $~><|^+=\n\n  For example, the `anchorString` `water` will match on the string `Fetch a pail of water.`\n\n- Strings embedded in other strings are ignored during the matching process.\n\n- In words that have dashes, the parts separated by dashes are treated as distinct words.\n\n  Example: If the anchor string is `forget`, then an anchor tab is placed on the `forget` in `forget-me-not`, even when `anchorMatchWholeWord` is set to **true**.\n\n- Letters with accent marks are treated as distinct characters from their unaccented counterparts.\n\n- For single-character anchor strings, if the two characters appear right next to each other in the document, a single anchor tab is placed for both of them.\n\n  Example: If the anchor string is `i`, then only one anchor tab is placed in `skiing`.\n\n- Unlike punctuation, numbers are not ignored when finding anchor words.\n\n  Example: If the anchor string is `cat`, then `-cat-` is matched but `1cat2` is not when `anchorMatchWholeWord` is set to **true** (its default value).\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTabs]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72269,7 +72351,7 @@ Blockly.Blocks['polyLineOverlay__anchorCaseSensitiveMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorCaseSensitive` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72288,7 +72370,7 @@ Blockly.Blocks['polyLineOverlay__anchorHorizontalAlignment'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "This property controls how [anchor tabs][AnchorTabs] are aligned in relation to the anchor text. Possible values are :\n\n- `left`: Aligns the left side of the tab with the beginning of the first character of the matching anchor word. This is the default value.\n- `right`: Aligns the tab’s left side with the last character of the matching anchor word.\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTabs]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72327,7 +72409,7 @@ Blockly.Blocks['polyLineOverlay__anchorHorizontalAlignmentMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorHorizontalAlignment` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72346,7 +72428,7 @@ Blockly.Blocks['polyLineOverlay__anchorIgnoreIfNotPresent'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, this tab is ignored if the `anchorString` is not found in the document.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72385,7 +72467,7 @@ Blockly.Blocks['polyLineOverlay__anchorIgnoreIfNotPresentMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorIgnoreIfNotPresent` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72404,7 +72486,7 @@ Blockly.Blocks['polyLineOverlay__anchorMatchWholeWord'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, the text string in a document must match the value of the `anchorString` property in its entirety for an [anchor tab][AnchorTab] to be created. The default value is **false**.\n\nFor example, when set to **true**, if the input is `man` then `man` will match but `manpower`, `fireman`, and `penmanship` will not. When set to **false**, if the input is `man` then `man`, `manpower`, `fireman`, and `penmanship` will all match.\n\nThis functionality uses the following rules:\n\n- Unless punctuation is specified in the `anchorString`, this functionality ignores punctuation and the following characters:\n\n  $~><|^+=\n\n  For example, the `anchorString` `water` will match on the string `Fetch a pail of water.`\n\n- Strings embedded in other strings are ignored during the matching process.\n\n- In words that have dashes, the parts separated by dashes are treated as distinct words.\n\n  Example: If the anchor string is `forget`, then an anchor tab is placed on the `forget` in `forget-me-not`, even when `anchorMatchWholeWord` is set to **true**.\n\n- Letters with accent marks are treated as distinct characters from their unaccented counterparts.\n\n- For single-character anchor strings, if the two characters appear right next to each other in the document, a single anchor tab is placed for both of them.\n\n  Example: If the anchor string is `i`, then only one anchor tab is placed in `skiing`.\n\n- Unlike punctuation, numbers are not ignored when finding anchor words.\n\n  Example: If the anchor string is `cat`, then `-cat-` is matched but `1cat2` is not when `anchorMatchWholeWord` is set to **true** (its default value).\n\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTab]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72443,7 +72525,7 @@ Blockly.Blocks['polyLineOverlay__anchorMatchWholeWordMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorMatchWholeWord` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72462,7 +72544,7 @@ Blockly.Blocks['polyLineOverlay__anchorString'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Specifies the string to find in the document and use as the basis for tab placement.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72501,7 +72583,7 @@ Blockly.Blocks['polyLineOverlay__anchorStringMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorString` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72520,7 +72602,7 @@ Blockly.Blocks['polyLineOverlay__anchorTabProcessorVersion'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72559,7 +72641,7 @@ Blockly.Blocks['polyLineOverlay__anchorTabProcessorVersionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72578,8 +72660,8 @@ Blockly.Blocks['polyLineOverlay__anchorUnits'] = {
           "text": ""
         }
       ],
-      "colour": 219,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "colour": 225,
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
       "nextStatement":     "polyLineOverlayAttribute",    
@@ -72617,7 +72699,7 @@ Blockly.Blocks['polyLineOverlay__anchorUnitsMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorUnits` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72636,8 +72718,8 @@ Blockly.Blocks['polyLineOverlay__anchorXOffset'] = {
           "text": ""
         }
       ],
-      "colour": 219,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "colour": 225,
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
       "nextStatement":     "polyLineOverlayAttribute",    
@@ -72675,7 +72757,7 @@ Blockly.Blocks['polyLineOverlay__anchorXOffsetMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorXOffset` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72694,8 +72776,8 @@ Blockly.Blocks['polyLineOverlay__anchorYOffset'] = {
           "text": ""
         }
       ],
-      "colour": 219,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "colour": 225,
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
       "nextStatement":     "polyLineOverlayAttribute",    
@@ -72733,7 +72815,7 @@ Blockly.Blocks['polyLineOverlay__anchorYOffsetMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `anchorYOffset` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72752,7 +72834,7 @@ Blockly.Blocks['polyLineOverlay__conditionalParentLabel'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "For conditional fields this is the `tabLabel` of the parent tab that controls this tab's visibility.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72791,7 +72873,7 @@ Blockly.Blocks['polyLineOverlay__conditionalParentLabelMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `conditionalParentLabel` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72810,7 +72892,7 @@ Blockly.Blocks['polyLineOverlay__conditionalParentValue'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "For conditional fields, this is the value of the parent tab that controls the tab's visibility.\n\nIf the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \"on\" as the value to show that the parent tab is active.\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72849,7 +72931,7 @@ Blockly.Blocks['polyLineOverlay__conditionalParentValueMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `conditionalParentValue` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72868,7 +72950,7 @@ Blockly.Blocks['polyLineOverlay__customTabId'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The DocuSign-generated custom tab id for the custom tab to be applied. This can only be used when adding new tabs for a recipient. When used, the new tab inherits all the custom tab properties.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72907,7 +72989,7 @@ Blockly.Blocks['polyLineOverlay__customTabIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `customTabId` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72926,7 +73008,7 @@ Blockly.Blocks['polyLineOverlay__documentId'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The `documentId` is set by the API client. It is an integer that falls between `1` and 2,147,483,647. The value is encoded as a string without commas. The values `1`, `2`, `3`, and so on are typically used to identify the first few documents in an envelope. Tab definitions include a `documentId` property that specifies the document on which to place the tab.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72965,7 +73047,7 @@ Blockly.Blocks['polyLineOverlay__documentIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `documentId` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -72984,7 +73066,7 @@ Blockly.Blocks['polyLineOverlay__formOrder'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "An integer specifying the order in which the guided form HTML should render. The order is relative to the `formPageLabel`, the group by which to place the guided form HTML block.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73023,7 +73105,7 @@ Blockly.Blocks['polyLineOverlay__formOrderMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `formOrder` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73042,7 +73124,7 @@ Blockly.Blocks['polyLineOverlay__formPageLabel'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "A string specifying the group in which to place the guided form HTML. Each group displays as a separate guided forms page in the signing experience.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73081,7 +73163,7 @@ Blockly.Blocks['polyLineOverlay__formPageLabelMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `formPageLabel` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73100,7 +73182,7 @@ Blockly.Blocks['polyLineOverlay__formPageNumber'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "An integer specifying the order in which to present the guided form pages.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73139,7 +73221,7 @@ Blockly.Blocks['polyLineOverlay__formPageNumberMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `fromPageNumber` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73158,7 +73240,7 @@ Blockly.Blocks['polyLineOverlay__height'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The height of the tab in pixels.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73197,7 +73279,7 @@ Blockly.Blocks['polyLineOverlay__heightMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `height` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73216,7 +73298,7 @@ Blockly.Blocks['polyLineOverlay__locked'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, the signer cannot change the data of the custom tab.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73255,7 +73337,7 @@ Blockly.Blocks['polyLineOverlay__lockedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `locked` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73274,7 +73356,7 @@ Blockly.Blocks['polyLineOverlay__mergeFieldXml'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73293,7 +73375,7 @@ Blockly.Blocks['polyLineOverlay__overlayType'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The type of overlay to use. The API currently supports only the `outline` overlay type.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73332,7 +73414,7 @@ Blockly.Blocks['polyLineOverlay__overlayTypeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `overlayType` property is editable.\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73351,7 +73433,7 @@ Blockly.Blocks['polyLineOverlay__pageNumber'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The page number being accessed.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73390,7 +73472,7 @@ Blockly.Blocks['polyLineOverlay__pageNumberMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `pageNumber` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73409,7 +73491,7 @@ Blockly.Blocks['polyLineOverlay__recipientId'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73428,7 +73510,7 @@ Blockly.Blocks['polyLineOverlay__recipientIdGuid'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The globally-unique identifier (GUID) for a specific recipient on a specific envelope. If the same recipient is associated with multiple envelopes, they will have a different GUID for each one. Read only.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73467,7 +73549,7 @@ Blockly.Blocks['polyLineOverlay__recipientIdGuidMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `recipientIdGuid` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73506,7 +73588,7 @@ Blockly.Blocks['polyLineOverlay__recipientIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `recipientId` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73525,7 +73607,7 @@ Blockly.Blocks['polyLineOverlay__shared'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, indicates that the tab is shared.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73564,7 +73646,7 @@ Blockly.Blocks['polyLineOverlay__sharedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `shared` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73583,7 +73665,7 @@ Blockly.Blocks['polyLineOverlay__status'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The status of the tab. Possible values are:\n\n- `active`: The tab is active, but the recipient has not yet interacted with it.\n- `signed`: The recipient signed the tab.\n- `declined`: The recipient declined the envelope.\n- `na`: Used when the `status` property is not applicable to the tab type. (For example, a tab that has the `tabType` `SignerAttachmentOptional`).",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73622,7 +73704,7 @@ Blockly.Blocks['polyLineOverlay__statusMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `status` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73645,7 +73727,7 @@ Blockly.Blocks['polyLineOverlay__tabGroupLabels'] = {
           "check": "polyLineOverlay_tabGroupLabelsAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "An array of tab group labels that uniquely identify tab groups. To assign a tab to a `tabGroup`, you assign the `TabGroupLabel` to the `Tab.TabGroupLabels` array.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73665,7 +73747,7 @@ Blockly.Blocks['polyLineOverlay_tabGroupLabels__tabGroupLabel'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "polyLineOverlay_tabGroupLabelsAttribute",
@@ -73706,7 +73788,7 @@ Blockly.Blocks['polyLineOverlay__tabGroupLabelsMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `tabGroupLabels` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73725,7 +73807,7 @@ Blockly.Blocks['polyLineOverlay__tabId'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The unique identifier for the tab.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73764,7 +73846,7 @@ Blockly.Blocks['polyLineOverlay__tabIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `tabId` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73783,7 +73865,7 @@ Blockly.Blocks['polyLineOverlay__tabLabel'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The label associated with the tab. This value may be an empty string.\nIf no value is provided, the tab type is used as the value.\n\nMaximum Length: 500 characters.\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73802,7 +73884,7 @@ Blockly.Blocks['polyLineOverlay__tabOrder'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "A positive integer that sets the order the tab is navigated to during signing.\n\nTabs on a page are navigated to in ascending order, starting with the lowest number and moving to the highest. If two or more tabs have the same `tabOrder` value, the normal auto-navigation setting behavior for the envelope is used.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73841,7 +73923,7 @@ Blockly.Blocks['polyLineOverlay__tabOrderMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `tabOrder` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73860,7 +73942,7 @@ Blockly.Blocks['polyLineOverlay__tabType'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Indicates the type of tab (for example, `signHere` or `initialHere`).",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73899,7 +73981,7 @@ Blockly.Blocks['polyLineOverlay__tabTypeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `tabType` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73918,7 +74000,7 @@ Blockly.Blocks['polyLineOverlay__templateLocked'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. ",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73957,7 +74039,7 @@ Blockly.Blocks['polyLineOverlay__templateLockedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `templateLocked` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -73976,7 +74058,7 @@ Blockly.Blocks['polyLineOverlay__templateRequired'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74015,7 +74097,7 @@ Blockly.Blocks['polyLineOverlay__templateRequiredMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `templateRequired` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74054,7 +74136,7 @@ Blockly.Blocks['polyLineOverlay__toolTipMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `toolTip` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74073,7 +74155,7 @@ Blockly.Blocks['polyLineOverlay__tooltip'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The text of a tooltip that appears when a user hovers over a form field or tab.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74092,7 +74174,7 @@ Blockly.Blocks['polyLineOverlay__width'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "The width of the tab in pixels.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74131,7 +74213,7 @@ Blockly.Blocks['polyLineOverlay__widthMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `width` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74150,7 +74232,7 @@ Blockly.Blocks['polyLineOverlay__xPosition'] = {
           "text": ""
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74189,7 +74271,7 @@ Blockly.Blocks['polyLineOverlay__xPositionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `xPosition` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74208,8 +74290,8 @@ Blockly.Blocks['polyLineOverlay__yPosition'] = {
           "text": ""
         }
       ],
-      "colour": 219,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "colour": 225,
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
       "nextStatement":     "polyLineOverlayAttribute",    
@@ -74247,7 +74329,7 @@ Blockly.Blocks['polyLineOverlay__yPositionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 219,
+      "colour": 225,
       "tooltip": "Metadata that indicates whether the `yPosition` property is editable.",
       "helpUrl": "",
       "previousStatement": "polyLineOverlayAttribute",
@@ -74271,7 +74353,7 @@ Blockly.Blocks['powerForm'] = {
           "check": "powerFormAttribute"
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "Contains details about a PowerForm.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -74291,7 +74373,7 @@ Blockly.Blocks['powerForm__createdBy'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The id of the user who created the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74310,7 +74392,7 @@ Blockly.Blocks['powerForm__createdDateTime'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The UTC DateTime when the item was created.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74329,7 +74411,7 @@ Blockly.Blocks['powerForm__emailBody'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The body of the email message sent to the recipients. \n\nMaximum length: 10000 characters.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74348,7 +74430,7 @@ Blockly.Blocks['powerForm__emailSubject'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The subject line of the email message that is sent to all recipients.\n\nFor information about adding merge field information to the email subject, see [Template Email Subject Merge Fields](https://developers.docusign.com/esign-rest-api/reference/Templates/Templates/create#template-email-subject-merge-fields).\n",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74367,7 +74449,7 @@ Blockly.Blocks['powerForm__instructions'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The instructions that display on the landing page for the first recipient. These instructions are important if the recipient accesses the PowerForm by a method other than email. If instructions are entered, they display as an introduction after the recipient accesses the PowerForm.  Limit: 2000 characters.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74386,7 +74468,7 @@ Blockly.Blocks['powerForm__isActive'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "When **true**, indicates that the PowerForm is active and can be sent to recipients. This is the default value.\n\nWhen **false**, the PowerForm cannot be emailed or accessed by a recipient, even if they arrive at the PowerForm URL. \n\nIf a recipient attempts to sign an inactive PowerForm, an error message informs the recipient that the document is not active and suggests that they contact the sender.\n",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74405,7 +74487,7 @@ Blockly.Blocks['powerForm__lastUsed'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The UTC DateTime when the PowerForm was last used.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74424,7 +74506,7 @@ Blockly.Blocks['powerForm__limitUseInterval'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The length of time before the same recipient can sign the same PowerForm. This property is used in combination with the `limitUseIntervalUnits` property.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74443,7 +74525,7 @@ Blockly.Blocks['powerForm__limitUseIntervalEnabled'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "When **true**, the `limitUseInterval` is enabled.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74462,7 +74544,7 @@ Blockly.Blocks['powerForm__limitUseIntervalUnits'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The units associated with the `limitUseInterval`. Valid values are:\n\n- `minutes`\n- `hours\n- `days`\n- `weeks`\n- `months`\n\nFor example, to limit a recipient to signing once per year, set the `limitUseInterval` to 365 and the `limitUseIntervalUnits` to `days`.\n",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74481,7 +74563,7 @@ Blockly.Blocks['powerForm__maxUseEnabled'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "When set to **true**, you can set a maximum number of uses for the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74500,7 +74582,7 @@ Blockly.Blocks['powerForm__name'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The name of the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74519,7 +74601,7 @@ Blockly.Blocks['powerForm__powerFormId'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The id of the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74538,7 +74620,7 @@ Blockly.Blocks['powerForm__powerFormUrl'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The URL for the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74557,7 +74639,7 @@ Blockly.Blocks['powerForm__senderName'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The sender's name.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74576,7 +74658,7 @@ Blockly.Blocks['powerForm__senderUserId'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The id of the sender.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74595,7 +74677,7 @@ Blockly.Blocks['powerForm__signingMode'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The signing mode to use. Valid values are:\n \n- `email`: Verifies the recipient's identity using email authentication before the recipient can sign a document. The recipient enters their email address and then clicks **Begin Signing** to begin the signing process. The system then sends an email message with a validation code for the PowerForm to the recipient. If the recipient does not provide a valid email address, they cannot open and sign the document.  \n- `direct`: Does not require any verification. After a recipient enters their email address and clicks **Begin Signing**, a new browser tab opens and the recipient can immediately begin the signing process. Because the recipient's identity is not verified by using email authentication, we strongly recommend that you only use the `direct` signing mode when the PowerForm is accessible behind a secure portal where the recipient's identity is already authenticated, or where another form of authentication is specified for the recipient in the DocuSign template (for example, an access code, phone authentication, or ID check).  \n\n**Note**: In the account settings, `enablePowerFormDirect` must be **true** to use `direct` as the `signingMode`.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74614,7 +74696,7 @@ Blockly.Blocks['powerForm__templateId'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The id of the template used to create the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74633,7 +74715,7 @@ Blockly.Blocks['powerForm__templateName'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The name of the template used to create the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74652,7 +74734,7 @@ Blockly.Blocks['powerForm__timesUsed'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The number of times the PowerForm has been used. ",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74671,7 +74753,7 @@ Blockly.Blocks['powerForm__uri'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The URI for the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74690,7 +74772,7 @@ Blockly.Blocks['powerForm__usesRemaining'] = {
           "text": ""
         }
       ],
-      "colour": 222,
+      "colour": 228,
       "tooltip": "The number of times the PowerForm can still be used.",
       "helpUrl": "",
       "previousStatement": "powerFormAttribute",
@@ -74714,7 +74796,7 @@ Blockly.Blocks['powerFormRecipient'] = {
           "check": "powerFormRecipientAttribute"
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "**Note**: For a self-service PowerForm on a website, you can specify the intended recipients generically (for example, use `Member` as the `Name`), and omit personal details such as `email`.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -74734,7 +74816,7 @@ Blockly.Blocks['powerFormRecipient__accessCode'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "(Optional) The access code that the recipient must enter to access the PowerForm.\n\nMaximum Length: 50 characters. The code must also conform to the account's access code format setting.\n\nIf blank but the signer accessCode property is set in the envelope, then that value is used.\n\nIf blank and the signer accessCode property is not set, then the access code is not required.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74753,7 +74835,7 @@ Blockly.Blocks['powerFormRecipient__accessCodeLocked'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "When **true**, the `accessCode` property is locked and cannot be edited.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74772,7 +74854,7 @@ Blockly.Blocks['powerFormRecipient__accessCodeRequired'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "When **true**, the recipient must enter the `accessCode` to access the PowerForm.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74791,7 +74873,7 @@ Blockly.Blocks['powerFormRecipient__email'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "The email address of the recipient.\n\n**Note**: For self-service documents where you do not know who the recipients are in advance, you can leave this property blank.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74810,7 +74892,7 @@ Blockly.Blocks['powerFormRecipient__emailLocked'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "When **true**, the recipient's email address is locked and cannot be edited.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74829,7 +74911,7 @@ Blockly.Blocks['powerFormRecipient__idCheckConfigurationName'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "The name of the authentication check to use. This value must match one of the authentication types that the account uses. The names of these authentication types appear in the web console sending interface in the Identify list for a recipient. This setting overrides any default authentication setting. Valid values are:\n\n- `Phone Auth $`: The recipient must authenticate by using two-factor authentication (2FA). You provide the phone number to use for 2FA in the `phoneAuthentication` object.\n- `SMS Auth $`: The recipient must authenticate via SMS. You provide the phone number to use in the `smsAuthentication` object.\n- `ID Check $`: The  recipient must answer detailed security questions. \n\n**Example**: Your account has ID Check and SMS Authentication available. In the web console Identify list, these appear as ID Check $ and SMS Auth $. To use ID Check in an envelope, the idCheckConfigurationName should be ID Check $. For SMS, you would use SMS Auth $, and you would also need to add a phone number to the smsAuthentication node.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74848,7 +74930,7 @@ Blockly.Blocks['powerFormRecipient__idCheckRequired'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "Indicates if authentication is configured for the account. Valid values are:\n\n- `always`: Authentication checks are performed on every envelope. \n- `never`: Authentication checks are not performed on any envelopes. \n- `optional:` Authentication is configurable per envelope.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74867,7 +74949,7 @@ Blockly.Blocks['powerFormRecipient__name'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "The name of the PowerForm recipient.\n\n**Note**: For self-service documents where you do not know who the recipients are in advance, you can leave this property blank.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74886,7 +74968,7 @@ Blockly.Blocks['powerFormRecipient__recipientType'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "The recipient type, as specified by the following values:\n- `agent`: Agent recipients can add name and email information for recipients that appear after the agent in routing order.\n- `carbonCopy`: Carbon copy recipients get a copy of the envelope but don't need to sign, initial, date, or add information to any of the documents. This type of recipient can be used in any routing order.\n- `certifiedDelivery`: Certified delivery recipients must receive the completed documents for the envelope to be completed. They don't need to sign, initial, date, or add information to any of the documents.\n- `editor`: Editors have the same management and access rights for the envelope as the sender. Editors can add name and email information, add or change the routing order, set authentication options, and can edit signature/initial tabs and data fields for the remaining recipients.\n- `inPersonSigner`: In-person recipients are DocuSign users who act as signing hosts in the same physical location as the signer.\n- `intermediaries`: Intermediary recipients can optionally add name and email information for recipients at the same or subsequent level in the routing order.\n- `seal`: Electronic seal recipients represent legal entities.\n- `signer`: Signers are recipients who must sign, initial, date, or add data to form fields on the documents in the envelope.\n- `witness`: Witnesses are recipients whose signatures affirm that the identified signers have signed the documents in the envelope.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74905,7 +74987,7 @@ Blockly.Blocks['powerFormRecipient__roleName'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "The role associated with the recipient (for example, `Member`).\n\nThis property is required when you are working with template recipients and PowerForm recipients.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74924,7 +75006,7 @@ Blockly.Blocks['powerFormRecipient__routingOrder'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "Specifies the routing order of the recipient in the envelope. ",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74943,7 +75025,7 @@ Blockly.Blocks['powerFormRecipient__templateRequiresIdLookup'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "When **true**, the template used to create the PowerForm requires ID lookup for the recipient.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74962,7 +75044,7 @@ Blockly.Blocks['powerFormRecipient__userNameLocked'] = {
           "text": ""
         }
       ],
-      "colour": 225,
+      "colour": 231,
       "tooltip": "When **true**, the `userName` property for the recipient is locked and cannot be edited.",
       "helpUrl": "",
       "previousStatement": "powerFormRecipientAttribute",
@@ -74986,7 +75068,7 @@ Blockly.Blocks['radio'] = {
           "check": "radioAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "One of the selectable radio buttons\nin the `radios` property\nof a [`radioGroup`](https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeRecipientTabs/create/#/definitions/radioGroup) tab.\n",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -75006,7 +75088,7 @@ Blockly.Blocks['radio__anchorAllowWhiteSpaceInCharacters'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75045,7 +75127,7 @@ Blockly.Blocks['radio__anchorAllowWhiteSpaceInCharactersMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75064,7 +75146,7 @@ Blockly.Blocks['radio__anchorCaseSensitive'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "This property controls how [anchor tabs][AnchorTabs] are placed. When **true**, the text string in a document must match the case of the `anchorString` property for an anchor tab to be created. The default value is **false**.\n\nFor example, when set to **true**, if the anchor string is `DocuSign`, then `DocuSign` will match but `Docusign`, `docusign`, `DoCuSiGn`, etc. will not match. When set to **false**, `DocuSign`, `Docusign`, `docusign`, `DoCuSiGn`, etc. will all match.\n\nThis functionality uses the following rules:\n\n- Unless punctuation is specified in the `anchorString`, this functionality ignores punctuation and the following characters:\n\n  $~><|^+=\n\n  For example, the `anchorString` `water` will match on the string `Fetch a pail of water.`\n\n- Strings embedded in other strings are ignored during the matching process.\n\n- In words that have dashes, the parts separated by dashes are treated as distinct words.\n\n  Example: If the anchor string is `forget`, then an anchor tab is placed on the `forget` in `forget-me-not`, even when `anchorMatchWholeWord` is set to **true**.\n\n- Letters with accent marks are treated as distinct characters from their unaccented counterparts.\n\n- For single-character anchor strings, if the two characters appear right next to each other in the document, a single anchor tab is placed for both of them.\n\n  Example: If the anchor string is `i`, then only one anchor tab is placed in `skiing`.\n\n- Unlike punctuation, numbers are not ignored when finding anchor words.\n\n  Example: If the anchor string is `cat`, then `-cat-` is matched but `1cat2` is not when `anchorMatchWholeWord` is set to **true** (its default value).\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTabs]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75103,7 +75185,7 @@ Blockly.Blocks['radio__anchorCaseSensitiveMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorCaseSensitive` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75122,7 +75204,7 @@ Blockly.Blocks['radio__anchorHorizontalAlignment'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "This property controls how [anchor tabs][AnchorTabs] are aligned in relation to the anchor text. Possible values are :\n\n- `left`: Aligns the left side of the tab with the beginning of the first character of the matching anchor word. This is the default value.\n- `right`: Aligns the tab’s left side with the last character of the matching anchor word.\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTabs]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75161,7 +75243,7 @@ Blockly.Blocks['radio__anchorHorizontalAlignmentMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorHorizontalAlignment` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75180,7 +75262,7 @@ Blockly.Blocks['radio__anchorIgnoreIfNotPresent'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, this tab is ignored if the `anchorString` is not found in the document.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75219,7 +75301,7 @@ Blockly.Blocks['radio__anchorIgnoreIfNotPresentMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorIgnoreIfNotPresent` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75238,7 +75320,7 @@ Blockly.Blocks['radio__anchorMatchWholeWord'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the text string in a document must match the value of the `anchorString` property in its entirety for an [anchor tab][AnchorTab] to be created. The default value is **false**.\n\nFor example, when set to **true**, if the input is `man` then `man` will match but `manpower`, `fireman`, and `penmanship` will not. When set to **false**, if the input is `man` then `man`, `manpower`, `fireman`, and `penmanship` will all match.\n\nThis functionality uses the following rules:\n\n- Unless punctuation is specified in the `anchorString`, this functionality ignores punctuation and the following characters:\n\n  $~><|^+=\n\n  For example, the `anchorString` `water` will match on the string `Fetch a pail of water.`\n\n- Strings embedded in other strings are ignored during the matching process.\n\n- In words that have dashes, the parts separated by dashes are treated as distinct words.\n\n  Example: If the anchor string is `forget`, then an anchor tab is placed on the `forget` in `forget-me-not`, even when `anchorMatchWholeWord` is set to **true**.\n\n- Letters with accent marks are treated as distinct characters from their unaccented counterparts.\n\n- For single-character anchor strings, if the two characters appear right next to each other in the document, a single anchor tab is placed for both of them.\n\n  Example: If the anchor string is `i`, then only one anchor tab is placed in `skiing`.\n\n- Unlike punctuation, numbers are not ignored when finding anchor words.\n\n  Example: If the anchor string is `cat`, then `-cat-` is matched but `1cat2` is not when `anchorMatchWholeWord` is set to **true** (its default value).\n\n\n**Note**: You can only specify the value of this property in POST requests.\n\n[AnchorTab]: https://developers.docusign.com/esign-rest-api/guides/concepts/tabs#autoplace\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75277,7 +75359,7 @@ Blockly.Blocks['radio__anchorMatchWholeWordMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorMatchWholeWord` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75296,7 +75378,7 @@ Blockly.Blocks['radio__anchorString'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Specifies the string to find in the document and use as the basis for tab placement.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75335,7 +75417,7 @@ Blockly.Blocks['radio__anchorStringMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorString` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75354,7 +75436,7 @@ Blockly.Blocks['radio__anchorTabProcessorVersion'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75393,7 +75475,7 @@ Blockly.Blocks['radio__anchorTabProcessorVersionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75412,8 +75494,8 @@ Blockly.Blocks['radio__anchorUnits'] = {
           "text": ""
         }
       ],
-      "colour": 228,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "colour": 234,
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
       "nextStatement":     "radioAttribute",    
@@ -75451,7 +75533,7 @@ Blockly.Blocks['radio__anchorUnitsMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorUnits` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75470,8 +75552,8 @@ Blockly.Blocks['radio__anchorXOffset'] = {
           "text": ""
         }
       ],
-      "colour": 228,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "colour": 234,
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
       "nextStatement":     "radioAttribute",    
@@ -75509,7 +75591,7 @@ Blockly.Blocks['radio__anchorXOffsetMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorXOffset` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75528,8 +75610,8 @@ Blockly.Blocks['radio__anchorYOffset'] = {
           "text": ""
         }
       ],
-      "colour": 228,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "colour": 234,
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
       "nextStatement":     "radioAttribute",    
@@ -75567,7 +75649,7 @@ Blockly.Blocks['radio__anchorYOffsetMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `anchorYOffset` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75586,7 +75668,7 @@ Blockly.Blocks['radio__bold'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the information in the tab is bold.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75625,7 +75707,7 @@ Blockly.Blocks['radio__boldMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `bold` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75644,7 +75726,7 @@ Blockly.Blocks['radio__font'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "The font to be used for the tab value. Supported fonts include:\n\n- Default\n- Arial\n- ArialNarrow\n- Calibri\n- CourierNew\n- Garamond\n- Georgia\n- Helvetica\n- LucidaConsole\n- MSGothic\n- MSMincho\n- OCR-A\n- Tahoma\n- TimesNewRoman\n- Trebuchet\n- Verdana\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75663,7 +75745,7 @@ Blockly.Blocks['radio__fontColor'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "The font color to use for the information in the tab. Possible values are: \n\n- Black\n- BrightBlue\n- BrightRed\n- DarkGreen\n- DarkRed\n- Gold\n- Green\n- NavyBlue\n- Purple\n- White\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75702,7 +75784,7 @@ Blockly.Blocks['radio__fontColorMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `fontColor` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75741,7 +75823,7 @@ Blockly.Blocks['radio__fontMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `font` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75760,7 +75842,7 @@ Blockly.Blocks['radio__fontSize'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "The font size used for the information in the tab. Possible values are:\n\n- Size7\n- Size8\n- Size9\n- Size10\n- Size11\n- Size12\n- Size14\n- Size16\n- Size18\n- Size20\n- Size22\n- Size24\n- Size26\n- Size28\n- Size36\n- Size48\n- Size72",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75799,7 +75881,7 @@ Blockly.Blocks['radio__fontSizeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `fontSize` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75818,7 +75900,7 @@ Blockly.Blocks['radio__italic'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the information in the tab is italic.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75857,7 +75939,7 @@ Blockly.Blocks['radio__italicMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `italic` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75876,7 +75958,7 @@ Blockly.Blocks['radio__locked'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the signer cannot change the data of the custom tab.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75915,7 +75997,7 @@ Blockly.Blocks['radio__lockedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `locked` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75934,7 +76016,7 @@ Blockly.Blocks['radio__pageNumber'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Specifies the page number on which the tab is located.\nMust be 1 for supplemental documents.\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75973,7 +76055,7 @@ Blockly.Blocks['radio__pageNumberMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `pageNumber` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -75992,7 +76074,7 @@ Blockly.Blocks['radio__required'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the signer is required to fill out this tab.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76031,7 +76113,7 @@ Blockly.Blocks['radio__requiredMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `required` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76050,7 +76132,7 @@ Blockly.Blocks['radio__selected'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the radio button is selected.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76089,7 +76171,7 @@ Blockly.Blocks['radio__selectedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `selected` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76108,7 +76190,7 @@ Blockly.Blocks['radio__status'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "The status of the item.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76147,7 +76229,7 @@ Blockly.Blocks['radio__statusMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `status` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76166,7 +76248,7 @@ Blockly.Blocks['radio__tabId'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "The unique identifier for the tab.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76205,7 +76287,7 @@ Blockly.Blocks['radio__tabIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `tabId` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76224,7 +76306,7 @@ Blockly.Blocks['radio__tabOrder'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "A positive integer that sets the order the tab is navigated to during signing.\n\nTabs on a page are navigated to in ascending order, starting with the lowest number and moving to the highest. If two or more tabs have the same `tabOrder` value, the normal auto-navigation setting behavior for the envelope is used.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76263,7 +76345,7 @@ Blockly.Blocks['radio__tabOrderMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `tabOrder` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76282,7 +76364,7 @@ Blockly.Blocks['radio__underline'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "When set to **true**, the information in the tab is underlined.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76321,7 +76403,7 @@ Blockly.Blocks['radio__underlineMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `underline` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76340,7 +76422,7 @@ Blockly.Blocks['radio__value'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Specifies the value of the tab. ",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76379,7 +76461,7 @@ Blockly.Blocks['radio__valueMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `value` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76398,7 +76480,7 @@ Blockly.Blocks['radio__xPosition'] = {
           "text": ""
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76437,7 +76519,7 @@ Blockly.Blocks['radio__xPositionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `xPosition` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76456,8 +76538,8 @@ Blockly.Blocks['radio__yPosition'] = {
           "text": ""
         }
       ],
-      "colour": 228,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "colour": 234,
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
       "nextStatement":     "radioAttribute",    
@@ -76495,7 +76577,7 @@ Blockly.Blocks['radio__yPositionMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 228,
+      "colour": 234,
       "tooltip": "Metadata that indicates whether the `yPosition` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioAttribute",
@@ -76519,7 +76601,7 @@ Blockly.Blocks['radioGroup'] = {
           "check": "radioGroupAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "This group tab is used to place radio buttons on a document.\nThe `radios` property\ncontains a list of\n[`radio`](https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeRecipientTabs/create/#/definitions/radio)\nobjects  associated with the group. Only one radio button can\nbe selected in a group.\n",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -76539,7 +76621,7 @@ Blockly.Blocks['radioGroup__conditionalParentLabel'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "For conditional fields this is the `tabLabel` of the parent tab that controls this tab's visibility.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76578,7 +76660,7 @@ Blockly.Blocks['radioGroup__conditionalParentLabelMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `conditionalParentLabel` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76597,7 +76679,7 @@ Blockly.Blocks['radioGroup__conditionalParentValue'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "For conditional fields, this is the value of the parent tab that controls the tab's visibility.\n\nIf the parent tab is a Checkbox, Radio button, Optional Signature, or Optional Initial use \"on\" as the value to show that the parent tab is active.\n",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76636,7 +76718,7 @@ Blockly.Blocks['radioGroup__conditionalParentValueMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `conditionalParentValue` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76655,7 +76737,7 @@ Blockly.Blocks['radioGroup__documentId'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "The `documentId` is set by the API client. It is an integer that falls between `1` and 2,147,483,647. The value is encoded as a string without commas. The values `1`, `2`, `3`, and so on are typically used to identify the first few documents in an envelope. Tab definitions include a `documentId` property that specifies the document on which to place the tab.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76694,7 +76776,7 @@ Blockly.Blocks['radioGroup__documentIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `documentId` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76713,7 +76795,7 @@ Blockly.Blocks['radioGroup__groupName'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "The name of the group. The search_text provided in the call automatically performs a wild card search on group_name.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76752,7 +76834,7 @@ Blockly.Blocks['radioGroup__groupNameMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `groupName` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76771,7 +76853,7 @@ Blockly.Blocks['radioGroup__recipientId'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "A local reference that senders use to map recipients to other objects, such as specific document tabs. Within an envelope, each `recipientId` must be unique, but there is no uniqueness requirement across envelopes. For example, many envelopes assign the first recipient a `recipientId` of `1`.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76790,7 +76872,7 @@ Blockly.Blocks['radioGroup__recipientIdGuid'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "The globally-unique identifier (GUID) for a specific recipient on a specific envelope. If the same recipient is associated with multiple envelopes, they will have a different GUID for each one. Read only.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76829,7 +76911,7 @@ Blockly.Blocks['radioGroup__recipientIdGuidMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `recipientIdGuid` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76868,7 +76950,7 @@ Blockly.Blocks['radioGroup__recipientIdMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `recipientId` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76887,7 +76969,7 @@ Blockly.Blocks['radioGroup__requireAll'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "When set to **true** and shared is true, information must be entered in this field to complete the envelope. ",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76926,7 +77008,7 @@ Blockly.Blocks['radioGroup__requireAllMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `requireAll` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76945,7 +77027,7 @@ Blockly.Blocks['radioGroup__requireInitialOnSharedChange'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Optional element for field markup. When set to **true**, the signer is required to initial when they modify a shared field.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -76984,7 +77066,7 @@ Blockly.Blocks['radioGroup__requireInitialOnSharedChangeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `requireInitialOnSharedChange` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77003,7 +77085,7 @@ Blockly.Blocks['radioGroup__shared'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "When set to **true**, this custom tab is shared.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77042,7 +77124,7 @@ Blockly.Blocks['radioGroup__sharedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `shared` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77061,7 +77143,7 @@ Blockly.Blocks['radioGroup__tabType'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Indicates the type of tab (for example, `signHere` or `initialHere`).",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77100,7 +77182,7 @@ Blockly.Blocks['radioGroup__tabTypeMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `tabType` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77119,7 +77201,7 @@ Blockly.Blocks['radioGroup__templateLocked'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "When set to **true**, the sender cannot change any attributes of the recipient. Used only when working with template recipients. ",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77158,7 +77240,7 @@ Blockly.Blocks['radioGroup__templateLockedMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `templateLocked` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77177,7 +77259,7 @@ Blockly.Blocks['radioGroup__templateRequired'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "When set to **true**, the sender may not remove the recipient. Used only when working with template recipients.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77216,7 +77298,7 @@ Blockly.Blocks['radioGroup__templateRequiredMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `templateRequired` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77235,7 +77317,7 @@ Blockly.Blocks['radioGroup__tooltip'] = {
           "text": ""
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "The text of a tooltip that appears when a user hovers over a form field or tab.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
@@ -77274,55 +77356,11 @@ Blockly.Blocks['radioGroup__tooltipMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 231,
+      "colour": 237,
       "tooltip": "Metadata that indicates whether the `tooltip` property is editable.",
       "helpUrl": "",
       "previousStatement": "radioGroupAttribute",
       "nextStatement":     "radioGroupAttribute",    
-    });
-  }
-};
-
-// recipientAdditionalNotification
-Blockly.Blocks['recipientAdditionalNotification'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "recipient additional notification %1 %2",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "recipientAdditionalNotificationAttribute"
-        }
-      ],
-      "colour": 234,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "createEnvelopeAttribute",
-      "nextStatement": "createEnvelopeAttribute",
-    });
-  }
-};
-// agent__recipientAdditionalNotification Attributes
-Blockly.Blocks['recipientAdditionalNotification__secondaryDeliveryMethod'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "secondary delivery method: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "secondaryDeliveryMethod",
-          "text": ""
-        }
-      ],
-      "colour": 234,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientAdditionalNotificationAttribute",
-      "nextStatement":     "recipientAdditionalNotificationAttribute",    
     });
   }
 };
@@ -77342,7 +77380,7 @@ Blockly.Blocks['recipientAttachment'] = {
           "check": "recipientAttachmentAttribute"
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77362,7 +77400,7 @@ Blockly.Blocks['recipientAttachment__attachmentId'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "The unique identifier for the attachment.",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77381,7 +77419,7 @@ Blockly.Blocks['recipientAttachment__attachmentType'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "Specifies the type of the attachment for the recipient. Possible values are:\n\n- `.htm`\n- `.xml`",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77400,7 +77438,7 @@ Blockly.Blocks['recipientAttachment__data'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "A Base64-encoded representation of the attachment that is used to upload and download the file. File attachments may be up to 50 MB in size.",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77419,7 +77457,7 @@ Blockly.Blocks['recipientAttachment__label'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "An optional label for the attachment.",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77438,7 +77476,7 @@ Blockly.Blocks['recipientAttachment__name'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "The name of the attachment.",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77457,7 +77495,7 @@ Blockly.Blocks['recipientAttachment__remoteUrl'] = {
           "text": ""
         }
       ],
-      "colour": 237,
+      "colour": 240,
       "tooltip": "The URL of a previously staged chunked upload. Using a chunked upload enables you to stage a large, chunkable temp file. You then use the `remoteUrl` property to reference the chunked upload as the content in attachment and document-related requests. The `remoteUrl` property cannot be used for downloads.",
       "helpUrl": "",
       "previousStatement": "recipientAttachmentAttribute",
@@ -77481,7 +77519,7 @@ Blockly.Blocks['recipientEmailNotification'] = {
           "check": "recipientEmailNotificationAttribute"
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77501,7 +77539,7 @@ Blockly.Blocks['recipientEmailNotification__emailBody'] = {
           "text": ""
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "The body of the email message.",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
@@ -77540,7 +77578,7 @@ Blockly.Blocks['recipientEmailNotification__emailBodyMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "Metadata that indicates whether the `emailBody` property can be edited.",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
@@ -77559,7 +77597,7 @@ Blockly.Blocks['recipientEmailNotification__emailSubject'] = {
           "text": ""
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "The subject line for the email notification.",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
@@ -77598,7 +77636,7 @@ Blockly.Blocks['recipientEmailNotification__emailSubjectMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "Metadata that indicates whether the `emailSubject` property can be edited.",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
@@ -77617,8 +77655,8 @@ Blockly.Blocks['recipientEmailNotification__supportedLanguage'] = {
           "text": ""
         }
       ],
-      "colour": 240,
-      "tooltip": "The language to use for the standard email format and signing view for a recipient.\n\nFor example, in the recipient's email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.\n\n**Note**: This setting affects only DocuSign standard text. Any custom text that you enter for the `emailBody` and `emailSubject` of the notification is not translated, and appears exactly as you enter it.\n\n To retrieve the possible values, use the [Accounts::listSupportedLanguages][ListLang] method.\n\n[ListLang]: /esign/restapi/Accounts/Accounts/listSupportedLanguages/",
+      "colour": 243,
+      "tooltip": "The language to use for the standard email format and signing view for a recipient.\n\nFor example, in the recipient's email notification, this setting affects elements such as the standard introductory text describing the request to sign. It also determines the language used for buttons and tabs in both the email notification and the signing experience.\n\n**Note**: This setting affects only DocuSign standard text. Any custom text that you enter for the `emailBody` and `emailSubject` of the notification is not translated, and appears exactly as you enter it.\n\n To retrieve the possible values, use the [Accounts::listSupportedLanguages][ListLang] method.\n\n[ListLang]: ./esign/restapi/Accounts/Accounts/listSupportedLanguages/",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
       "nextStatement":     "recipientEmailNotificationAttribute",    
@@ -77656,7 +77694,7 @@ Blockly.Blocks['recipientEmailNotification__supportedLanguageMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 240,
+      "colour": 243,
       "tooltip": "Metadata that indicates whether the `supportedLanguage` property can be edited.",
       "helpUrl": "",
       "previousStatement": "recipientEmailNotificationAttribute",
@@ -77680,7 +77718,7 @@ Blockly.Blocks['recipientEvent'] = {
           "check": "recipientEventAttribute"
         }
       ],
-      "colour": 243,
+      "colour": 246,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77700,7 +77738,7 @@ Blockly.Blocks['recipientEvent__includeDocuments'] = {
           "text": ""
         }
       ],
-      "colour": 243,
+      "colour": 246,
       "tooltip": "reserved",
       "helpUrl": "",
       "previousStatement": "recipientEventAttribute",
@@ -77719,7 +77757,7 @@ Blockly.Blocks['recipientEvent__recipientEventStatusCode'] = {
           "text": ""
         }
       ],
-      "colour": 243,
+      "colour": 246,
       "tooltip": "Send a webhook notification for the following recipient statuses: Sent, Delivered, Completed, Declined, AuthenticationFailed, and AutoResponded.",
       "helpUrl": "",
       "previousStatement": "recipientEventAttribute",
@@ -77743,7 +77781,7 @@ Blockly.Blocks['recipientIdentityInputOption'] = {
           "check": "recipientIdentityInputOptionAttribute"
         }
       ],
-      "colour": 246,
+      "colour": 249,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77763,7 +77801,7 @@ Blockly.Blocks['recipientIdentityInputOption__name'] = {
           "text": ""
         }
       ],
-      "colour": 246,
+      "colour": 249,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientIdentityInputOptionAttribute",
@@ -77782,7 +77820,7 @@ Blockly.Blocks['recipientIdentityInputOption__valueType'] = {
           "text": ""
         }
       ],
-      "colour": 246,
+      "colour": 249,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientIdentityInputOptionAttribute",
@@ -77806,7 +77844,7 @@ Blockly.Blocks['recipientIdentityPhoneNumber'] = {
           "check": "recipientIdentityPhoneNumberAttribute"
         }
       ],
-      "colour": 249,
+      "colour": 252,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77826,7 +77864,7 @@ Blockly.Blocks['recipientIdentityPhoneNumber__countryCode'] = {
           "text": ""
         }
       ],
-      "colour": 249,
+      "colour": 252,
       "tooltip": "The three-letter code for the user's country.",
       "helpUrl": "",
       "previousStatement": "recipientIdentityPhoneNumberAttribute",
@@ -77845,7 +77883,7 @@ Blockly.Blocks['recipientIdentityPhoneNumber__extension'] = {
           "text": ""
         }
       ],
-      "colour": 249,
+      "colour": 252,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientIdentityPhoneNumberAttribute",
@@ -77864,7 +77902,7 @@ Blockly.Blocks['recipientIdentityPhoneNumber__number'] = {
           "text": ""
         }
       ],
-      "colour": 249,
+      "colour": 252,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientIdentityPhoneNumberAttribute",
@@ -77888,7 +77926,7 @@ Blockly.Blocks['recipientIdentityVerification'] = {
           "check": "recipientIdentityVerificationAttribute"
         }
       ],
-      "colour": 252,
+      "colour": 255,
       "tooltip": "Specifies ID Verification applied on an envelope by workflow ID. See the [list](https://developers.docusign.com/esign-rest-api/reference/Accounts/IdentityVerifications/list) method in the [IdentityVerifications](https://developers.docusign.com/esign-rest-api/reference/Accounts/IdentityVerifications) resource for more information on how to retrieve workflow IDs available for an account. This can be used in addition to other [recipient authentication](https://support.docusign.com/en/guides/ndse-user-guide-recipient-authentication) methods. ",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77896,7 +77934,7 @@ Blockly.Blocks['recipientIdentityVerification'] = {
     });
   }
 };
-// agent__recipientIdentityVerification Attributes
+// carbonCopy__recipientIdentityVerification Attributes
 Blockly.Blocks['recipientIdentityVerification__workflowId'] = {
   init: function() {
     this.jsonInit({
@@ -77908,7 +77946,7 @@ Blockly.Blocks['recipientIdentityVerification__workflowId'] = {
           "text": ""
         }
       ],
-      "colour": 252,
+      "colour": 255,
       "tooltip": "ID of the Identity Verification worklow used to verify recipients' identity. </br> This ID must match one of the [workflowId](https://developers.docusign.com/esign-rest-api/reference/Accounts/IdentityVerifications/list#accountIdentityVerificationWorkflow) available to your account.",
       "helpUrl": "",
       "previousStatement": "recipientIdentityVerificationAttribute",
@@ -77932,7 +77970,7 @@ Blockly.Blocks['recipientPhoneAuthentication'] = {
           "check": "recipientPhoneAuthenticationAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "A complex type that contains the elements:\n\n* `recipMayProvideNumber`: A Boolean value that specifies whether the recipient can use the phone number of their choice.\n* `senderProvidedNumbers`: A list of phone numbers that the recipient can use.\n* `recordVoicePrint`: Reserved for DocuSign.\n* `validateRecipProvidedNumber`: Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
@@ -77952,7 +77990,7 @@ Blockly.Blocks['recipientPhoneAuthentication__recipMayProvideNumber'] = {
           "text": ""
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Boolean. When set to **true**, the recipient can supply a phone number their choice.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -77991,7 +78029,7 @@ Blockly.Blocks['recipientPhoneAuthentication__recipMayProvideNumberMetadata'] = 
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Metadata that indicates whether the `recipMayProvideNumber` property can be edited.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78010,7 +78048,7 @@ Blockly.Blocks['recipientPhoneAuthentication__recordVoicePrint'] = {
           "text": ""
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78049,7 +78087,7 @@ Blockly.Blocks['recipientPhoneAuthentication__recordVoicePrintMetadata'] = {
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78072,7 +78110,7 @@ Blockly.Blocks['recipientPhoneAuthentication__senderProvidedNumbers'] = {
           "check": "recipientPhoneAuthentication_senderProvidedNumbersAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "An array containing a list of phone numbers that the recipient can use for SMS text authentication. ",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78092,7 +78130,7 @@ Blockly.Blocks['recipientPhoneAuthentication_senderProvidedNumbers__senderProvid
           "text": ""
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthentication_senderProvidedNumbersAttribute",
@@ -78133,7 +78171,7 @@ Blockly.Blocks['recipientPhoneAuthentication__senderProvidedNumbersMetadata'] = 
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Metadata that indicates whether the `senderProvidedNumbers` property can be edited.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78152,7 +78190,7 @@ Blockly.Blocks['recipientPhoneAuthentication__validateRecipProvidedNumber'] = {
           "text": ""
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": " Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
@@ -78191,152 +78229,11 @@ Blockly.Blocks['recipientPhoneAuthentication__validateRecipProvidedNumberMetadat
           "check": "propertyMetadataAttribute"
         }
       ],
-      "colour": 255,
+      "colour": 258,
       "tooltip": "Reserved for DocuSign.",
       "helpUrl": "",
       "previousStatement": "recipientPhoneAuthenticationAttribute",
       "nextStatement":     "recipientPhoneAuthenticationAttribute",    
-    });
-  }
-};
-
-// recipientPhoneNumber
-Blockly.Blocks['recipientPhoneNumber'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "recipient phone number %1 %2",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "recipientPhoneNumberAttribute"
-        }
-      ],
-      "colour": 258,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "createEnvelopeAttribute",
-      "nextStatement": "createEnvelopeAttribute",
-    });
-  }
-};
-// recipientAdditionalNotification__recipientPhoneNumber Attributes
-Blockly.Blocks['recipientPhoneNumber__countryCode'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "country code: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "countryCode",
-          "text": ""
-        }
-      ],
-      "colour": 258,
-      "tooltip": "The three-letter code for the user's country.",
-      "helpUrl": "",
-      "previousStatement": "recipientPhoneNumberAttribute",
-      "nextStatement":     "recipientPhoneNumberAttribute",    
-    });
-  }
-};
-Blockly.Blocks['recipientPhoneNumber__countryCodeMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "country code metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 258,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientPhoneNumberAttribute",
-      "nextStatement":     "recipientPhoneNumberAttribute",    
-    });
-  }
-};
-Blockly.Blocks['recipientPhoneNumber__number'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "number: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "number",
-          "text": ""
-        }
-      ],
-      "colour": 258,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientPhoneNumberAttribute",
-      "nextStatement":     "recipientPhoneNumberAttribute",    
-    });
-  }
-};
-Blockly.Blocks['recipientPhoneNumber__numberMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "number metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 258,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientPhoneNumberAttribute",
-      "nextStatement":     "recipientPhoneNumberAttribute",    
     });
   }
 };
@@ -78357,7 +78254,7 @@ Blockly.Blocks['recipientProofFile'] = {
         }
       ],
       "colour": 261,
-      "tooltip": "The proof file of the recipient. [ID Evidence](https://developers.docusign.com/idevidence-api) uses proof files to store the identification data that recipients submit when verifying their ID with [ID Verification](https://developers.docusign.com/esign-rest-api/reference/Accounts/IdentityVerifications)",
+      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
       "nextStatement": "createEnvelopeAttribute",
@@ -78377,7 +78274,7 @@ Blockly.Blocks['recipientProofFile__isInProofFile'] = {
         }
       ],
       "colour": 261,
-      "tooltip": "Indicates whether a proof file is available for this recipient.",
+      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "recipientProofFileAttribute",
       "nextStatement":     "recipientProofFileAttribute",    
@@ -78421,7 +78318,7 @@ Blockly.Blocks['recipientSignatureInformation__fontStyle'] = {
         }
       ],
       "colour": 264,
-      "tooltip": "The font type to use for the signature if the signature is not drawn. The following font styles  are supported. The quotes are to indicate that these values are strings, not `enums`.\n\n- `\"1_DocuSign\"`\n- `\"2_DocuSign\"`\n- `\"3_DocuSign\"`\n- `\"4_DocuSign\"`\n- `\"5_DocuSign\"`\n- `\"6_DocuSign\"`\n- `\"7_DocuSign\"`\n- `\"8_DocuSign\"`\n- `\"Mistral\"`\n- `\"Rage Italic\"`\n",
+      "tooltip": "Specifies the font style for the user's signature.",
       "helpUrl": "",
       "previousStatement": "recipientSignatureInformationAttribute",
       "nextStatement":     "recipientSignatureInformationAttribute",    
@@ -78972,96 +78869,6 @@ Blockly.Blocks['recipientViewRequest__email'] = {
     });
   }
 };
-// Item which is an array of Scalar
-Blockly.Blocks['recipientViewRequest__frameAncestors'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "frame ancestors %1 %2",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "frameAncestor",
-          "check": "recipientViewRequest_frameAncestorsAttribute"
-        }
-      ],
-      "colour": 3,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientViewRequestAttribute",
-      "nextStatement":     "recipientViewRequestAttribute",    
-    });
-  }
-};
-// the scalar items (we're assuming string)
-Blockly.Blocks['recipientViewRequest_frameAncestors__frameAncestor'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "frame ancestor: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "frameAncestor",
-          "text": ""
-        }
-      ],
-      "colour": 3,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientViewRequest_frameAncestorsAttribute",
-      "nextStatement":     "recipientViewRequest_frameAncestorsAttribute",    
-    });
-  }
-};
-
-
-// Item which is an array of Scalar
-Blockly.Blocks['recipientViewRequest__messageOrigins'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "message origins %1 %2",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "messageOrigin",
-          "check": "recipientViewRequest_messageOriginsAttribute"
-        }
-      ],
-      "colour": 3,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientViewRequestAttribute",
-      "nextStatement":     "recipientViewRequestAttribute",    
-    });
-  }
-};
-// the scalar items (we're assuming string)
-Blockly.Blocks['recipientViewRequest_messageOrigins__messageOrigin'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "message origin: %1",
-      "args0": [
-        {
-          "type": "field_input",
-          "name": "messageOrigin",
-          "text": ""
-        }
-      ],
-      "colour": 3,
-      "tooltip": "",
-      "helpUrl": "",
-      "previousStatement": "recipientViewRequest_messageOriginsAttribute",
-      "nextStatement":     "recipientViewRequest_messageOriginsAttribute",    
-    });
-  }
-};
-
-
 Blockly.Blocks['recipientViewRequest__pingFrequency'] = {
   init: function() {
     this.jsonInit({
@@ -79332,7 +79139,7 @@ Blockly.Blocks['sealSign'] = {
         }
       ],
       "colour": 279,
-      "tooltip": "Specifies one or more electronic seals to apply on documents. An electronic seal recipient is a legal entity rather than an actual person. Electronic Seals can be used by organizations and governments to show evidence of origin and integrity of documents. Even though electronic seals can be represented by a tab in a document, they do not require user interaction and apply automatically in the order specified by the sender. The sender is therefore the person authorizing usage of the electronic seal in the flow.\n\nExample: \n\n```json\n\"recipients\": {\n      \"seals\": [\n        {\n          \"recipientId\": \"1\",\n          \"routingOrder\" : 1,\n          \"recipientSignatureProviders\": [\n            {\n              \"sealName\": \"52e9d968-xxxx-xxxx-xxxx-4682bc45c106\"\n            }\n      	]\n    	}\n  	]\n	},\n    .\n    .\n    .\n```\nFor more information about Electronic Seals, see [Apply Electronic Seals to Your Documents](https://support.docusign.com/en/guides/ndse-user-guide-apply-electronic-seals).\n",
+      "tooltip": "Specifies one or more electronic seals to apply on documents. An electronic seal recipient is a legal entity rather than an actual person. Electronic Seals can be used by organizations and governments to show evidence of origin and integrity of documents. Even though electronic seals can be represented by a tab in a document, they do not require user interaction and apply automatically in the order specified by the sender. The sender is therefore the person authorizing usage of the electronic seal in the flow.\n\nExample: \n\n```json\n\"recipients\": {\n      \"seals\": [\n        {\n          \"recipientId\": \"1\",\n          \"routingOrder\" : 1,\n          \"recipientSignatureProviders\": [\n            {\n              \"sealName\": \"52e9d968-13be-42ca-a6fe-4682bc45c106\"\n            }\n      	]\n    	}\n  	]\n	},\n    .\n    .\n    .\n```\nFor more information about Electronic Seals, see [Apply Electronic Seals to Your Documents](https://support.docusign.com/en/guides/ndse-user-guide-apply-electronic-seals).",
       "helpUrl": "",
       "previousStatement": "createEnvelopeAttribute",
       "nextStatement": "createEnvelopeAttribute",
@@ -80849,7 +80656,7 @@ Blockly.Blocks['signHere__anchorUnits'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -80907,7 +80714,7 @@ Blockly.Blocks['signHere__anchorXOffset'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -80965,7 +80772,7 @@ Blockly.Blocks['signHere__anchorYOffset'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -81429,7 +81236,7 @@ Blockly.Blocks['signHere__height'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Not applicable to Sign Here tab.",
+      "tooltip": "The height of the tab in pixels.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -81815,7 +81622,7 @@ Blockly.Blocks['signHere__scaleValue'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Scales the size of the tab. This field accepts values from 0.5 to 2.0, where  0.5 is half the normal size, 1.0 is normal size, and 2.0 is twice the normal size.",
+      "tooltip": "Sets the size of the tab. This field accepts values from `0.5` to `1.0`, where `1.0` represents full size and `0.5` is 50% of full size.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -82479,7 +82286,7 @@ Blockly.Blocks['signHere__width'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "Not applicable to Sign Here tab.",
+      "tooltip": "The width of the tab in pixels.",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -82537,7 +82344,7 @@ Blockly.Blocks['signHere__xPosition'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+1, -7)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -82595,7 +82402,7 @@ Blockly.Blocks['signHere__yPosition'] = {
         }
       ],
       "colour": 285,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+1, -7)\n",
+      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired.\nMay be zero.\n\n<div class=\"highlight highlight-attention\">\n<p markdown=\"1\">\nThe `signHere` tab appears 21 points *lower*\nthan the value you provide here.\nTo align the tab as expected,\nsubtract 21 from the expected y-value.\n</p>\n<p>\nSee [Sign Here Tab Alignment](https://developers.docusign.com/esign-rest-api/reference/Envelopes/EnvelopeRecipientTabs/#sign-here-tab-alignment)\n</p>\n</div>\n",
       "helpUrl": "",
       "previousStatement": "signHereAttribute",
       "nextStatement":     "signHereAttribute",    
@@ -82800,45 +82607,6 @@ Blockly.Blocks['signer__addAccessCodeToEmail'] = {
       ],
       "colour": 291,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "signerAttribute",
-      "nextStatement":     "signerAttribute",    
-    });
-  }
-};
-Blockly.Blocks['signer__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 291,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "signerAttribute",
       "nextStatement":     "signerAttribute",    
@@ -84932,7 +84700,7 @@ Blockly.Blocks['signerAttachment__anchorUnits'] = {
         }
       ],
       "colour": 294,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "signerAttachmentAttribute",
       "nextStatement":     "signerAttachmentAttribute",    
@@ -84990,7 +84758,7 @@ Blockly.Blocks['signerAttachment__anchorXOffset'] = {
         }
       ],
       "colour": 294,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "signerAttachmentAttribute",
       "nextStatement":     "signerAttachmentAttribute",    
@@ -85048,7 +84816,7 @@ Blockly.Blocks['signerAttachment__anchorYOffset'] = {
         }
       ],
       "colour": 294,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "signerAttachmentAttribute",
       "nextStatement":     "signerAttachmentAttribute",    
@@ -86543,7 +86311,7 @@ Blockly.Blocks['signerAttachment__xPosition'] = {
         }
       ],
       "colour": 294,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+0, -24)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "signerAttachmentAttribute",
       "nextStatement":     "signerAttachmentAttribute",    
@@ -86601,7 +86369,7 @@ Blockly.Blocks['signerAttachment__yPosition'] = {
         }
       ],
       "colour": 294,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (+0, -24)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "signerAttachmentAttribute",
       "nextStatement":     "signerAttachmentAttribute",    
@@ -87153,7 +86921,7 @@ Blockly.Blocks['smartSection__anchorUnits'] = {
         }
       ],
       "colour": 300,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "smartSectionAttribute",
       "nextStatement":     "smartSectionAttribute",    
@@ -87211,7 +86979,7 @@ Blockly.Blocks['smartSection__anchorXOffset'] = {
         }
       ],
       "colour": 300,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "smartSectionAttribute",
       "nextStatement":     "smartSectionAttribute",    
@@ -87269,7 +87037,7 @@ Blockly.Blocks['smartSection__anchorYOffset'] = {
         }
       ],
       "colour": 300,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "smartSectionAttribute",
       "nextStatement":     "smartSectionAttribute",    
@@ -88948,7 +88716,7 @@ Blockly.Blocks['smartSection__yPosition'] = {
         }
       ],
       "colour": 300,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "smartSectionAttribute",
       "nextStatement":     "smartSectionAttribute",    
@@ -89398,7 +89166,7 @@ Blockly.Blocks['smartSectionDisplaySettings__preLabel'] = {
         }
       ],
       "colour": 306,
-      "tooltip": "Enables you to add descriptive text that appears before a collapsed section or continue button.",
+      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "smartSectionDisplaySettingsAttribute",
       "nextStatement":     "smartSectionDisplaySettingsAttribute",    
@@ -89930,7 +89698,7 @@ Blockly.Blocks['ssn__anchorUnits'] = {
         }
       ],
       "colour": 312,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "ssnAttribute",
       "nextStatement":     "ssnAttribute",    
@@ -89988,7 +89756,7 @@ Blockly.Blocks['ssn__anchorXOffset'] = {
         }
       ],
       "colour": 312,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "ssnAttribute",
       "nextStatement":     "ssnAttribute",    
@@ -90046,7 +89814,7 @@ Blockly.Blocks['ssn__anchorYOffset'] = {
         }
       ],
       "colour": 312,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "ssnAttribute",
       "nextStatement":     "ssnAttribute",    
@@ -92527,7 +92295,7 @@ Blockly.Blocks['ssn__xPosition'] = {
         }
       ],
       "colour": 312,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "ssnAttribute",
       "nextStatement":     "ssnAttribute",    
@@ -92585,7 +92353,7 @@ Blockly.Blocks['ssn__yPosition'] = {
         }
       ],
       "colour": 312,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "ssnAttribute",
       "nextStatement":     "ssnAttribute",    
@@ -93510,7 +93278,7 @@ Blockly.Blocks['tabGroup__anchorUnits'] = {
         }
       ],
       "colour": 324,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "tabGroupAttribute",
       "nextStatement":     "tabGroupAttribute",    
@@ -93568,7 +93336,7 @@ Blockly.Blocks['tabGroup__anchorXOffset'] = {
         }
       ],
       "colour": 324,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "tabGroupAttribute",
       "nextStatement":     "tabGroupAttribute",    
@@ -93626,7 +93394,7 @@ Blockly.Blocks['tabGroup__anchorYOffset'] = {
         }
       ],
       "colour": 324,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "tabGroupAttribute",
       "nextStatement":     "tabGroupAttribute",    
@@ -94148,7 +93916,7 @@ Blockly.Blocks['tabGroup__groupRule'] = {
         }
       ],
       "colour": 324,
-      "tooltip": "Specifies how `maximumAllowed` and `minimumRequired`\nare interpreted when selecting tabs in a `tabGroup`.\n\nPossible values are:\n\n- `SelectAtLeast`\n- `SelectAtMost`\n- `SelectExactly`\n- `SelectARange`\n\n",
+      "tooltip": "The rule that is selected by default when a user is adding validation for a tab group in the UI.",
       "helpUrl": "",
       "previousStatement": "tabGroupAttribute",
       "nextStatement":     "tabGroupAttribute",    
@@ -95295,7 +95063,7 @@ Blockly.Blocks['tabGroup__yPosition'] = {
         }
       ],
       "colour": 324,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "tabGroupAttribute",
       "nextStatement":     "tabGroupAttribute",    
@@ -95999,7 +95767,7 @@ Blockly.Blocks['text__anchorUnits'] = {
         }
       ],
       "colour": 330,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "textAttribute",
       "nextStatement":     "textAttribute",    
@@ -96057,7 +95825,7 @@ Blockly.Blocks['text__anchorXOffset'] = {
         }
       ],
       "colour": 330,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "textAttribute",
       "nextStatement":     "textAttribute",    
@@ -96115,7 +95883,7 @@ Blockly.Blocks['text__anchorYOffset'] = {
         }
       ],
       "colour": 330,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "textAttribute",
       "nextStatement":     "textAttribute",    
@@ -98712,7 +98480,7 @@ Blockly.Blocks['text__xPosition'] = {
         }
       ],
       "colour": 330,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "textAttribute",
       "nextStatement":     "textAttribute",    
@@ -98770,7 +98538,7 @@ Blockly.Blocks['text__yPosition'] = {
         }
       ],
       "colour": 330,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "textAttribute",
       "nextStatement":     "textAttribute",    
@@ -99398,7 +99166,7 @@ Blockly.Blocks['title__anchorUnits'] = {
         }
       ],
       "colour": 336,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "titleAttribute",
       "nextStatement":     "titleAttribute",    
@@ -99456,7 +99224,7 @@ Blockly.Blocks['title__anchorXOffset'] = {
         }
       ],
       "colour": 336,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "titleAttribute",
       "nextStatement":     "titleAttribute",    
@@ -99514,7 +99282,7 @@ Blockly.Blocks['title__anchorYOffset'] = {
         }
       ],
       "colour": 336,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "titleAttribute",
       "nextStatement":     "titleAttribute",    
@@ -101647,7 +101415,7 @@ Blockly.Blocks['title__xPosition'] = {
         }
       ],
       "colour": 336,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "titleAttribute",
       "nextStatement":     "titleAttribute",    
@@ -101705,7 +101473,7 @@ Blockly.Blocks['title__yPosition'] = {
         }
       ],
       "colour": 336,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "titleAttribute",
       "nextStatement":     "titleAttribute",    
@@ -101845,7 +101613,7 @@ Blockly.Blocks['userInfo__email'] = {
         }
       ],
       "colour": 339,
-      "tooltip": "The user's email address.",
+      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "userInfoAttribute",
       "nextStatement":     "userInfoAttribute",    
@@ -102447,7 +102215,7 @@ Blockly.Blocks['view__anchorUnits'] = {
         }
       ],
       "colour": 342,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "viewAttribute",
       "nextStatement":     "viewAttribute",    
@@ -102505,7 +102273,7 @@ Blockly.Blocks['view__anchorXOffset'] = {
         }
       ],
       "colour": 342,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "viewAttribute",
       "nextStatement":     "viewAttribute",    
@@ -102563,7 +102331,7 @@ Blockly.Blocks['view__anchorYOffset'] = {
         }
       ],
       "colour": 342,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "viewAttribute",
       "nextStatement":     "viewAttribute",    
@@ -104367,7 +104135,7 @@ Blockly.Blocks['view__xPosition'] = {
         }
       ],
       "colour": 342,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "viewAttribute",
       "nextStatement":     "viewAttribute",    
@@ -104425,7 +104193,7 @@ Blockly.Blocks['view__yPosition'] = {
         }
       ],
       "colour": 342,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "viewAttribute",
       "nextStatement":     "viewAttribute",    
@@ -104567,45 +104335,6 @@ Blockly.Blocks['witness__addAccessCodeToEmail'] = {
       ],
       "colour": 345,
       "tooltip": "Optional. When set to **true**, the access code will be added to the email sent to the recipient. This nullifies the security measure of `accessCode` on the recipient.",
-      "helpUrl": "",
-      "previousStatement": "witnessAttribute",
-      "nextStatement":     "witnessAttribute",    
-    });
-  }
-};
-Blockly.Blocks['witness__additionalNotificationsMetadata'] = {
-  init: function() {
-    this.jsonInit({
-      "message0": "additional notifications metadata %1 rights: %2 %3 options: %4",
-      "args0": [
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "field_dropdown",
-          "name": "rights",
-          "options": [
-            [
-              "editable",
-              "editable"
-            ],
-            [
-              "read_only",
-              "read_only"
-            ]
-          ]
-        },
-        {
-          "type": "input_dummy"
-        },
-        {
-          "type": "input_statement",
-          "name": "attributes",
-          "check": "propertyMetadataAttribute"
-        }
-      ],
-      "colour": 345,
-      "tooltip": "",
       "helpUrl": "",
       "previousStatement": "witnessAttribute",
       "nextStatement":     "witnessAttribute",    
@@ -106737,7 +106466,7 @@ Blockly.Blocks['zip__anchorUnits'] = {
         }
       ],
       "colour": 348,
-      "tooltip": "Specifies units of the\n`anchorXOffset` and\n`anchorYOffset`.\nValid units are:\n\n- `pixels`\n- `inches`\n- `mms`\n- `cms`\n",
+      "tooltip": "Specifies the units of the X and Y offset. Units may be pixels, millimeters, centimeters, or inches.",
       "helpUrl": "",
       "previousStatement": "zipAttribute",
       "nextStatement":     "zipAttribute",    
@@ -106795,7 +106524,7 @@ Blockly.Blocks['zip__anchorXOffset'] = {
         }
       ],
       "colour": 348,
-      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the X axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "zipAttribute",
       "nextStatement":     "zipAttribute",    
@@ -106853,7 +106582,7 @@ Blockly.Blocks['zip__anchorYOffset'] = {
         }
       ],
       "colour": 348,
-      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n",
+      "tooltip": "Specifies the Y axis location of the tab in `anchorUnits` relative to the `anchorString`.\n\n**Note**: When you provide an x- and y-coordinate for the sign here tab, the tab appears 21 points lower than the value you provide for the y-coordinate. To align the tab as expected, subtract 21 from the expected y-value.",
       "helpUrl": "",
       "previousStatement": "zipAttribute",
       "nextStatement":     "zipAttribute",    
@@ -109392,7 +109121,7 @@ Blockly.Blocks['zip__xPosition'] = {
         }
       ],
       "colour": 348,
-      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This property indicates the horizontal offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n",
       "helpUrl": "",
       "previousStatement": "zipAttribute",
       "nextStatement":     "zipAttribute",    
@@ -109450,7 +109179,7 @@ Blockly.Blocks['zip__yPosition'] = {
         }
       ],
       "colour": 348,
-      "tooltip": "This property indicates the vertical offset of the object on the page.\nDocuSign uses 72 DPI when determining position.\nRequired. May be zero.\n\nTo improve the tab's position on the document,\nDocuSign recommends\nadjusting `xPosition`\nand `yPosition`\ncoordinates\nby (-3, -2)\n",
+      "tooltip": "This indicates the vertical offset of the object on the page. DocuSign uses 72 DPI when determining position.",
       "helpUrl": "",
       "previousStatement": "zipAttribute",
       "nextStatement":     "zipAttribute",    

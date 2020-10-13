@@ -1,14 +1,4 @@
 {
-   "recipientViewRequest": {
-      "frameAncestors": {
-         "itemType": "arrayOfScalar",
-         "scalarType": "string"
-      },
-      "messageOrigins": {
-         "itemType": "arrayOfScalar",
-         "scalarType": "string"
-      }
-   },
    "envelopeDefinition": {
       "attachments": {
          "itemType": "arrayOfObject",
@@ -104,6 +94,14 @@
       "matchBoxes": {
          "itemType": "arrayOfObject",
          "objectName": "matchBox"
+      },
+      "ocrRequests": {
+         "itemType": "arrayOfObject",
+         "objectName": "ocrRequest"
+      },
+      "pageSizes": {
+         "itemType": "arrayOfObject",
+         "objectName": "pageSize"
       },
       "tabs": {
          "itemType": "object",
@@ -6616,14 +6614,6 @@
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
       "customFields": {
          "itemType": "arrayOfScalar",
          "scalarType": "string"
@@ -6671,10 +6661,6 @@
       "idCheckInformationInput": {
          "itemType": "object",
          "objectName": "idCheckInformationInput"
-      },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
       },
       "lastNameMetadata": {
          "itemType": "object",
@@ -6733,26 +6719,6 @@
          "objectName": "socialAuthentication"
       }
    },
-   "recipientAdditionalNotification": {
-      "phoneNumber": {
-         "itemType": "object",
-         "objectName": "recipientPhoneNumber"
-      },
-      "secondaryDeliveryMethodMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      }
-   },
-   "recipientPhoneNumber": {
-      "countryCodeMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
-      "numberMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      }
-   },
    "documentVisibility": {
       "errorDetails": {
          "itemType": "object",
@@ -6797,18 +6763,6 @@
          "objectName": "addressInformation"
       }
    },
-   "recipientIdentityVerification": {
-      "inputOptions": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientIdentityInputOption"
-      }
-   },
-   "recipientIdentityInputOption": {
-      "phoneNumberList": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientIdentityPhoneNumber"
-      }
-   },
    "recipientPhoneAuthentication": {
       "recipMayProvideNumberMetadata": {
          "itemType": "object",
@@ -6849,14 +6803,6 @@
    },
    "carbonCopy": {
       "accessCodeMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
@@ -6978,16 +6924,20 @@
          "sdkObjectName": "tabs"
       }
    },
+   "recipientIdentityVerification": {
+      "inputOptions": {
+         "itemType": "arrayOfObject",
+         "objectName": "recipientIdentityInputOption"
+      }
+   },
+   "recipientIdentityInputOption": {
+      "phoneNumberList": {
+         "itemType": "arrayOfObject",
+         "objectName": "recipientIdentityPhoneNumber"
+      }
+   },
    "certifiedDelivery": {
       "accessCodeMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
@@ -7109,14 +7059,6 @@
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
       "customFields": {
          "itemType": "arrayOfScalar",
          "scalarType": "string"
@@ -7160,10 +7102,6 @@
       "idCheckInformationInput": {
          "itemType": "object",
          "objectName": "idCheckInformationInput"
-      },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
       },
       "lastNameMetadata": {
          "itemType": "object",
@@ -7274,10 +7212,6 @@
       "idCheckInformationInput": {
          "itemType": "object",
          "objectName": "idCheckInformationInput"
-      },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
       },
       "inPersonSigningTypeMetadata": {
          "itemType": "object",
@@ -7414,10 +7348,6 @@
          "itemType": "object",
          "objectName": "idCheckInformationInput"
       },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
-      },
       "nameMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
@@ -7509,14 +7439,6 @@
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
       "customFields": {
          "itemType": "arrayOfScalar",
          "scalarType": "string"
@@ -7564,10 +7486,6 @@
       "idCheckInformationInput": {
          "itemType": "object",
          "objectName": "idCheckInformationInput"
-      },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
       },
       "lastNameMetadata": {
          "itemType": "object",
@@ -7663,10 +7581,6 @@
          "itemType": "object",
          "objectName": "idCheckInformationInput"
       },
-      "identityVerification": {
-         "itemType": "object",
-         "objectName": "recipientIdentityVerification"
-      },
       "noteMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
@@ -7719,14 +7633,6 @@
    },
    "signer": {
       "accessCodeMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
       },
@@ -7866,14 +7772,6 @@
    },
    "witness": {
       "accessCodeMetadata": {
-         "itemType": "object",
-         "objectName": "propertyMetadata"
-      },
-      "additionalNotifications": {
-         "itemType": "arrayOfObject",
-         "objectName": "recipientAdditionalNotification"
-      },
-      "additionalNotificationsMetadata": {
          "itemType": "object",
          "objectName": "propertyMetadata"
       },

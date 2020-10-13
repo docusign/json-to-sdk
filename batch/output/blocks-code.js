@@ -1,4 +1,3 @@
-// Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 export function addBlockCode(BlocklyObj) {
     const Blockly = BlocklyObj;
     
@@ -23,8 +22,6 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
          `postalCode: ${JSON.stringify(block.getFieldValue('postalCode'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['addressInformation__stateOrProvince'] = block =>
          `stateOrProvince: ${JSON.stringify(block.getFieldValue('stateOrProvince'))}${block.getNextBlock() ? ', ': ''}\n`;
-         Blockly.JavaScript['addressInformation__zipPlus4'] = block =>
-         `zipPlus4: ${JSON.stringify(block.getFieldValue('zipPlus4'))}${block.getNextBlock() ? ', ': ''}\n`;
       Blockly.JavaScript['addressInformationInput'] = block => 
   `\n.add_object("addressInformationInput", {
 ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
@@ -52,20 +49,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['agent__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['agent__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['agent__allowSystemOverrideForLockedRecipient'] = block =>
+         Blockly.JavaScript['agent__allowSystemOverrideForLockedRecipient'] = block =>
          `allowSystemOverrideForLockedRecipient: ${JSON.stringify(block.getFieldValue('allowSystemOverrideForLockedRecipient'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['agent__clientUserId'] = block =>
          `clientUserId: ${JSON.stringify(block.getFieldValue('clientUserId'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -987,20 +971,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['carbonCopy__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['carbonCopy__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['carbonCopy__agentCanEditEmail'] = block =>
+         Blockly.JavaScript['carbonCopy__agentCanEditEmail'] = block =>
          `agentCanEditEmail: ${JSON.stringify(block.getFieldValue('agentCanEditEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['carbonCopy__agentCanEditName'] = block =>
          `agentCanEditName: ${JSON.stringify(block.getFieldValue('agentCanEditName'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -1289,20 +1260,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['certifiedDelivery__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['certifiedDelivery__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['certifiedDelivery__agentCanEditEmail'] = block =>
+         Blockly.JavaScript['certifiedDelivery__agentCanEditEmail'] = block =>
          `agentCanEditEmail: ${JSON.stringify(block.getFieldValue('agentCanEditEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['certifiedDelivery__agentCanEditName'] = block =>
          `agentCanEditName: ${JSON.stringify(block.getFieldValue('agentCanEditName'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -5774,16 +5732,26 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
          `fileFormatHint: ${JSON.stringify(block.getFieldValue('fileFormatHint'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__includeInDownload'] = block =>
          `includeInDownload: ${JSON.stringify(block.getFieldValue('includeInDownload'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['document__isDynamicXfa'] = block =>
+         `isDynamicXfa: ${JSON.stringify(block.getFieldValue('isDynamicXfa'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['document__isStaticXfa'] = block =>
+         `isStaticXfa: ${JSON.stringify(block.getFieldValue('isStaticXfa'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__name'] = block =>
          `name: ${JSON.stringify(block.getFieldValue('name'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__order'] = block =>
          `order: ${JSON.stringify(block.getFieldValue('order'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['document__pageCount'] = block =>
+         `pageCount: ${JSON.stringify(block.getFieldValue('pageCount'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__pages'] = block =>
          `pages: ${JSON.stringify(block.getFieldValue('pages'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__password'] = block =>
          `password: ${JSON.stringify(block.getFieldValue('password'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['document__pdfFieldsData'] = block =>
+         `pdfFieldsData: ${JSON.stringify(block.getFieldValue('pdfFieldsData'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__pdfFormFieldOption'] = block =>
          `pdfFormFieldOption: ${JSON.stringify(block.getFieldValue('pdfFormFieldOption'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['document__pdfWidgetsBase64'] = block =>
+         `pdfWidgetsBase64: ${JSON.stringify(block.getFieldValue('pdfWidgetsBase64'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__remoteUrl'] = block =>
          `remoteUrl: ${JSON.stringify(block.getFieldValue('remoteUrl'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['document__signerMustAcknowledge'] = block =>
@@ -6468,20 +6436,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['editor__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['editor__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['editor__allowSystemOverrideForLockedRecipient'] = block =>
+         Blockly.JavaScript['editor__allowSystemOverrideForLockedRecipient'] = block =>
          `allowSystemOverrideForLockedRecipient: ${JSON.stringify(block.getFieldValue('allowSystemOverrideForLockedRecipient'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['editor__clientUserId'] = block =>
          `clientUserId: ${JSON.stringify(block.getFieldValue('clientUserId'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -8192,27 +8147,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
          `clientUserId: ${JSON.stringify(block.getFieldValue('clientUserId'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['recipientViewRequest__email'] = block =>
          `email: ${JSON.stringify(block.getFieldValue('email'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['recipientViewRequest__frameAncestors'] = block => {
-         let out = `    frameAncestors: [\n`;
-         out    += `        ${Blockly.JavaScript.statementToCode(block, 'frameAncestor', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out    += `    ]${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['recipientViewRequest_frameAncestors__frameAncestor'] = block =>
-         `    ${JSON.stringify(block.getFieldValue('frameAncestor'))}${block.getNextBlock() ? ', ': ''}\n`;
-
-      Blockly.JavaScript['recipientViewRequest__messageOrigins'] = block => {
-         let out = `    messageOrigins: [\n`;
-         out    += `        ${Blockly.JavaScript.statementToCode(block, 'messageOrigin', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out    += `    ]${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['recipientViewRequest_messageOrigins__messageOrigin'] = block =>
-         `    ${JSON.stringify(block.getFieldValue('messageOrigin'))}${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['recipientViewRequest__pingFrequency'] = block =>
+         Blockly.JavaScript['recipientViewRequest__pingFrequency'] = block =>
          `pingFrequency: ${JSON.stringify(block.getFieldValue('pingFrequency'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['recipientViewRequest__pingUrl'] = block =>
          `pingUrl: ${JSON.stringify(block.getFieldValue('pingUrl'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -12486,20 +12421,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['intermediary__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['intermediary__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['intermediary__allowSystemOverrideForLockedRecipient'] = block =>
+         Blockly.JavaScript['intermediary__allowSystemOverrideForLockedRecipient'] = block =>
          `allowSystemOverrideForLockedRecipient: ${JSON.stringify(block.getFieldValue('allowSystemOverrideForLockedRecipient'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['intermediary__clientUserId'] = block =>
          `clientUserId: ${JSON.stringify(block.getFieldValue('clientUserId'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -16573,7 +16495,22 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
       Blockly.JavaScript['propertyMetadata_options'] = block =>
          `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
 
-Blockly.JavaScript['page'] = block => 
+Blockly.JavaScript['ocrRequest'] = block => 
+  `\n.add_object("ocrRequest", {
+${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
+   Blockly.JavaScript['ocrRequest__ocrLanguage'] = block =>
+         `ocrLanguage: ${JSON.stringify(block.getFieldValue('ocrLanguage'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['ocrRequest__pageSelection'] = block =>
+         `pageSelection: ${JSON.stringify(block.getFieldValue('pageSelection'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['ocrRequest__setPageOrientation'] = block =>
+         `setPageOrientation: ${JSON.stringify(block.getFieldValue('setPageOrientation'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['ocrRequest__showFrames'] = block =>
+         `showFrames: ${JSON.stringify(block.getFieldValue('showFrames'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['ocrRequest__showText'] = block =>
+         `showText: ${JSON.stringify(block.getFieldValue('showText'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['ocrRequest__skipPagesHavingExistingExtractableText'] = block =>
+         `skipPagesHavingExistingExtractableText: ${JSON.stringify(block.getFieldValue('skipPagesHavingExistingExtractableText'))}${block.getNextBlock() ? ', ': ''}\n`;
+      Blockly.JavaScript['page'] = block => 
   `\n.add_object("page", {
 ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
    Blockly.JavaScript['page__dpi'] = block =>
@@ -16590,6 +16527,13 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
          `sequence: ${JSON.stringify(block.getFieldValue('sequence'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['page__width'] = block =>
          `width: ${JSON.stringify(block.getFieldValue('width'))}${block.getNextBlock() ? ', ': ''}\n`;
+      Blockly.JavaScript['pageSize'] = block => 
+  `\n.add_object("pageSize", {
+${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
+   Blockly.JavaScript['pageSize__pageHeight'] = block =>
+         `pageHeight: ${JSON.stringify(block.getFieldValue('pageHeight'))}${block.getNextBlock() ? ', ': ''}\n`;
+         Blockly.JavaScript['pageSize__pageWidth'] = block =>
+         `pageWidth: ${JSON.stringify(block.getFieldValue('pageWidth'))}${block.getNextBlock() ? ', ': ''}\n`;
       Blockly.JavaScript['pathExtendedElement'] = block => 
   `\n.add_object("pathExtendedElement", {
 ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
@@ -17889,12 +17833,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
       Blockly.JavaScript['propertyMetadata_options'] = block =>
          `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
 
-Blockly.JavaScript['recipientAdditionalNotification'] = block => 
-  `\n.add_object("recipientAdditionalNotification", {
-${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
-   Blockly.JavaScript['recipientAdditionalNotification__secondaryDeliveryMethod'] = block =>
-         `secondaryDeliveryMethod: ${JSON.stringify(block.getFieldValue('secondaryDeliveryMethod'))}${block.getNextBlock() ? ', ': ''}\n`;
-      Blockly.JavaScript['recipientAttachment'] = block => 
+Blockly.JavaScript['recipientAttachment'] = block => 
   `\n.add_object("recipientAttachment", {
 ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
    Blockly.JavaScript['recipientAttachment__attachmentId'] = block =>
@@ -18045,39 +17984,6 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
          `validateRecipProvidedNumber: ${JSON.stringify(block.getFieldValue('validateRecipProvidedNumber'))}${block.getNextBlock() ? ', ': ''}\n`;
             Blockly.JavaScript['recipientPhoneAuthentication__validateRecipProvidedNumberMetadata'] = block => {
          let out = `validateRecipProvidedNumberMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-Blockly.JavaScript['recipientPhoneNumber'] = block => 
-  `\n.add_object("recipientPhoneNumber", {
-${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}})`;
-   Blockly.JavaScript['recipientPhoneNumber__countryCode'] = block =>
-         `countryCode: ${JSON.stringify(block.getFieldValue('countryCode'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['recipientPhoneNumber__countryCodeMetadata'] = block => {
-         let out = `countryCodeMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['recipientPhoneNumber__number'] = block =>
-         `number: ${JSON.stringify(block.getFieldValue('number'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['recipientPhoneNumber__numberMetadata'] = block => {
-         let out = `numberMetadata: {\n`;
          out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
          out += `    options: [\n`;
          out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
@@ -18986,20 +18892,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['signer__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['signer__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['signer__agentCanEditEmail'] = block =>
+         Blockly.JavaScript['signer__agentCanEditEmail'] = block =>
          `agentCanEditEmail: ${JSON.stringify(block.getFieldValue('agentCanEditEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['signer__agentCanEditName'] = block =>
          `agentCanEditName: ${JSON.stringify(block.getFieldValue('agentCanEditName'))}${block.getNextBlock() ? ', ': ''}\n`;
@@ -24206,20 +24099,7 @@ ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORD
 
    Blockly.JavaScript['witness__addAccessCodeToEmail'] = block =>
          `addAccessCodeToEmail: ${JSON.stringify(block.getFieldValue('addAccessCodeToEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
-            Blockly.JavaScript['witness__additionalNotificationsMetadata'] = block => {
-         let out = `additionalNotificationsMetadata: {\n`;
-         out += `    rights: ${JSON.stringify(block.getFieldValue('rights'))},\n`;
-         out += `    options: [\n`;
-         out += `        ${Blockly.JavaScript.statementToCode(block, 'attributes', Blockly.JavaScript.ORDER_NONE) || ''}`;
-         out += `    ]\n`;
-         out += `}${block.getNextBlock() ? ', ': ''}\n`;
-         return out
-      };
-      // Code for the array of scalar items (options)
-      Blockly.JavaScript['propertyMetadata_options'] = block =>
-         `    "${block.getFieldValue('option')}"${block.getNextBlock() ? ', ': ''}\n`;
-
-   Blockly.JavaScript['witness__agentCanEditEmail'] = block =>
+         Blockly.JavaScript['witness__agentCanEditEmail'] = block =>
          `agentCanEditEmail: ${JSON.stringify(block.getFieldValue('agentCanEditEmail'))}${block.getNextBlock() ? ', ': ''}\n`;
          Blockly.JavaScript['witness__agentCanEditName'] = block =>
          `agentCanEditName: ${JSON.stringify(block.getFieldValue('agentCanEditName'))}${block.getNextBlock() ? ', ': ''}\n`;

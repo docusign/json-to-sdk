@@ -30,6 +30,12 @@
    "matchBox": {
       "document": "matchBoxes"
    },
+   "ocrRequest": {
+      "document": "ocrRequests"
+   },
+   "pageSize": {
+      "document": "pageSizes"
+   },
    "EnvelopeRecipientTabs": {
       "document": "tabs",
       "carbonCopy": "tabs",
@@ -373,18 +379,6 @@
    "agent": {
       "EnvelopeRecipients": "agents"
    },
-   "recipientAdditionalNotification": {
-      "agent": "additionalNotifications",
-      "carbonCopy": "additionalNotifications",
-      "certifiedDelivery": "additionalNotifications",
-      "editor": "additionalNotifications",
-      "intermediary": "additionalNotifications",
-      "signer": "additionalNotifications",
-      "witness": "additionalNotifications"
-   },
-   "recipientPhoneNumber": {
-      "recipientAdditionalNotification": "phoneNumber"
-   },
    "documentVisibility": {
       "agent": "documentVisibility",
       "carbonCopy": "documentVisibility",
@@ -436,24 +430,6 @@
    },
    "ssn9InformationInput": {
       "idCheckInformationInput": "ssn9InformationInput"
-   },
-   "recipientIdentityVerification": {
-      "agent": "identityVerification",
-      "carbonCopy": "identityVerification",
-      "certifiedDelivery": "identityVerification",
-      "editor": "identityVerification",
-      "inPersonSigner": "identityVerification",
-      "notaryHost": "identityVerification",
-      "intermediary": "identityVerification",
-      "sealSign": "identityVerification",
-      "signer": "identityVerification",
-      "witness": "identityVerification"
-   },
-   "recipientIdentityInputOption": {
-      "recipientIdentityVerification": "inputOptions"
-   },
-   "recipientIdentityPhoneNumber": {
-      "recipientIdentityInputOption": "phoneNumberList"
    },
    "recipientPhoneAuthentication": {
       "agent": "phoneAuthentication",
@@ -532,6 +508,18 @@
    },
    "carbonCopy": {
       "EnvelopeRecipients": "carbonCopies"
+   },
+   "recipientIdentityVerification": {
+      "carbonCopy": "identityVerification",
+      "certifiedDelivery": "identityVerification",
+      "signer": "identityVerification",
+      "witness": "identityVerification"
+   },
+   "recipientIdentityInputOption": {
+      "recipientIdentityVerification": "inputOptions"
+   },
+   "recipientIdentityPhoneNumber": {
+      "recipientIdentityInputOption": "phoneNumberList"
    },
    "recipientProofFile": {
       "carbonCopy": "proofFile",

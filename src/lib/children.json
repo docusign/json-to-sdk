@@ -88,6 +88,14 @@
          "attribute": "matchBoxes",
          "style": "arrayOfObject"
       },
+      "ocrRequest": {
+         "attribute": "ocrRequests",
+         "style": "arrayOfObject"
+      },
+      "pageSize": {
+         "attribute": "pageSizes",
+         "style": "arrayOfObject"
+      },
       "EnvelopeRecipientTabs": {
          "attribute": "tabs",
          "style": "object"
@@ -1302,10 +1310,6 @@
          "attribute": "signingGroupIdMetadata",
          "style": "object"
       },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
-      },
       "agent_customFields": {
          "attribute": "customFields",
          "style": "arrayOfScalar"
@@ -1328,10 +1332,6 @@
       },
       "idCheckInformationInput": {
          "attribute": "idCheckInformationInput",
-         "style": "object"
-      },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
          "style": "object"
       },
       "recipientPhoneAuthentication": {
@@ -1361,22 +1361,6 @@
       "socialAuthentication": {
          "attribute": "socialAuthentications",
          "style": "arrayOfObject"
-      }
-   },
-   "recipientAdditionalNotification": {
-      "recipientPhoneNumber": {
-         "attribute": "phoneNumber",
-         "style": "object"
-      },
-      "propertyMetadata": {
-         "attribute": "secondaryDeliveryMethodMetadata",
-         "style": "object"
-      }
-   },
-   "recipientPhoneNumber": {
-      "propertyMetadata": {
-         "attribute": "numberMetadata",
-         "style": "object"
       }
    },
    "documentVisibility": {
@@ -1415,18 +1399,6 @@
          "style": "object"
       }
    },
-   "recipientIdentityVerification": {
-      "recipientIdentityInputOption": {
-         "attribute": "inputOptions",
-         "style": "arrayOfObject"
-      }
-   },
-   "recipientIdentityInputOption": {
-      "recipientIdentityPhoneNumber": {
-         "attribute": "phoneNumberList",
-         "style": "arrayOfObject"
-      }
-   },
    "recipientPhoneAuthentication": {
       "propertyMetadata": {
          "attribute": "validateRecipProvidedNumberMetadata",
@@ -1457,10 +1429,6 @@
       "propertyMetadata": {
          "attribute": "signingGroupIdMetadata",
          "style": "object"
-      },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
       },
       "carbonCopy_customFields": {
          "attribute": "customFields",
@@ -1527,14 +1495,22 @@
          "style": "object"
       }
    },
+   "recipientIdentityVerification": {
+      "recipientIdentityInputOption": {
+         "attribute": "inputOptions",
+         "style": "arrayOfObject"
+      }
+   },
+   "recipientIdentityInputOption": {
+      "recipientIdentityPhoneNumber": {
+         "attribute": "phoneNumberList",
+         "style": "arrayOfObject"
+      }
+   },
    "certifiedDelivery": {
       "propertyMetadata": {
          "attribute": "signingGroupIdMetadata",
          "style": "object"
-      },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
       },
       "certifiedDelivery_customFields": {
          "attribute": "customFields",
@@ -1602,10 +1578,6 @@
          "attribute": "signingGroupIdMetadata",
          "style": "object"
       },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
-      },
       "editor_customFields": {
          "attribute": "customFields",
          "style": "arrayOfScalar"
@@ -1624,10 +1596,6 @@
       },
       "idCheckInformationInput": {
          "attribute": "idCheckInformationInput",
-         "style": "object"
-      },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
          "style": "object"
       },
       "recipientPhoneAuthentication": {
@@ -1686,10 +1654,6 @@
       },
       "idCheckInformationInput": {
          "attribute": "idCheckInformationInput",
-         "style": "object"
-      },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
          "style": "object"
       },
       "notaryHost": {
@@ -1762,10 +1726,6 @@
          "attribute": "idCheckInformationInput",
          "style": "object"
       },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
-         "style": "object"
-      },
       "recipientPhoneAuthentication": {
          "attribute": "phoneAuthentication",
          "style": "object"
@@ -1820,10 +1780,6 @@
          "attribute": "signingGroupIdMetadata",
          "style": "object"
       },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
-      },
       "intermediary_customFields": {
          "attribute": "customFields",
          "style": "arrayOfScalar"
@@ -1846,10 +1802,6 @@
       },
       "idCheckInformationInput": {
          "attribute": "idCheckInformationInput",
-         "style": "object"
-      },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
          "style": "object"
       },
       "recipientPhoneAuthentication": {
@@ -1906,10 +1858,6 @@
          "attribute": "idCheckInformationInput",
          "style": "object"
       },
-      "recipientIdentityVerification": {
-         "attribute": "identityVerification",
-         "style": "object"
-      },
       "recipientPhoneAuthentication": {
          "attribute": "phoneAuthentication",
          "style": "object"
@@ -1947,10 +1895,6 @@
       "propertyMetadata": {
          "attribute": "signingGroupIdMetadata",
          "style": "object"
-      },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
       },
       "signer_customFields": {
          "attribute": "customFields",
@@ -2029,10 +1973,6 @@
       "propertyMetadata": {
          "attribute": "signingGroupIdMetadata",
          "style": "object"
-      },
-      "recipientAdditionalNotification": {
-         "attribute": "additionalNotifications",
-         "style": "arrayOfObject"
       },
       "witness_customFields": {
          "attribute": "customFields",

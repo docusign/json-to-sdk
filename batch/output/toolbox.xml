@@ -656,10 +656,6 @@
       
       <block type="recipientViewRequest__email"></block>
       
-      <block type="recipientViewRequest__frameAncestors"></block>
-      <block type="recipientViewRequest_frameAncestors__frameAncestor"></block>
-      <block type="recipientViewRequest__messageOrigins"></block>
-      <block type="recipientViewRequest_messageOrigins__messageOrigin"></block>
       <block type="recipientViewRequest__pingFrequency"></block>
       
       <block type="recipientViewRequest__pingUrl"></block>
@@ -698,8 +694,6 @@
       
       <block type="addressInformation__stateOrProvince"></block>
       
-      <block type="addressInformation__zipPlus4"></block>
-      
   </category>
 
   <category name="address information input" colour="9">
@@ -717,8 +711,6 @@
       <block type="agent__accessCodeMetadata"></block>
       <block type="propertyMetadata_options"></block>
       <block type="agent__addAccessCodeToEmail"></block>
-      
-      <block type="agent__additionalNotificationsMetadata"></block>
       
       <block type="agent__allowSystemOverrideForLockedRecipient"></block>
       
@@ -1028,8 +1020,6 @@
       <block type="propertyMetadata_options"></block>
       <block type="carbonCopy__addAccessCodeToEmail"></block>
       
-      <block type="carbonCopy__additionalNotificationsMetadata"></block>
-      
       <block type="carbonCopy__agentCanEditEmail"></block>
       
       <block type="carbonCopy__agentCanEditName"></block>
@@ -1149,8 +1139,6 @@
       <block type="certifiedDelivery__accessCodeMetadata"></block>
       <block type="propertyMetadata_options"></block>
       <block type="certifiedDelivery__addAccessCodeToEmail"></block>
-      
-      <block type="certifiedDelivery__additionalNotificationsMetadata"></block>
       
       <block type="certifiedDelivery__agentCanEditEmail"></block>
       
@@ -2470,15 +2458,25 @@
       
       <block type="document__includeInDownload"></block>
       
+      <block type="document__isDynamicXfa"></block>
+      
+      <block type="document__isStaticXfa"></block>
+      
       <block type="document__name"></block>
       
       <block type="document__order"></block>
+      
+      <block type="document__pageCount"></block>
       
       <block type="document__pages"></block>
       
       <block type="document__password"></block>
       
+      <block type="document__pdfFieldsData"></block>
+      
       <block type="document__pdfFormFieldOption"></block>
+      
+      <block type="document__pdfWidgetsBase64"></block>
       
       <block type="document__remoteUrl"></block>
       
@@ -2520,6 +2518,20 @@
       
   </category>
 
+  <category name="document html display anchor" colour="72">
+    <block type="documentHtmlDisplayAnchor"></block>
+      <block type="documentHtmlDisplayAnchor__caseSensitive"></block>
+      
+      <block type="documentHtmlDisplayAnchor__endAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__removeEndAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__removeStartAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__startAnchor"></block>
+      
+  </category>
+
   <category name="document html definition" colour="69">
     <block type="documentHtmlDefinition"></block>
       <block type="documentHtmlDefinition__displayAnchorPrefix"></block>
@@ -2541,20 +2553,6 @@
       <block type="documentHtmlDefinition__showMobileOptimizedToggle"></block>
       
       <block type="documentHtmlDefinition__source"></block>
-      
-  </category>
-
-  <category name="document html display anchor" colour="72">
-    <block type="documentHtmlDisplayAnchor"></block>
-      <block type="documentHtmlDisplayAnchor__caseSensitive"></block>
-      
-      <block type="documentHtmlDisplayAnchor__endAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__removeEndAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__removeStartAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__startAnchor"></block>
       
   </category>
 
@@ -2755,8 +2753,6 @@
       <block type="editor__accessCodeMetadata"></block>
       <block type="propertyMetadata_options"></block>
       <block type="editor__addAccessCodeToEmail"></block>
-      
-      <block type="editor__additionalNotificationsMetadata"></block>
       
       <block type="editor__allowSystemOverrideForLockedRecipient"></block>
       
@@ -4696,8 +4692,6 @@
       <block type="propertyMetadata_options"></block>
       <block type="intermediary__addAccessCodeToEmail"></block>
       
-      <block type="intermediary__additionalNotificationsMetadata"></block>
-      
       <block type="intermediary__allowSystemOverrideForLockedRecipient"></block>
       
       <block type="intermediary__clientUserId"></block>
@@ -5944,7 +5938,23 @@
       
   </category>
 
-  <category name="page" colour="204">
+  <category name="ocr request" colour="204">
+    <block type="ocrRequest"></block>
+      <block type="ocrRequest__ocrLanguage"></block>
+      
+      <block type="ocrRequest__pageSelection"></block>
+      
+      <block type="ocrRequest__setPageOrientation"></block>
+      
+      <block type="ocrRequest__showFrames"></block>
+      
+      <block type="ocrRequest__showText"></block>
+      
+      <block type="ocrRequest__skipPagesHavingExistingExtractableText"></block>
+      
+  </category>
+
+  <category name="page" colour="207">
     <block type="page"></block>
       <block type="page__dpi"></block>
       
@@ -5962,7 +5972,15 @@
       
   </category>
 
-  <category name="path extended element" colour="207">
+  <category name="page size" colour="210">
+    <block type="pageSize"></block>
+      <block type="pageSize__pageHeight"></block>
+      
+      <block type="pageSize__pageWidth"></block>
+      
+  </category>
+
+  <category name="path extended element" colour="213">
     <block type="pathExtendedElement"></block>
       <block type="pathExtendedElement__name"></block>
       
@@ -5972,7 +5990,7 @@
       
   </category>
 
-  <category name="payment details" colour="210">
+  <category name="payment details" colour="216">
     <block type="paymentDetails"></block>
       <block type="paymentDetails__allowedPaymentMethods"></block>
       <block type="paymentDetails_allowedPaymentMethods__allowedPaymentMethod"></block>
@@ -6004,7 +6022,7 @@
       
   </category>
 
-  <category name="payment line item" colour="213">
+  <category name="payment line item" colour="219">
     <block type="paymentLineItem"></block>
       <block type="paymentLineItem__amountReference"></block>
       
@@ -6016,7 +6034,7 @@
       
   </category>
 
-  <category name="poly line" colour="216">
+  <category name="poly line" colour="222">
     <block type="polyLine"></block>
       <block type="polyLine__x1"></block>
       
@@ -6028,7 +6046,7 @@
       
   </category>
 
-  <category name="poly line overlay" colour="219">
+  <category name="poly line overlay" colour="225">
     <block type="polyLineOverlay"></block>
       <block type="polyLineOverlay__anchorAllowWhiteSpaceInCharacters"></block>
       
@@ -6176,7 +6194,7 @@
       
   </category>
 
-  <category name="power form" colour="222">
+  <category name="power form" colour="228">
     <block type="powerForm"></block>
       <block type="powerForm__createdBy"></block>
       
@@ -6224,7 +6242,7 @@
       
   </category>
 
-  <category name="power form recipient" colour="225">
+  <category name="power form recipient" colour="231">
     <block type="powerFormRecipient"></block>
       <block type="powerFormRecipient__accessCode"></block>
       
@@ -6254,7 +6272,7 @@
       
   </category>
 
-  <category name="radio" colour="228">
+  <category name="radio" colour="234">
     <block type="radio"></block>
       <block type="radio__anchorAllowWhiteSpaceInCharacters"></block>
       
@@ -6362,7 +6380,7 @@
       
   </category>
 
-  <category name="radio group" colour="231">
+  <category name="radio group" colour="237">
     <block type="radioGroup"></block>
       <block type="radioGroup__conditionalParentLabel"></block>
       
@@ -6418,13 +6436,7 @@
       
   </category>
 
-  <category name="recipient additional notification" colour="234">
-    <block type="recipientAdditionalNotification"></block>
-      <block type="recipientAdditionalNotification__secondaryDeliveryMethod"></block>
-      
-  </category>
-
-  <category name="recipient attachment" colour="237">
+  <category name="recipient attachment" colour="240">
     <block type="recipientAttachment"></block>
       <block type="recipientAttachment__attachmentId"></block>
       
@@ -6440,7 +6452,7 @@
       
   </category>
 
-  <category name="recipient email notification" colour="240">
+  <category name="recipient email notification" colour="243">
     <block type="recipientEmailNotification"></block>
       <block type="recipientEmailNotification__emailBody"></block>
       
@@ -6456,7 +6468,7 @@
       
   </category>
 
-  <category name="recipient event" colour="243">
+  <category name="recipient event" colour="246">
     <block type="recipientEvent"></block>
       <block type="recipientEvent__includeDocuments"></block>
       
@@ -6464,7 +6476,7 @@
       
   </category>
 
-  <category name="recipient identity input option" colour="246">
+  <category name="recipient identity input option" colour="249">
     <block type="recipientIdentityInputOption"></block>
       <block type="recipientIdentityInputOption__name"></block>
       
@@ -6472,7 +6484,7 @@
       
   </category>
 
-  <category name="recipient identity phone number" colour="249">
+  <category name="recipient identity phone number" colour="252">
     <block type="recipientIdentityPhoneNumber"></block>
       <block type="recipientIdentityPhoneNumber__countryCode"></block>
       
@@ -6482,41 +6494,9 @@
       
   </category>
 
-  <category name="recipient identity verification" colour="252">
+  <category name="recipient identity verification" colour="255">
     <block type="recipientIdentityVerification"></block>
       <block type="recipientIdentityVerification__workflowId"></block>
-      
-  </category>
-
-  <category name="recipient phone authentication" colour="255">
-    <block type="recipientPhoneAuthentication"></block>
-      <block type="recipientPhoneAuthentication__recipMayProvideNumber"></block>
-      
-      <block type="recipientPhoneAuthentication__recipMayProvideNumberMetadata"></block>
-      <block type="propertyMetadata_options"></block>
-      <block type="recipientPhoneAuthentication__recordVoicePrint"></block>
-      
-      <block type="recipientPhoneAuthentication__recordVoicePrintMetadata"></block>
-      
-      <block type="recipientPhoneAuthentication__senderProvidedNumbers"></block>
-      <block type="recipientPhoneAuthentication_senderProvidedNumbers__senderProvidedNumber"></block>
-      <block type="recipientPhoneAuthentication__senderProvidedNumbersMetadata"></block>
-      
-      <block type="recipientPhoneAuthentication__validateRecipProvidedNumber"></block>
-      
-      <block type="recipientPhoneAuthentication__validateRecipProvidedNumberMetadata"></block>
-      
-  </category>
-
-  <category name="recipient phone number" colour="258">
-    <block type="recipientPhoneNumber"></block>
-      <block type="recipientPhoneNumber__countryCode"></block>
-      
-      <block type="recipientPhoneNumber__countryCodeMetadata"></block>
-      <block type="propertyMetadata_options"></block>
-      <block type="recipientPhoneNumber__number"></block>
-      
-      <block type="recipientPhoneNumber__numberMetadata"></block>
       
   </category>
 
@@ -6533,16 +6513,6 @@
       <block type="recipientSignatureInformation__signatureInitials"></block>
       
       <block type="recipientSignatureInformation__signatureName"></block>
-      
-  </category>
-
-  <category name="recipient signature provider" colour="267">
-    <block type="recipientSignatureProvider"></block>
-      <block type="recipientSignatureProvider__sealDocumentsWithTabsOnly"></block>
-      
-      <block type="recipientSignatureProvider__sealName"></block>
-      
-      <block type="recipientSignatureProvider__signatureProviderName"></block>
       
   </category>
 
@@ -6563,6 +6533,36 @@
       <block type="recipientSignatureProviderOptions__sms"></block>
       
       <block type="recipientSignatureProviderOptions__smsMetadata"></block>
+      
+  </category>
+
+  <category name="recipient signature provider" colour="267">
+    <block type="recipientSignatureProvider"></block>
+      <block type="recipientSignatureProvider__sealDocumentsWithTabsOnly"></block>
+      
+      <block type="recipientSignatureProvider__sealName"></block>
+      
+      <block type="recipientSignatureProvider__signatureProviderName"></block>
+      
+  </category>
+
+  <category name="recipient phone authentication" colour="258">
+    <block type="recipientPhoneAuthentication"></block>
+      <block type="recipientPhoneAuthentication__recipMayProvideNumber"></block>
+      
+      <block type="recipientPhoneAuthentication__recipMayProvideNumberMetadata"></block>
+      <block type="propertyMetadata_options"></block>
+      <block type="recipientPhoneAuthentication__recordVoicePrint"></block>
+      
+      <block type="recipientPhoneAuthentication__recordVoicePrintMetadata"></block>
+      
+      <block type="recipientPhoneAuthentication__senderProvidedNumbers"></block>
+      <block type="recipientPhoneAuthentication_senderProvidedNumbers__senderProvidedNumber"></block>
+      <block type="recipientPhoneAuthentication__senderProvidedNumbersMetadata"></block>
+      
+      <block type="recipientPhoneAuthentication__validateRecipProvidedNumber"></block>
+      
+      <block type="recipientPhoneAuthentication__validateRecipProvidedNumberMetadata"></block>
       
   </category>
 
@@ -6851,8 +6851,6 @@
       <block type="signer__accessCodeMetadata"></block>
       <block type="propertyMetadata_options"></block>
       <block type="signer__addAccessCodeToEmail"></block>
-      
-      <block type="signer__additionalNotificationsMetadata"></block>
       
       <block type="signer__agentCanEditEmail"></block>
       
@@ -7586,14 +7584,6 @@
       
   </category>
 
-  <category name="ssn9 information input" colour="318">
-    <block type="ssn9InformationInput"></block>
-      <block type="ssn9InformationInput__displayLevelCode"></block>
-      
-      <block type="ssn9InformationInput__ssn9"></block>
-      
-  </category>
-
   <category name="ssn4 information input" colour="315">
     <block type="ssn4InformationInput"></block>
       <block type="ssn4InformationInput__displayLevelCode"></block>
@@ -7601,6 +7591,14 @@
       <block type="ssn4InformationInput__receiveInResponse"></block>
       
       <block type="ssn4InformationInput__ssn4"></block>
+      
+  </category>
+
+  <category name="ssn9 information input" colour="318">
+    <block type="ssn9InformationInput"></block>
+      <block type="ssn9InformationInput__displayLevelCode"></block>
+      
+      <block type="ssn9InformationInput__ssn9"></block>
       
   </category>
 
@@ -8461,8 +8459,6 @@
       <block type="witness__accessCodeMetadata"></block>
       <block type="propertyMetadata_options"></block>
       <block type="witness__addAccessCodeToEmail"></block>
-      
-      <block type="witness__additionalNotificationsMetadata"></block>
       
       <block type="witness__agentCanEditEmail"></block>
       
