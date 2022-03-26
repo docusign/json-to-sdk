@@ -1,26 +1,20 @@
 // Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 /**
- * dsJsonToSdk produces an sdk program from the json input 
+ * dsJsonToSdk produces an sdk program from the json input
  * @type {{}}
  */
 
-import pluralize from "pluralize/pluralize";
-import childObjAttr from "./childObjAttr.json";
-import {DsSdkTemplates} from "./dsSdkTemplates";
+const pluralize = require("pluralize/pluralize");
+const childObjAttr = require("./childObjAttr.json");
+const {DsSdkTemplates} = require("./dsSdkTemplates");
 
 class JsonToSdk {
 
-    constructor(appObject, sdkLanguage) {
-        this.appObject = appObject;
-        this.sdkLanguage = sdkLanguage;
-        this.variableNamesUsed = {}; // Handle issue of only declaring once
-           // items are variable names, with value of the last one used. 
-           // Eg signer: 2 means that name signer1 and signer2 have been used
-        this.template = new DsSdkTemplates(appObject, sdkLanguage);
+    constructor() {
     }
 
     /**
-     * 
+     *
      * @param {object} json The incoming JSON with the envelope definition
      *                      and perhaps other objects too.
      *                      Optional other objects:
@@ -28,7 +22,10 @@ class JsonToSdk {
      *                      * createRecipientViewReq -- for creating the view
      * @returns {string} program The SDK program
      */
-    convert (json) {
+    convert (json, sdkLanguage) {
+        this.appObject = {accessToken: null, accountId: null, dsApi: {findDocuments: this.findDocuments},
+            languageNames: this.languageNames};
+        this.template = new DsSdkTemplates(this.appObject, sdkLanguage);
         if (!this.template.supported) {
             return `Sorry, ${this.appObject.languageNames(this.sdkLanguage)} is not yet implemented`
         }
@@ -37,18 +34,21 @@ class JsonToSdk {
             return this.template.template  // EARLY return
         }
         this.sdkObjOut = [];
-        this.variableNamesUsed = {};
+        this.variableNamesUsed = {}; // Handle issue of only declaring once
+           // items are variable names, with value of the last one used.
+           // Eg signer: 2 means that name signer1 and signer2 have been used
+
         // The incoming JSON may be from the fluent output
         // (has attribute envelopeDefinition) or not
-        this.doSdkObjConversion('envelopeDefinition', 'envelopeDefinition', 'envelopeDefinition', 
+        this.doSdkObjConversion('envelopeDefinition', 'envelopeDefinition', 'envelopeDefinition',
                 json.envelopeDefinition || json);
         let envelopeDefinition = this.sdkObjOut.join("\n")
         this.template.setEnvelopeDefinition(envelopeDefinition);
-        
+
         this.sdkObjOut = [];
         if (json.createRecipientViewReq) {
             // Embedded signing
-            this.doSdkObjConversion('recipientViewRequest', 'recipientViewRequest', 'recipientViewRequest', 
+            this.doSdkObjConversion('recipientViewRequest', 'recipientViewRequest', 'recipientViewRequest',
                 json.createRecipientViewReq);
         }
         this.template.setRecipientViewRequest(
@@ -58,7 +58,7 @@ class JsonToSdk {
     }
 
     /**
-     * 
+     *
      * @param {string} name the base name for a variable
      * @returns {string} result the variable name that should be used
      */
@@ -73,10 +73,10 @@ class JsonToSdk {
 
     /**
      * Produce the sdkDefinition object
-     * @param {string} objName The current object's name. 
+     * @param {string} objName The current object's name.
      *                         The json parameter is its attributes.
-     * @param {string} sdkObjName The current object's name as used in the SDKs 
-     * @param {string} varName The generic name of the variable for objName. 
+     * @param {string} sdkObjName The current object's name as used in the SDKs
+     * @param {string} varName The generic name of the variable for objName.
      *                         Not yet customized to snake case, etc.
      * @param {object} json    An envelope definition (or part of it)
      */
@@ -87,13 +87,13 @@ class JsonToSdk {
         // 2. Produce variables for all arrayOfScalars
         // 3. Write code output for this variable, using the
         //    variable names created in steps 1 and 2.
-    
+
         const attributes = Object.keys(json)
             , objAttributes = attributes.filter(
-                attr => childObjAttr[objName] && childObjAttr[objName][attr] && 
+                attr => childObjAttr[objName] && childObjAttr[objName][attr] &&
                     childObjAttr[objName][attr].itemType === 'object')
             , arrayOfObjAttributes = attributes.filter(
-                attr => childObjAttr[objName] && childObjAttr[objName][attr] && 
+                attr => childObjAttr[objName] && childObjAttr[objName][attr] &&
                     childObjAttr[objName][attr].itemType === 'arrayOfObject')
             , arrayOfScalarAttributes = attributes.filter(
                 attr => (childObjAttr[objName] && childObjAttr[objName][attr]) &&
@@ -102,7 +102,7 @@ class JsonToSdk {
                 attr => !(childObjAttr[objName] && childObjAttr[objName][attr]))
             , attributeInfo = [] // will be sorted list of attribute name and type
             ;
-        
+
         // Create variables named for the attributes
         objAttributes.forEach(attr => {
             const vName = this.getVariableName(attr);
@@ -139,7 +139,7 @@ class JsonToSdk {
                 {var: vName, items: json[attr]}));
         })
 
-        scalarAttributes.forEach(attr => 
+        scalarAttributes.forEach(attr =>
             attributeInfo.push({attr: attr, type: typeof json[attr], scalar: true, value: json[attr]})
         )
 
@@ -156,8 +156,8 @@ class JsonToSdk {
             }
         }
         this.sdkObjOut.push(this.template.t.object({
-            var: varName, objectName: objName, sdkObjectName: sdkObjName, 
+            var: varName, objectName: objName, sdkObjectName: sdkObjName,
             attributeInfo: attributeInfo}));
     }
 }
-export { JsonToSdk }
+module.exports = { JsonToSdk };

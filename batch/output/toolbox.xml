@@ -2518,20 +2518,6 @@
       
   </category>
 
-  <category name="document html display anchor" colour="72">
-    <block type="documentHtmlDisplayAnchor"></block>
-      <block type="documentHtmlDisplayAnchor__caseSensitive"></block>
-      
-      <block type="documentHtmlDisplayAnchor__endAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__removeEndAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__removeStartAnchor"></block>
-      
-      <block type="documentHtmlDisplayAnchor__startAnchor"></block>
-      
-  </category>
-
   <category name="document html definition" colour="69">
     <block type="documentHtmlDefinition"></block>
       <block type="documentHtmlDefinition__displayAnchorPrefix"></block>
@@ -2553,6 +2539,20 @@
       <block type="documentHtmlDefinition__showMobileOptimizedToggle"></block>
       
       <block type="documentHtmlDefinition__source"></block>
+      
+  </category>
+
+  <category name="document html display anchor" colour="72">
+    <block type="documentHtmlDisplayAnchor"></block>
+      <block type="documentHtmlDisplayAnchor__caseSensitive"></block>
+      
+      <block type="documentHtmlDisplayAnchor__endAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__removeEndAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__removeStartAnchor"></block>
+      
+      <block type="documentHtmlDisplayAnchor__startAnchor"></block>
       
   </category>
 
@@ -3608,6 +3608,16 @@
       
   </category>
 
+  <category name="envelope metadata" colour="111">
+    <block type="envelopeMetadata"></block>
+      <block type="envelopeMetadata__allowAdvancedCorrect"></block>
+      
+      <block type="envelopeMetadata__allowCorrect"></block>
+      
+      <block type="envelopeMetadata__enableSignWithNotary"></block>
+      
+  </category>
+
   <category name="envelope locks" colour="108">
     <block type="EnvelopeLocks"></block>
       <block type="EnvelopeLocks__lockDurationInSeconds"></block>
@@ -3621,16 +3631,6 @@
       <block type="EnvelopeLocks__lockedUntilDateTime"></block>
       
       <block type="EnvelopeLocks__useScratchPad"></block>
-      
-  </category>
-
-  <category name="envelope metadata" colour="111">
-    <block type="envelopeMetadata"></block>
-      <block type="envelopeMetadata__allowAdvancedCorrect"></block>
-      
-      <block type="envelopeMetadata__allowCorrect"></block>
-      
-      <block type="envelopeMetadata__enableSignWithNotary"></block>
       
   </category>
 
@@ -6476,14 +6476,6 @@
       
   </category>
 
-  <category name="recipient identity input option" colour="249">
-    <block type="recipientIdentityInputOption"></block>
-      <block type="recipientIdentityInputOption__name"></block>
-      
-      <block type="recipientIdentityInputOption__valueType"></block>
-      
-  </category>
-
   <category name="recipient identity phone number" colour="252">
     <block type="recipientIdentityPhoneNumber"></block>
       <block type="recipientIdentityPhoneNumber__countryCode"></block>
@@ -6500,49 +6492,11 @@
       
   </category>
 
-  <category name="recipient proof file" colour="261">
-    <block type="recipientProofFile"></block>
-      <block type="recipientProofFile__isInProofFile"></block>
+  <category name="recipient identity input option" colour="249">
+    <block type="recipientIdentityInputOption"></block>
+      <block type="recipientIdentityInputOption__name"></block>
       
-  </category>
-
-  <category name="recipient signature information" colour="264">
-    <block type="recipientSignatureInformation"></block>
-      <block type="recipientSignatureInformation__fontStyle"></block>
-      
-      <block type="recipientSignatureInformation__signatureInitials"></block>
-      
-      <block type="recipientSignatureInformation__signatureName"></block>
-      
-  </category>
-
-  <category name="recipient signature provider options" colour="270">
-    <block type="recipientSignatureProviderOptions"></block>
-      <block type="recipientSignatureProviderOptions__cpfNumber"></block>
-      
-      <block type="recipientSignatureProviderOptions__cpfNumberMetadata"></block>
-      <block type="propertyMetadata_options"></block>
-      <block type="recipientSignatureProviderOptions__oneTimePassword"></block>
-      
-      <block type="recipientSignatureProviderOptions__oneTimePasswordMetadata"></block>
-      
-      <block type="recipientSignatureProviderOptions__signerRole"></block>
-      
-      <block type="recipientSignatureProviderOptions__signerRoleMetadata"></block>
-      
-      <block type="recipientSignatureProviderOptions__sms"></block>
-      
-      <block type="recipientSignatureProviderOptions__smsMetadata"></block>
-      
-  </category>
-
-  <category name="recipient signature provider" colour="267">
-    <block type="recipientSignatureProvider"></block>
-      <block type="recipientSignatureProvider__sealDocumentsWithTabsOnly"></block>
-      
-      <block type="recipientSignatureProvider__sealName"></block>
-      
-      <block type="recipientSignatureProvider__signatureProviderName"></block>
+      <block type="recipientIdentityInputOption__valueType"></block>
       
   </category>
 
@@ -6563,6 +6517,52 @@
       <block type="recipientPhoneAuthentication__validateRecipProvidedNumber"></block>
       
       <block type="recipientPhoneAuthentication__validateRecipProvidedNumberMetadata"></block>
+      
+  </category>
+
+  <category name="recipient proof file" colour="261">
+    <block type="recipientProofFile"></block>
+      <block type="recipientProofFile__isInProofFile"></block>
+      
+  </category>
+
+  <category name="recipient signature information" colour="264">
+    <block type="recipientSignatureInformation"></block>
+      <block type="recipientSignatureInformation__fontStyle"></block>
+      
+      <block type="recipientSignatureInformation__signatureInitials"></block>
+      
+      <block type="recipientSignatureInformation__signatureName"></block>
+      
+  </category>
+
+  <category name="recipient signature provider" colour="267">
+    <block type="recipientSignatureProvider"></block>
+      <block type="recipientSignatureProvider__sealDocumentsWithTabsOnly"></block>
+      
+      <block type="recipientSignatureProvider__sealName"></block>
+      
+      <block type="recipientSignatureProvider__signatureProviderName"></block>
+      
+  </category>
+
+  <category name="recipient signature provider options" colour="270">
+    <block type="recipientSignatureProviderOptions"></block>
+      <block type="recipientSignatureProviderOptions__cpfNumber"></block>
+      
+      <block type="recipientSignatureProviderOptions__cpfNumberMetadata"></block>
+      <block type="propertyMetadata_options"></block>
+      <block type="recipientSignatureProviderOptions__oneTimePassword"></block>
+      
+      <block type="recipientSignatureProviderOptions__oneTimePasswordMetadata"></block>
+      
+      <block type="recipientSignatureProviderOptions__signerRole"></block>
+      
+      <block type="recipientSignatureProviderOptions__signerRoleMetadata"></block>
+      
+      <block type="recipientSignatureProviderOptions__sms"></block>
+      
+      <block type="recipientSignatureProviderOptions__smsMetadata"></block>
       
   </category>
 

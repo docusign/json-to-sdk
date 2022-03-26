@@ -1,20 +1,22 @@
 // Copyright DocuSign, Inc. Ⓒ 2020. MIT License -- https://opensource.org/licenses/MIT
 /**
- * dsSdkTemplates are used to convert JSON constructs into 
+ * dsSdkTemplates are used to convert JSON constructs into
  * code for different DocuSign SDKs.
- * 
+ *
  * This file is used by dsJsonToSdk.js
  */
 
-import {pascalCase, snakeCase, camelCase} from 'change-case'; // https://www.npmjs.com/package/change-case
+const fs = require('fs');
+const path = require('path');
+const {pascalCase, snakeCase, camelCase} = require('change-case'); // https://www.npmjs.com/package/change-case
 /* eslint import/no-webpack-loader-syntax: off */
-import NodeJSTemplate from '!!raw-loader!../assets/sdkExamples/NodeJSTemplate.js.txt';
-import PHPTemplate from '!!raw-loader!../assets/sdkExamples/PHPTemplate.php.txt';
-import VBTemplate from '!!raw-loader!../assets/sdkExamples/VBTemplate.vb.txt';
-import CSharpTemplate from '!!raw-loader!../assets/sdkExamples/CSharpTemplate.cs.txt';
-import JavaTemplate from '!!raw-loader!../assets/sdkExamples/JavaTemplate.java.txt';
-import PythonTemplate from '!!raw-loader!../assets/sdkExamples/PythonTemplate.py.txt';
-import RubyTemplate from '!!raw-loader!../assets/sdkExamples/RubyTemplate.rb.txt';
+const NodeJSTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/NodeJSTemplate.js.txt'), 'utf-8');
+const PHPTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/PHPTemplate.php.txt'), 'utf-8');
+const VBTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/VBTemplate.vb.txt'), 'utf-8');
+const CSharpTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/CSharpTemplate.cs.txt'), 'utf-8');
+const JavaTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/JavaTemplate.java.txt'), 'utf-8');
+const PythonTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/PythonTemplate.py.txt'), 'utf-8');
+const RubyTemplate = fs.readFileSync(path.join(__dirname, '../assets/sdkExamples/RubyTemplate.rb.txt'), 'utf-8');
 
 const supportedLanguages = {NodeJS: true, PHP: true, VB: true, CSharp: true,
     Java: true, Python: true, Ruby: true};
@@ -72,7 +74,7 @@ class DsSdkTemplates {
 
     /**
      * @returns {string} mime designation for the file type
-     * @param {string} ext 
+     * @param {string} ext
      */
     convertExtMime(ext) {
         return extMimeTable[ext || "pdf"]
@@ -80,8 +82,8 @@ class DsSdkTemplates {
 
     /**
      * @returns string the transformed variable name
-     * @param {*} transformRule 
-     * @param {string} vName 
+     * @param {*} transformRule
+     * @param {string} vName
      */
     transformVar(transformRule, vName) {
         const rule = transformRule.var
@@ -93,8 +95,8 @@ class DsSdkTemplates {
     }
     /**
      * @returns string the transformed SDK object name
-     * @param {*} transformRule 
-     * @param {string} vName 
+     * @param {*} transformRule
+     * @param {string} vName
      */
     transformObj(transformRule, objName) {
         const rule = transformRule.obj
@@ -105,8 +107,8 @@ class DsSdkTemplates {
     }
     /**
      * @returns string the transformed attribute ref for setting the attribute
-     * @param {*} transformRule 
-     * @param {string} vName 
+     * @param {*} transformRule
+     * @param {string} vName
      */
     transformAttrName(transformRule, attrName) {
         const rule = transformRule.attr
@@ -129,7 +131,7 @@ class DsSdkTemplates {
     }
 
     /**
-     * Setters for template items 
+     * Setters for template items
      */
     setEnvelopeDefinition(envelopeDefinition) {
         this.template = this.template.replace('{{envelope_definition}}', envelopeDefinition)
@@ -145,8 +147,8 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
         const setRecipientViewRequest = recipientViewRequest => {
             if (!recipientViewRequest) {
@@ -155,56 +157,56 @@ class DsSdkTemplates {
             this.template = this.template.replace(
                 '{{recipient_view_request}}', recipientViewRequest)
         }
-    
+
         /**
          * Write out Node.js code for an array assigned to a variable
-         * 
+         *
          * Handlebars version:
          *     let {{{var}}} = [{{#each items}}{{{this}}}{{#if @last}}{{else}}, {{/if}}{{/each}}];
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
         const arrayFunction = (args) => {
             const {var: vName, items} = args;
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${v}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}let ${vName} = [${itemsFormatted.join('')}];`
         }
 
         /**
          * Write out Node.js code for an array of strings assigned to a variable
-         * 
+         *
          * Handlebars version:
          *         let {{{var}}} = [{{#each items}}{{{escapeString this}}}{{#if @last}}{{else}}, {{/if}}{{/each}}];
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
         const arrayOfStringsFunction = (args) => {
             const {var: vName, items} = args;
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}let ${vName} = [${itemsFormatted.join('')}];`
         }
 
         /**
-         * Write out Node.js code for an object (associative array) 
+         * Write out Node.js code for an object (associative array)
          * assigned to a variable
-         * 
+         *
          * Handlebars version:
          *     let {{{var}}} = docusign.{{{objectName}}}.constructFromObject({
          *          {{#each attributeInfo}}
          *          {{{attr}}}: {{#if scalar}}{{#if (eq type "string")}}{{{escapeString value}}}{{else}}{{{value}}}{{/if}}{{else}}{{{varName}}}{{/if}}{{#if @last}}{{else}},{{/if}}
          *     {{/each}}
          *     });
-         * 
-         * 
-         * @param {string} vName The variable's name 
+         *
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -214,12 +216,12 @@ class DsSdkTemplates {
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             const {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
             const realSdkObjectName = pascalCase(sdkObjectName);
-            const out1 = `${indent}let ${vName} = docusign.${realSdkObjectName}.constructFromObject({\n`
+            const out1 = `${indent}let ${vName} = {\n`
                 , attributes = attributeInfos.map((v, i, a) => {
                         if (v.docFilename) {
                             // make a function call to get the doc in Base64 format
@@ -230,14 +232,14 @@ class DsSdkTemplates {
                         return `${indent}${indent}${v.attr}: ${v.scalar ? (v.type === 'string' ? JSON.stringify(v.value) : v.value) : v.varName}${i === a.length - 1 ? '' : ', '} ${v.comment ? ('// ' + v.comment):''}\n`
                     }
                   ).join('')
-                , out2 = `${indent}${indent}});`
+                , out2 = `${indent}};`
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
@@ -249,8 +251,8 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
         const setRecipientViewRequest = recipientViewRequest => {
             if (!recipientViewRequest) {
@@ -259,12 +261,12 @@ class DsSdkTemplates {
             this.template = this.template.replace(
                 '{{recipient_view_request}}', recipientViewRequest)
         }
-    
+
         const transformRule = transformRules.PHP;
         /**
          * Write out code for an array assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
@@ -272,15 +274,15 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${this.transformVar(transformRule, v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}];`
         }
 
         /**
          * Write out code for an array of strings assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
@@ -288,24 +290,24 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}];`
         }
 
         /**
-         * Write out code for an object (associative array) 
+         * Write out code for an object (associative array)
          * assigned to a variable
-         * 
+         *
          * Handlebars version:
          *     let {{{var}}} = docusign.{{{objectName}}}.constructFromObject({
          *          {{#each attributeInfo}}
          *          {{{attr}}}: {{#if scalar}}{{#if (eq type "string")}}{{{escapeString value}}}{{else}}{{{value}}}{{/if}}{{else}}{{{varName}}}{{/if}}{{#if @last}}{{else}},{{/if}}
          *     {{/each}}
          *     });
-         * 
-         * 
-         * @param {string} vName The variable's name 
+         *
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -315,7 +317,7 @@ class DsSdkTemplates {
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             let {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
@@ -337,12 +339,12 @@ class DsSdkTemplates {
                   ).join('')
                 , out2 = `${indent}${indent}]);`
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
@@ -355,8 +357,8 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
         const setRecipientViewRequest = recipientViewRequest => {
             if (!recipientViewRequest) {
@@ -365,12 +367,12 @@ class DsSdkTemplates {
             this.template = this.template.replace(
                 '{{recipient_view_request}}', recipientViewRequest)
         }
-    
+
         const transformRule = transformRules.Python;
         /**
          * Write out code for an array assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
@@ -378,15 +380,15 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${this.transformVar(transformRule, v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}]`
         }
 
         /**
          * Write out code for an array of strings assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
@@ -394,24 +396,24 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}]`
         }
 
         /**
-         * Write out code for an object (associative array) 
+         * Write out code for an object (associative array)
          * assigned to a variable
-         * 
+         *
          * Handlebars version:
          *     let {{{var}}} = docusign.{{{objectName}}}.constructFromObject({
          *          {{#each attributeInfo}}
          *          {{{attr}}}: {{#if scalar}}{{#if (eq type "string")}}{{{escapeString value}}}{{else}}{{{value}}}{{/if}}{{else}}{{{varName}}}{{/if}}{{#if @last}}{{else}},{{/if}}
          *     {{/each}}
          *     });
-         * 
-         * 
-         * @param {string} vName The variable's name 
+         *
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -421,7 +423,7 @@ class DsSdkTemplates {
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             let {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
@@ -443,12 +445,12 @@ class DsSdkTemplates {
                   ).join('')
                 , out2 = `${indent}${indent})`
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
@@ -461,8 +463,8 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
         const setRecipientViewRequest = recipientViewRequest => {
             if (!recipientViewRequest) {
@@ -471,12 +473,12 @@ class DsSdkTemplates {
             this.template = this.template.replace(
                 '{{recipient_view_request}}', recipientViewRequest)
         }
-    
+
         const transformRule = transformRules.Ruby;
         /**
          * Write out code for an array assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
@@ -484,15 +486,15 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${this.transformVar(transformRule, v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}]`
         }
 
         /**
          * Write out code for an array of strings assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
@@ -500,24 +502,24 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${indent}${vName} = [${itemsFormatted.join('')}]`
         }
 
         /**
-         * Write out code for an object (associative array) 
+         * Write out code for an object (associative array)
          * assigned to a variable
-         * 
+         *
          * Handlebars version:
          *     let {{{var}}} = docusign.{{{objectName}}}.constructFromObject({
          *          {{#each attributeInfo}}
          *          {{{attr}}}: {{#if scalar}}{{#if (eq type "string")}}{{{escapeString value}}}{{else}}{{{value}}}{{/if}}{{else}}{{{varName}}}{{/if}}{{#if @last}}{{else}},{{/if}}
          *     {{/each}}
          *     });
-         * 
-         * 
-         * @param {string} vName The variable's name 
+         *
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -527,7 +529,7 @@ class DsSdkTemplates {
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             let {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
@@ -549,12 +551,12 @@ class DsSdkTemplates {
                   ).join('')
                 , out2 = `${indent}${indent}})`
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
@@ -567,26 +569,26 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
-        const lineIndent = "        ";            
+        const lineIndent = "        ";
         /**
-         * Since this template uses JSON, this method handles both the 
+         * Since this template uses JSON, this method handles both the
          * envelopeDefinition and the recipientViewRequest
-         * @param {string} jsonArg 
+         * @param {string} jsonArg
          */
         const convertJSONFunction = (jsonArg) => {
             const json = JSON.parse(JSON.stringify(jsonArg)) // local copy
                 , envelopeDefinition = json.envelopeDefinition || json
                 , documentObjs = this.appObject.dsApi.findDocuments(envelopeDefinition)
-                , documents = documentObjs.map(v => 
-                    ({mimeType: this.convertExtMime(v.fileExtension), filename: v.name, 
+                , documents = documentObjs.map(v =>
+                    ({mimeType: this.convertExtMime(v.fileExtension), filename: v.name,
                       documentId: v.documentId, diskFilename: v.filename}))
                 , documentsLastIndex = documents.length - 1
                 ;
             documentObjs.forEach(e => {delete e.filename});
-            
+
             // Goal:
             // Dim documents = {
             // (mimeType:="application/pdf", filename:="Example document", documentId:="1", diskFilename:="anchorfields.pdf")
@@ -634,8 +636,8 @@ class DsSdkTemplates {
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const indent = "    ";
         const lineIndent = "            ";
         const setRecipientViewRequest = recipientViewRequest => {
@@ -644,12 +646,12 @@ class DsSdkTemplates {
             this.template = this.template.replace(
                 '{{recipient_view_request}}', out1 + recipientViewRequest)
         }
-    
+
         const transformRule = transformRules.CSharp;
         /**
          * Write out code for an array of objs assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
@@ -658,15 +660,15 @@ class DsSdkTemplates {
             vName = this.transformVar(transformRule, vName);
             objName = this.transformObj(transformRule, objName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${this.transformVar(transformRule, v)}${i === a.length - 1 ? '' : ', '}`)
             return `${lineIndent}List<${objName}> ${vName} = new List<${objName}> {${itemsFormatted.join('')}};`
         }
 
         /**
          * Write out code for an array of strings assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
@@ -674,16 +676,16 @@ class DsSdkTemplates {
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${lineIndent}List<String> ${vName} = new List<String> {${itemsFormatted.join('')}};`
             }
 
         /**
-         * Write out code for an object (associative array) 
+         * Write out code for an object (associative array)
          * assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -693,7 +695,7 @@ class DsSdkTemplates {
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             let {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
@@ -717,12 +719,12 @@ ${lineIndent}{\n`
                   ).join('')
                 , out2 = `${lineIndent}};`
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
@@ -734,8 +736,8 @@ ${lineIndent}{\n`
         /**
          * Update template with recipient_view_request and
          * handle the false case too.
-         * @param {*} recipientViewRequest 
-         */ 
+         * @param {*} recipientViewRequest
+         */
         const lineIndent = "        ";
         const setRecipientViewRequest = recipientViewRequest => {
             const out1 =
@@ -743,12 +745,12 @@ ${lineIndent}{\n`
             this.template = this.template.replace(
                 '{{recipient_view_request}}', out1 + recipientViewRequest)
         }
-    
+
         const transformRule = transformRules.Java;
         /**
          * Write out code for an array of objs assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {*} objName The name of the variables object type
          * @param {*} items  The items in the array
          */
@@ -757,15 +759,15 @@ ${lineIndent}{\n`
             vName = this.transformVar(transformRule, vName);
             objName = this.transformObj(transformRule, objName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${this.transformVar(transformRule, v)}${i === a.length - 1 ? '' : ', '}`)
             return `${lineIndent}List<${objName}> ${vName} = Arrays.asList(${itemsFormatted.join('')});`
         }
 
         /**
          * Write out code for an array of strings assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variables object type
          * @param {array} items  The items in the array
          */
@@ -773,16 +775,16 @@ ${lineIndent}{\n`
             let {var: vName, items} = args;
             vName = this.transformVar(transformRule, vName);
 
-            const itemsFormatted = items.map ((v, i, a) => 
+            const itemsFormatted = items.map ((v, i, a) =>
                 `${JSON.stringify(v)}${i === a.length - 1 ? '' : ', '}`)
             return `${lineIndent}List<String> ${vName} = Arrays.asList(${itemsFormatted.join('')});`
             }
 
         /**
-         * Write out code for an object (associative array) 
+         * Write out code for an object (associative array)
          * assigned to a variable
-         * 
-         * @param {string} vName The variable's name 
+         *
+         * @param {string} vName The variable's name
          * @param {string} objName The name of the variable's object type
          * @param {string} sdkObjectName The name of the variable's object type for the SDK.
          *                               May need an additional transformation. Eg to Pascal Case
@@ -792,7 +794,7 @@ ${lineIndent}{\n`
          *                  type -- the type of the attribute
          *                  scalar -- true/false
          *                  value -- value of the attribute
-         *                  varName -- name of the variable for the attribute's value   
+         *                  varName -- name of the variable for the attribute's value
          */
         const objectFunction = (args) => {
             let {var: vName, sdkObjectName, attributeInfo: attributeInfos} = args;
@@ -815,15 +817,15 @@ ${lineIndent}{\n`
                   ).join('')
                 , out2 = ``
                 ;
-            return out1 + attributes + out2 
+            return out1 + attributes + out2
         }
 
         return {setRecipientViewRequest: setRecipientViewRequest,
-                array: arrayFunction, 
-                arrayOfString: arrayOfStringsFunction, 
+                array: arrayFunction,
+                arrayOfString: arrayOfStringsFunction,
                 object: objectFunction,
             }
     }
 
 }
-export { DsSdkTemplates }
+module.exports = { DsSdkTemplates };

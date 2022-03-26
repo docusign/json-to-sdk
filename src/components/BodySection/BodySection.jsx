@@ -53,7 +53,7 @@ class BodySection extends React.Component {
         this.exampleFileNames[langPython] = 'main.py';
         this.exampleFileNames[langRuby  ] = 'main.rb';
 
-        this.state = { 
+        this.state = {
             inputType: 'json',
             outputType: 'C#',
             fluent: defaultFluent,
@@ -64,13 +64,11 @@ class BodySection extends React.Component {
             windowHeight: 0
         };
 
-        this.appObject = {accessToken: null, accountId: null, dsApi: {findDocuments: this.findDocuments},
-            languageNames: this.languageNames}
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.downloadFramework = this.downloadFramework.bind(this);
         this.downloadCode = this.downloadCode.bind(this);
     }
-    
+
     render () {
         return (
         <>
@@ -83,8 +81,8 @@ class BodySection extends React.Component {
                     </div>
                     <div>
                         Note: Only the <a href="https://developers.docusign.com/esign-rest-api/reference/Envelopes/Envelopes/create"
-                            target="_blank" rel="noopener noreferrer">Envelopes:create</a> and <a 
-                            href="https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/EnvelopeViews/createRecipient/" 
+                            target="_blank" rel="noopener noreferrer">Envelopes:create</a> and <a
+                            href="https://developers.docusign.com/docs/esign-rest-api/reference/Envelopes/EnvelopeViews/createRecipient/"
                             target="_blank" rel="noopener noreferrer">EnvelopeViews:createRecipient</a> API calls are supported.
                     </div>
                     <Form.Group>
@@ -99,7 +97,7 @@ class BodySection extends React.Component {
             <Col xs="6" className="mt-4">
                 <Form><Form.Group><Form.Row className="justify-content-md-left">
                     <Col md="auto"><b>Output:</b></Col>
-                    <Col><Form.Control as="select" md="auto" style={{width: "10em"}} 
+                    <Col><Form.Control as="select" md="auto" style={{width: "10em"}}
                         onChange={evt => this.outputChange(evt)} size="sm">
                         <option>C#</option><option>PHP</option><option>Java</option>
                         <option>Node.JS</option><option>Python</option><option>Ruby</option>
@@ -113,12 +111,12 @@ class BodySection extends React.Component {
                     </Form.Row></Form.Group>
                 </Form>
                 <div style={{fontFamily: "Consolas, monaco, monospace"}}>
-                    {this.state.errMsg ? 
+                    {this.state.errMsg ?
                         <div style={{color: "orangered"}}>{this.state.errMsg}</div>
                         :
                         /**  <pre style={{whiteSpace: "pre-wrap"}}>{this.state.output}</pre> */
                         <Form.Control as="textarea" readOnly spellcheck="false"
-                        style={{ height: `${this.state.windowHeight - inputTextAreaY}px`, 
+                        style={{ height: `${this.state.windowHeight - inputTextAreaY}px`,
                                  fontFamily: "Consolas, monaco, monospace", marginTop: "44px"}}
                         value={this.state.output} />
                     }
@@ -133,7 +131,7 @@ class BodySection extends React.Component {
                     }
                 </div>
            </Col>
-           <a className="hidden" 
+           <a className="hidden"
                 href={this.urls[this.sdkLanguage()]}
                 rel="noopener noreferrer"
                 download={`${this.sdkLanguage()}_example.zip`}
@@ -166,13 +164,13 @@ class BodySection extends React.Component {
     }
     componentDidMount() {
         this.updateWindowDimensions();
-        window.addEventListener('resize', this.updateWindowDimensions);          
+        window.addEventListener('resize', this.updateWindowDimensions);
         this.calculate();
     }
 
     updateWindowDimensions() {
         this.setState({ windowHeight: window.innerHeight });
-    }      
+    }
 
     calculate() {
         // Compute the output based on the controls and the input
@@ -193,22 +191,22 @@ class BodySection extends React.Component {
             if (this.state.outputType === 'JSON') {
                 this.setState({output: JSON.stringify(json, null, 4), errMsg: null, errStringPos: null});
             } else {
-                const jsonToSdk = new JsonToSdk(this.appObject, this.sdkLanguage());
-                try {sdk = jsonToSdk.convert(json)}
+                const jsonToSdk = new JsonToSdk();
+                try {sdk = jsonToSdk.convert(json, this.sdkLanguage())}
                 catch {
                     errMsg = `The input is valid JSON, but it is not valid as a request for the API.
                     Check that attributes are correctly set as arrays, objects, arrays of objects, etc.
                     You may want to stepwise test different parts of the JSON to see where the problem is.`;
                     this.setState({errMsg: errMsg, errStringPos: null});
-                    return;    
+                    return;
                 }
                 this.setState({output: sdk, errMsg: null, errStringPos: null});
             }
         } else {
-            // Fluent input  
+            // Fluent input
             try {
                 // eslint-disable-next-line
-                json = eval(this.state.fluent).getJSON();    
+                json = eval(this.state.fluent).getJSON();
             } catch (e) {
                 errMsg = e.message;
             }
@@ -219,8 +217,8 @@ class BodySection extends React.Component {
             if (this.state.outputType === 'JSON') {
                 this.setState({output: JSON.stringify(json, null, 4), errMsg: null, errStringPos: null});
             } else {
-                const jsonToSdk = new JsonToSdk(this.appObject, this.sdkLanguage());
-                sdk = jsonToSdk.convert(json);
+                const jsonToSdk = new JsonToSdk();
+                sdk = jsonToSdk.convert(json, this.sdkLanguage());
                 this.setState({output: sdk, errMsg: null, errStringPos: null});
             }
         }
@@ -235,7 +233,7 @@ class BodySection extends React.Component {
           , errStart = null
           , errEnd = null
           ;
-        if (results1) {errStringPos = parseInt(results1[1])} 
+        if (results1) {errStringPos = parseInt(results1[1])}
         if (errStringPos !== null) {
             const len = this.state.json.length;
             errStart = (errStringPos - errBuffer) > 0 ? (errStringPos - errBuffer) : 0;
@@ -301,7 +299,7 @@ class BodySection extends React.Component {
             , codeDownloadUrl = URL.createObjectURL(blob)
             ;
         this.setState ({codeDownloadUrl: codeDownloadUrl}, () => {
-            this.doCodeDownload.click(); 
+            this.doCodeDownload.click();
             URL.revokeObjectURL(codeDownloadUrl);  // free up storage--no longer needed.
             this.setState({codeDownloadUrl: ""})
         })
